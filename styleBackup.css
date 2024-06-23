@@ -1,12 +1,8 @@
 body {
     background-color: rgb(9, 9, 15);
 }
-.dashboardWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.dashboard, .dashboardblack, .dashboardplace, .dashboardLogo{
+
+.dashboard, .dashboardblack, .dashboardLogo{
     animation: dbfadeout 0.25s forwards;
     position: fixed;
     animation-play-state: paused;
@@ -33,16 +29,23 @@ body {
     animation-delay: calc(var(--scroll) * -1s);
     animation-timing-function: cubic-bezier(.05,.67,.37,.91);
 }
-.dashboardplace {
-    position: relative;
+.boo {
+    width: 100%;
+    height: 100%;
     display: block;
-    animation: dbph 0.25s forwards;
-    margin-bottom: 25%;
-    z-index: -1;
+}
+.dashboardplace {
+    display: block;
+    position: relative;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-timing-function: cubic-bezier(.05,.67,.37,.91);
+    width: 100vh;
+    height: 35vh;
+    min-height: 75px;
+    z-index: -1;
     opacity: 1;
+
 }
 @keyframes dbfadeout {
     to {
@@ -58,6 +61,16 @@ body {
         min-height: 35px;
     }
 }
+.mean {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wegetit {
+    color: white;
+    font-size: 32px;
+}
 .rnimg {
     object-fit: cover;
     width: 100%;
@@ -68,4 +81,10 @@ body {
     background: linear-gradient(to bottom, #f5f5f5, #a6dcfd);
     border: none;
     border-radius: 4.5px;
+}
+.dashlinks {
+    margin-top: 10vh;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
 }
