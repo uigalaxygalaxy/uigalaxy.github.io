@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styleBackup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uiGala.xyz</title>
+</head>
+<body class="b">
+    <div class="dashboardWrapper">
+        <div class="dashboardLogo">
+    </div>
+        <div class="dashboard">
+            <img class="rnimg" id="random-image" src="" alt="uiGalaxy Rando Logo">
+    </div>
+    <div class="dashboardplace">
+        <p>Boo!!!!!!</p>
+    </div>
+    <div class="dashboardblack">
+    </div>
+    </div>
+<ul class="dashlinks">
+    <li><a href="./TETRIO">TETR.IO stuff</a></li>
+    <li><a href="./portfolio">Portfolio of Shame</a></li>
+    <li><a href="./contact">Contacts</a></li>
+</ul>
+<div style="height: 2000px;"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Array of image URLs
+        const images = [
+            'daguhteer.jpg',
+            'image0.jpg',
+            'IMG_1722.jpg',
+        ];
+
+        // Function to select a random image
+        function getRandomImage(images) {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        // Select a random image
+        const randomImageUrl = getRandomImage(images);
+        // Set the src attribute of the random image in the content to the same random image
+        const randomImage = document.getElementById('random-image');
+        randomImage.src = randomImageUrl;
+
+    });
+</script>
+<script>
+window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false);
+</script>
+
+</body>
+</html>
