@@ -1,7 +1,15 @@
+* {
+    font-family: "Carbon Bold";
+    font-size: 20px;
+    font-weight: 300;
+    text-align: middle;
+}
 body {
     background-color: rgb(9, 9, 15);
 }
-
+.dashboard {
+    z-index: 2;
+}
 .dashboard, .dashboardblack, .dashboardLogo{
     animation: dbfadeout 0.25s forwards;
     position: fixed;
@@ -13,17 +21,22 @@ body {
     height: 35%;
     min-height: 75px;
     opacity: 1;
-    
+    left: 0px'
 }
 .dashboardLogo {
+    animation: dbph 0.25s forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-timing-function: cubic-bezier(.05,.67,.37,.91);
     display: flex;
     align-items: center;
-    justify-content: center;
     z-index: 4;
+    margin: 0;
+    padding: 0;
 }
 .dashboardblack {
     animation: dbph 0.25s forwards;
-    z-index: -2;
+    z-index: 1;
     background-color: rgb(69, 68, 71);
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
@@ -48,6 +61,9 @@ body {
 
 }
 @keyframes dbfadeout {
+    from {
+        filter: blur(0.69px);
+    }
     to {
     height: 6%;
     min-height: 35px;
@@ -57,19 +73,29 @@ body {
 }
 @keyframes dbph {
     to {
-        height: 6%;
+        height: 6vh;
         min-height: 35px;
     }
 }
+@keyframes ui {
+    from {
+        margin-left: 25vw;
+        height: 20vh;
+    }
+    to {
+        margin-left: calc(-25vw + 100px);
+        margin-right: 100vw;
+        height: 10vh;
+    }
+}
 .mean {
-    height: 5vh;
+    height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .wegetit {
     color: white;
-    font-size: 32px;
 }
 .rnimg {
     object-fit: cover;
@@ -87,4 +113,33 @@ body {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
+}
+.rnlogo {
+    position: absolute;
+    object-fit: contain;
+    overflow: hidden;
+    height: 9vh;
+    width: 51vw;
+    animation: ui 0.25s forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-timing-function: cubic-bezier(.05,.67,.37,.91);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.imp {
+    font-weight: bold;
+    font-size: 2em;
+    color: rgb(96, 129, 206);
+    animation: rgb 2s infinite;
+    animation-timing-function: linear;
+}
+@keyframes rgb {
+    from {
+        filter: hue-rotate(0);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
 }
