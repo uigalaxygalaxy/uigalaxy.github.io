@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://db.onlinewebfonts.com/c/4104a580e6f3e91f7e6b93986bcddafa?family=Carbon+Bold" rel="stylesheet">
     <link rel="stylesheet" href="styleBackup.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 </head>
 <body class="b">
         <div class="dashboardLogo">
+            <img class="rnlogo" id="random-logo" src="" alt="uiGalaxy Rando Logo">
     </div>
         <div class="dashboard">
             <img class="rnimg" id="random-image" src="" alt="uiGalaxy Rando Logo">
@@ -19,7 +21,7 @@
     </div>
 
     <div class="mean">
-       <p class="wegetit">Gambling Addicts United</p> 
+       <p class="wegetit"><span class="imp">U</span>nited <span class="imp">I</span>rresponsible <span class="imp">G</span>ambling <span class="imp">A</span>ddicts <span class="imp">L</span>eft <span class="imp">A</span>stronomically <span class="imp">X</span>onked <span class="imp">Y</span>esterday</p> 
     </div>
 
     <div  class="dashlinks">
@@ -38,6 +40,13 @@
             'daguhteer.jpg',
             'image0.jpg',
             'IMG_1722.jpg',
+            'rainworld.png'
+        ];
+        const logos = [
+            'UIGALAXYTETO.png',
+            'uigalaxycat.png',
+            'uigalaxyMira.png',
+            'tes123123t.png'
         ];
 
         // Function to select a random image
@@ -46,11 +55,20 @@
             return images[randomIndex];
         }
 
+        // logo
+        function getRandomLogo(logos) {
+            const LogoIndex = Math.floor(Math.random() * logos.length);
+            return logos[LogoIndex];
+        }
+
         // Select a random image
         const randomImageUrl = getRandomImage(images);
+        const randomLogoUrl = getRandomLogo(logos);
         // Set the src attribute of the random image in the content to the same random image
         const randomImage = document.getElementById('random-image');
+        const randomLogo = document.getElementById('random-logo');
         randomImage.src = randomImageUrl;
+        randomLogo.src = randomLogoUrl;
 
     });
 </script>
