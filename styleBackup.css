@@ -1,11 +1,10 @@
 
 :root {
-    --G1: 36, 230, 155;
-    --G2: 22, 223, 142;
-    --P1: 178, 130, 255;
-    --P1: 111, 76, 250;
-    --I1: 233, 107, 255;
-    --I2: 255, 90, 197;
+    --TC: 36, 230, 155; /* 181, 24, 110 */
+    --PC: 36, 230, 155; /* 200 23 23 */
+    --CC: 36, 230, 155;
+
+    
 }
 
 
@@ -99,6 +98,12 @@ body {
         height: 10vh;
     }
 }
+.themes {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 .mean {
     height: 8vh;
     display: flex;
@@ -160,7 +165,7 @@ body {
         filter: hue-rotate(360deg);
     }
 }
-.tetriobutton {
+.tetriobutton, .portfoliobutton, .twitterbutton, .youtubebutton {
     text-decoration: none;
     position: absolute;
     display: inline-block;
@@ -183,14 +188,14 @@ body {
     text-shadow: 0 0 12px rgba(36, 230, 155, 0.4);
 
 }
-.tetriobutton:hover {
+.tetriobutton:hover, .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover {
     background-color: rgb(36, 230, 155);
     margin-top: -57px;
     box-shadow: 0 0 95px rgb(36, 230, 155, 0.52);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
     color: white;
 }
-.tetriobutton::after {
+.tetriobutton::after, .portfoliobutton::after, .twitterbutton::after, .youtubebutton::after {
     display: block;
     content: '';
     position: absolute;
@@ -202,7 +207,7 @@ body {
     top: -23px;
     left: -115px;
 }
-.tetriobutton:hover::after {
+.tetriobutton:hover::after, .portfoliobutton:hover::after, .twitterbutton:hover::after, .youtubebutton:hover::after {
     animation: LightSweep 1.6s linear infinite;}
 @keyframes LightSweep {
     0% {
@@ -216,13 +221,13 @@ body {
     }
 }
 
-.tetoWrapper {
+.tetoWrapper, .portWrapper, .conWrapper {
     height: 350px;
     width: calc(22vw + 30px);
     margin: 0;
     /* background-color: green; */
 }
-.THeader {
+.THeader, .PHeader, .CHeader {
     border: rgb(255, 255, 255);
     border-width: 3px;
     height: 56px;
@@ -236,14 +241,24 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.THeaderimg {
+
+.PHeader {
+    background-color: rgb(36, 230, 155); 
+    box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
+}
+.CHeader {
+    background-color: rgb(36, 230, 155); 
+    box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
+
+}
+.THeaderimg, .PHeaderimg, .CHeaderimg  {
     display: inline-block;
     align-self: center;
     height: 85%;
     margin-left: 12px;
 }
-.THeader::before {
-    display: inline-block;
+.THeader::before, .PHeader::before, .CHeader::before {
+    display: inline-block;  
     content: '';
     position: absolute;
     height: 75px;
@@ -267,7 +282,7 @@ body {
         left: calc(100% + 50px);
     }
 }
-.TRead {
+.TRead, .CRead, .PRead {
     margin: 0 0 0 0;
     border: 3px solid white;
     border-top: none;
@@ -279,10 +294,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    animation: ReadTcPc 4s -2.67s infinite;
     border-image: linear-gradient(to right, rgb(36, 230, 155), rgb(8, 144, 81))2 3 100%;
+}
+
+.PRead {
+    animation: ReadTcPc 4s -1.33s infinite;
 
 }
-.TreadTxt {
+.CRead {
+    animation: ReadTcPc 4s -0s infinite;
+    height: calc(26.5vh - 5.2vw + 324px);
+}
+.TreadTxt, .CreadTxt, .PreadTxt {
     font-family: "B612";
     margin: 0 0 0 0;
     font-size: .85rem;
@@ -292,12 +316,18 @@ body {
     margin-right: 5px;
     line-break: auto;
     line-height: 22px;
-    color: rgb(181, 231, 220);
+    color: white;
     text-shadow: 0 0 8px rgba(36, 230, 155, 0.5);
     display: inline-block;
+    margin-bottom: 25px;
+
 }
 
-.THeaderTxt {
+.PreadTxt {
+}
+.CreadTxt {
+}
+.THeaderTxt, .CHeaderTxt, .PHeaderTxt {
     display: inline-block;
     position: relative;
     font-style: italic;
