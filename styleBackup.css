@@ -6,8 +6,13 @@
 
     
 }
-
-
+.time {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.down {
+    line-height: 18px;
+}
 * {
     font-family: "Carbon Bold";
     font-size: 20px;
@@ -128,9 +133,9 @@ body {
     margin-top: 10vh;
     display: grid;
     justify-items: center;
-    align-items: center;
+    align-items: start;
     grid-template-columns: repeat(3, 1fr);
-   
+    gap: 0px;
 }
 .rnlogo {
     object-fit: contain;
@@ -221,13 +226,14 @@ body {
     }
 }
 
-.tetoWrapper, .portWrapper, .conWrapper {
-    height: 350px;
+.tetoWrapper, .portWrapper, .conWrapper, .comWrapper, .MWrapper, .AlertWrapper, .donoWrapper {
     width: calc(22vw + 30px);
     margin: 0;
     /* background-color: green; */
+    margin-top: 20px;
 }
-.THeader, .PHeader, .CHeader {
+
+.THeader, .PHeader, .CHeader, .MHeader, .AHeader, .DHeader {
     border: rgb(255, 255, 255);
     border-width: 3px;
     height: 56px;
@@ -251,13 +257,13 @@ body {
     box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
 
 }
-.THeaderimg, .PHeaderimg, .CHeaderimg  {
+.THeaderimg, .PHeaderimg, .CHeaderimg, .MHeaderimg, .AHeaderimg, .DHeaderimg  {
     display: inline-block;
     align-self: center;
     height: 85%;
     margin-left: 12px;
 }
-.THeader::before, .PHeader::before, .CHeader::before {
+.THeader::before, .PHeader::before, .CHeader::before, .MHeader::before, .AHeader::before, .DHeader::before {
     display: inline-block;  
     content: '';
     position: absolute;
@@ -282,7 +288,7 @@ body {
         left: calc(100% + 50px);
     }
 }
-.TRead, .CRead, .PRead {
+.TRead, .CRead, .PRead, .MRead, .ARead, .DRead {
     margin: 0 0 0 0;
     border: 3px solid white;
     border-top: none;
@@ -304,9 +310,15 @@ body {
 }
 .CRead {
     animation: ReadTcPc 4s -0s infinite;
-    height: calc(26.5vh - 5.2vw + 324px);
+    height: calc(22.5vh - 4.8vw + 264px);
 }
-.TreadTxt, .CreadTxt, .PreadTxt {
+.MRead {
+    height: calc(7vh - 4.8vw + 137px);
+}
+.DRead {
+    height: calc(24.5vh - 4.8vw + 244px);
+}
+.TreadTxt, .CreadTxt, .PreadTxt, .MreadTxt, .AreadTxt, .DreadTxt {
     font-family: "B612";
     margin: 0 0 0 0;
     font-size: .85rem;
@@ -327,7 +339,15 @@ body {
 }
 .CreadTxt {
 }
-.THeaderTxt, .CHeaderTxt, .PHeaderTxt {
+.AreadTxt {
+    height: 100%;
+    line-break: auto;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-bottom: 0px;
+
+}
+.THeaderTxt, .CHeaderTxt, .PHeaderTxt, .MHeaderTxt, .AHeaderTxt, .DHeaderTxt {
     display: inline-block;
     position: relative;
     font-style: italic;
