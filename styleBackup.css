@@ -293,7 +293,7 @@ body {
         left: calc(100% + 50px);
     }
 }
-.TRead, .CRead, .PRead, .MRead, .ARead, .DRead {
+.TRead, .CRead, .PRead, .MRead, .ARead, .DRead, .MrRead {
     margin: 0 0 0 0;
     border: 3px solid white;
     border-top: none;
@@ -308,7 +308,10 @@ body {
     animation: ReadTcPc 4s -2.67s infinite;
     border-image: linear-gradient(to right, rgb(36, 230, 155), rgb(8, 144, 81))2 3 100%;
 }
+.MrRead {
+    height: calc(21.5vh - 7vw + 164px);
 
+}
 .PRead {
     animation: ReadTcPc 4s -1.33s infinite;
 
@@ -343,6 +346,10 @@ body {
 
 }
 
+.PreadTxt {
+}
+.CreadTxt {
+}
 .AreadTxt {
     height: 100%;
     line-break: auto;
