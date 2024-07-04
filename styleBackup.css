@@ -6,6 +6,11 @@
 
     
 }
+.uiURL {
+    text-decoration: none;
+    color: rgb(193, 124, 242);
+    text-shadow: 0 0 16px rgb(193, 124, 242);
+}
 .time {
     font-size: 1.1rem;
     font-weight: bold;
@@ -317,6 +322,9 @@ body {
 }
 .DRead {
     height: calc(24.5vh - 4.8vw + 244px);
+}
+.ARead {
+    height: calc(14vh - 6vw + 239px);
 }
 .TreadTxt, .CreadTxt, .PreadTxt, .MreadTxt, .AreadTxt, .DreadTxt {
     font-family: "B612";
