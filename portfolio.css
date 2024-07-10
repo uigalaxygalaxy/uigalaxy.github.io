@@ -224,6 +224,11 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
 
 }
+.warn {
+    font-size: 32px;
+    color: rgb(255,212,212);
+    animation: rgb 4s infinite;
+}
 .secCountTxt {
     font-family: "B612";
     font-size: 1.3rem;
