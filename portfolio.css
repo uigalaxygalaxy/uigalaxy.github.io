@@ -78,7 +78,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.motionTitle {
+.motionTitle, .youtubeTitle {
     font-family: "B612";
     font-size: 1.1rem;
     margin-top: 10px;
@@ -89,6 +89,10 @@
     color: white;
     text-shadow: 0 0 12px rgba(36, 230, 155, 0.5);
     text-shadow: 0 0 6px rgba(36, 230, 155, 0.8);
+}
+
+.youtubeTitle {
+    margin-bottom: 84px;
 }
 .motionDate {
     font-size: 0.8rem;
@@ -107,6 +111,12 @@
     height: 49px;
     font-size: 42px;
     overflow: hidden;
+}
+.TimeWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 .motionWrapper {
     margin-top: 4vh;
@@ -160,10 +170,13 @@
     width: 100%;
     height: 100%;
 }
+.motionGlow {
+    filter: drop-shadow(0 0 134px rgba(36, 230, 155, 0.24));
+}
 .motionShow {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
     width: 100vw;
     background-color: rgb(0,0,0,0);
-    box-shadow: 0 0 134px rgba(36, 230, 155, 0.15);
     height: 20vh;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -174,6 +187,37 @@
     min-width: 500px;
     grid-template-rows: 21vh;
     grid-column-gap: 12px;
+
+}
+.ytbutton {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    width: 23vw;
+    font-family: "Carbon Bold";
+    padding: 8px 0 8px;
+    border: none;
+    margin-top: 0px;
+    border-style: solid;
+    border-width: 3px;
+    text-align: middle;
+    border-color: rgb(36, 230, 155);
+    background-color: rgb(9, 9, 15, 0);
+    color: rgb(36, 230, 155);
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+    overflow: hidden;
+    border-radius: 4px;
+    margin-top: -50px;
+    text-shadow: 0 0 12px rgba(36, 230, 155, 0.4);
+}
+.motionContentWrapper {
+    text-decoration: none;
+    box-shadow: 0 0 134px rgba(36, 230, 155, 0.18);
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
+}
+
+.motionContentWrapper:hover {
+    transform: skew(-7deg);
 }
 .portfolio::before, .experience::before {
 display: inline-block;  
@@ -216,7 +260,12 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     min-width: 180px;
     width: calc(6vw + 60px); 
 }
+.SmolSquare {
+    min-width: 100px;
+    width: calc(3vw + 40px);
+}
 .secCount {
+    border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +278,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     color: rgb(255,212,212);
     animation: rgb 4s infinite;
 }
-.secCountTxt {
+.secCountTxt, .secCountTotal, .inbetween {
     font-family: "B612";
     font-size: 1.3rem;
     margin-top: 15px;
@@ -245,7 +294,11 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     animation-timing-function: cubic-bezier(0,0.98,0,0.98);
     animation-delay: 0.7s;
 }
+.secCountTotal {
+    animation: none;
+}
 .secLabel {
+    
     border-width: 3px;
     height: 38px;
     min-width: 70px;
@@ -256,4 +309,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 2px;
+    margin-top: -4px;
+
 }
