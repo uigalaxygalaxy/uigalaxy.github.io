@@ -36,38 +36,119 @@
 <div class="motionstuff"> </div>
 </div>
 </div>
+<div class="motionGlow">
 <div class="motionShow">
-    <div class="motionContentWrapper">
+    <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
+    class="motionContentWrapper">
         <img class="motionImg" src="../icons/attachment.gif">
         <div class="motionInfo">
         <p class="motionTitle">World Puzzle League</p>
         <p class="motionDate">August 10, 2024</p>
     </div>
-    </div>
-    <div class="motionContentWrapper">
+</a>
+    <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
+     class="motionContentWrapper">
         <img class="motionImg" src="../icons/sylvvvvvvvvvvv.png">
         <div class="motionInfo">
         <p class="motionTitle">Pain World</p>
         <p class="motionDate">August 9, 2024</p>
     </div>
-    </div>
-    <div class="motionContentWrapper">
+</a>
+    <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
+     class="motionContentWrapper">
         <img class="motionImg" src="../rainworld.png">
         <div class="motionInfo">
         <p class="motionTitle">Rain World</p>
         <p class="motionDate">June 12, 1001</p>
     </div>
+</a>
+    <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
+     class="motionContentWrapper">
+        <img class="motionImg" src="../rainworld.png">
+        <div class="motionInfo">
+        <p class="motionTitle">Rain World</p>
+        <p class="motionDate">June 12, 1001</p>
     </div>
+</a>
+  <div class="motionContentWrapper">
+        <p class="youtubeTitle">View More on my YouTube!</p>
+        <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
+        class="nodeco"><button class="ytbutton">YOUTUBE (@uiGalaxy)</button></a>
+        </div>
     <div>123</div>
     <div>123</div>
 
 </div>
-
-
-
-
-    <div class="experience">EXPERIENCE</div>
+</div>
+<div class="motionWrapper">
+    <div class="motion"><p class="motionTxt">EXPERIENCE</p></div>
+    <div class="motionstuff"> </div>
+    <div class="motionstuff"> </div>
+    </div>
     <div class="video"></div>
+
+
+    </div>
+    <div class="TimeWrapper">
+        <div class="SmolSquare">
+            <div class="secCount"> 
+                <p class="secCountTotal" id="Motionyr"></p>
+            </div>
+            <div class="secLabel"> 
+                <div class="secLabelTxt" >YEARS</div>
+            </div>
+            </div>
+            <p class="inbetween">/</p>
+
+        <div class="SmolSquare">
+            <div class="secCount"> 
+                <p class="secCountTotal" id="Motionmo"></p>
+            </div>
+            <div class="secLabel"> 
+                <div class="secLabelTxt" >MONTHS</div>
+            </div>
+            </div>
+            <p class="inbetween">/</p>
+
+        <div class="SmolSquare">
+            <div class="secCount"> 
+                <p class="secCountTotal" id="Motiond"></p>
+            </div>
+            <div class="secLabel"> 
+                <div class="secLabelTxt" >DAYS</div>
+            </div>
+            </div>
+            <p class="inbetween">&</p>
+        <div class="SmolSquare">
+            <div class="secCount"> 
+                <p class="secCountTotal" id="Motionhr"></p>
+            </div>
+            <div class="secLabel"> 
+                <div class="secLabelTxt" >HOURS</div>
+            </div>
+            </div>
+            <p class="inbetween">:</p>
+    <div class="SmolSquare">
+        <div class="secCount"> 
+            <p class="secCountTotal" id="Motionmin"></p>
+        </div>
+        <div class="secLabel"> 
+            <div class="secLabelTxt" >MINUTES</div>
+        </div>
+        </div>
+        <p class="inbetween">:</p>
+        <div class="SmolSquare">
+            <div class="secCount"> 
+                <p class="secCountTotal" id="Motionsec"></p>
+            </div>
+            <div class="secLabel"> 
+                <div class="secLabelTxt" >SECONDS</div>
+            </div>
+
+
+    </div>
+                <p class="inbetween">or</p>
+
     <div class="SecSquare">
         <div class="secCount"> 
             <p class="secCountTxt"></p>
@@ -75,8 +156,7 @@
         <div class="secLabel"> 
             <div class="secLabelTxt">TOTAL SECONDS</div>
         </div>
-
-    </div>
+</div>
 
 
 
@@ -152,8 +232,10 @@
     <script>
 let intervalId;
 var r = document.querySelector(':root');
+let mills = 0;
 
 function calculateTimeAgo() {
+
 
     const timestampInput = 1660778258;
     const unixTimestamp = parseInt(timestampInput, 10);
@@ -164,18 +246,31 @@ function calculateTimeAgo() {
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
     const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
 
-    const displayMonths = months;
+    const displayYears = years;
+    const displayMonths = months % 12;
     const displayDays = days % 30;
     const displayHours = hours % 24;
     const displayMinutes = minutes % 60;
     const displaySeconds = secondsAgo % 60;
-    const totalSeconds = secondsAgo;
 
     r.style.setProperty('--endvideo', secondsAgo);
 
-    document.getElementById('displaySeconds').innerText = 
-        `${displaySeconds}`;
+    if (displaySeconds - 10 < 0) {
+        document.getElementById('Motionsec').innerText = `0${displaySeconds}`;
+    }
+    else {
+        document.getElementById('Motionsec').innerText = `${displaySeconds}`;
+    }
+
+    document.getElementById('Motionmin').innerText = `${displayMinutes}`;
+    document.getElementById('Motionhr').innerText = `${displayHours}`;
+    document.getElementById('Motiond').innerText = `${displayDays}`;
+    document.getElementById('Motionmo').innerText = `${displayMonths}`;
+    document.getElementById('Motionyr').innerText = `${displayYears}`;
+
+
 }
 
 function startInterval() {
@@ -188,4 +283,5 @@ function startInterval() {
 
 // Start the interval when the script loads
 startInterval();
+
     </script>   
