@@ -27,7 +27,15 @@
     </div>
     <div style="height: 0px;"> </div>
     <div class="center">
-    <div class="portfolio">PORTFOLIO</div>
+     <!--
+    <div class="portfolio">PORTFOLIO</div> -->
+
+
+<div>
+<div class="PortfolioHeader"><p class=porText>PORTFOLIO</p></div>
+<div class="ExperienceDescription"><p class="desc">Hey there! Kudos for checking out my portfolio! I've been doing video work and graphic work for some time now and this is an organized place for you to see it. By the way, the compliment below is chosen from a random list. Refresh a couple times! </p></div>
+<div class="PortfolioHeader2"><p class=porText id="randoMessage">LOADING</p></div>
+</div>
 </div>
 <p class="warn">Warning! This page is unfinished. Take everything you see with a grain of salt.</p>
 <div class="motionWrapper">
@@ -99,7 +107,6 @@ class="motionContentWrapper">
     <div class="motionstuff"> </div>
     </div>
     <div class="video"></div>
-
 
     </div>
     <div class="TimeWrapper">
@@ -196,6 +203,14 @@ class="motionContentWrapper">
                 '../IMG_1722.jpg',
                 '../rainworld.png'
             ];
+            const messages = [
+                'YOU ARE ENOUGH',
+                'NICE FIT BRO',
+                'THANKS FOR READING',
+                `<span style="font-size: 42px">🚨</span> HEAT ALARM <span style="font-size: 42px">🚨</span>`,
+                `<span style=" color: red; font-size: 54px; animation: rgb 2s infinite;">YOU'RE LUCKY!!</span>`
+                ``
+            ]
             const logos = [
                 '../UIGALAXYTETO.PNG',
                 '../uigalaxycat.png',
@@ -215,14 +230,21 @@ class="motionContentWrapper">
                 return logos[LogoIndex];
             }
 
+            function getRandomMessage(messages) {
+                const messageIndex = Math.floor(Math.random() * messages.length);
+                return messages[messageIndex];
+            }
+
             // Select a random image
             const randomImageUrl = getRandomImage(images);
             const randomLogoUrl = getRandomLogo(logos);
+            const randomMsg = getRandomMessage(messages);
             // Set the src attribute of the random image in the content to the same random image
             const randomImage = document.getElementById('random-image');
             const randomLogo = document.getElementById('random-logo');
             randomImage.src = randomImageUrl;
             randomLogo.src = randomLogoUrl;
+            document.getElementById('randoMessage').innerHTML = randomMsg;
 
             const currentUrl = window.location.href;
             var clean = currentURL.replace('/portfolio','');
