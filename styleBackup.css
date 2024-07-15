@@ -1,3 +1,24 @@
+
+
+@media only screen and (max-width: 1260px) {
+.mean {
+    margin-top: 160px;
+}
+}
+@media only screen and (max-width: 960px) {
+    .mean {
+        margin-top: 320px;
+    }
+  }
+  @media only screen and (max-width: 805px) {
+    .mean {
+        margin-top: 450px;
+    }
+  }
+
+
+
+
 @font-face {
     font-family: "Carbon Bold";
     src: url(Carbon\ Bold.woff)
@@ -77,7 +98,7 @@ body {
     height: 35%;
     min-height: 75px;
     opacity: 1;
-    left: 0px'
+    left: 0px
 }
 .dashboardLogo {
     animation: dbph 0.25s forwards;
@@ -175,7 +196,7 @@ body {
     display: grid;
     justify-items: center;
     align-items: start;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 0px;
 }
 .rnlogo {
@@ -216,7 +237,7 @@ body {
     position: absolute;
     display: inline-block;
     width: calc(22vw + 24px);
-    min-width: 284px;
+    min-width: 385px;
     font-family: "Carbon Bold";
     padding: 8px 0 8px;
     border: none;
@@ -234,14 +255,14 @@ body {
     text-shadow: 0 0 12px rgba(36, 230, 155, 0.4);
 
 }
-.tetriobutton:hover, .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover {
+.tetriobutton:hover, .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover, .ytbutton:hover {
     background-color: rgb(36, 230, 155);
     margin-top: -57px;
     box-shadow: 0 0 95px rgb(36, 230, 155, 0.52);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
     color: white;
 }
-.tetriobutton::after, .portfoliobutton::after, .twitterbutton::after, .youtubebutton::after {
+.tetriobutton::after, .portfoliobutton::after, .twitterbutton::after, .youtubebutton::after, .ytbutton::after {
     display: block;
     content: '';
     position: absolute;
@@ -253,7 +274,7 @@ body {
     top: -23px;
     left: -115px;
 }
-.tetriobutton:hover::after, .portfoliobutton:hover::after, .twitterbutton:hover::after, .youtubebutton:hover::after {
+.tetriobutton:hover::after, .portfoliobutton:hover::after, .twitterbutton:hover::after, .youtubebutton:hover::after, .ytbutton:hover::after {
     animation: LightSweep 1.6s linear infinite;}
 @keyframes LightSweep {
     0% {
@@ -269,6 +290,7 @@ body {
 
 .tetoWrapper, .portWrapper, .conWrapper, .comWrapper, .MWrapper, .AlertWrapper, .donoWrapper {
     width: calc(22vw + 30px);
+    min-width: 390px;
     margin: 0;
     /* background-color: green; */
     margin-top: 20px;
@@ -279,7 +301,7 @@ body {
     border-width: 3px;
     height: 56px;
     width: calc(22vw + 30px);
-    min-width: 290px;
+    min-width: 390px;
     background-color: rgb(36, 230, 155); 
     margin: 0 0 0 0;
     box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
@@ -304,7 +326,7 @@ body {
     height: 85%;
     margin-left: 12px;
 }
-.THeader::before, .PHeader::before, .CHeader::before, .MHeader::before, .AHeader::before, .DHeader::before {
+.THeader::before, .PHeader::before, .CHeader::before, .MHeader::before, .AHeader::before, .DHeader::before, .PortfolioHeader::before, .PortfolioHeader2::before, .motion::before, .experience::before {
     display: inline-block;  
     content: '';
     position: absolute;
@@ -329,18 +351,32 @@ body {
         left: calc(100% + 50px);
     }
 }
+@keyframes LightSweepTheaderSlow {
+    0% {
+        left: -150px;
+    }
+    11% {
+        left: calc(100% + 50px);
+    }
+    100% {
+        left: calc(100% + 50px);
+    }
+}
+.PortfolioHeader::before, .PortfolioHeader2::before {
+    animation: LightSweepTheaderSlow 3.2s 1s linear infinite;
+}
 .TRead, .CRead, .PRead, .MRead, .ARead, .DRead, .MrRead {
     margin: 0 0 0 0;
     border: 3px solid white;
     border-top: none;
     height: calc(10vh - 6vw + 209px);
     width: calc(22vw + 24px);
-    min-width: 284px;
     background-color: rgba(0, 128, 0, 0); 
     box-shadow: 0 0 134px rgba(36, 230, 155, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 385px;
     animation: ReadTcPc 4s -2.67s infinite;
     border-image: linear-gradient(to right, rgb(36, 230, 155), rgb(8, 144, 81))2 3 100%;
 }
