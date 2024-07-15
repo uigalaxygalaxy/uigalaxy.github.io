@@ -196,7 +196,6 @@ class="motionContentWrapper">
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Array of image URLs
-            
             const images = [
                 '../daguhteer.jpg',
                 '../image0.jpg',
@@ -209,7 +208,6 @@ class="motionContentWrapper">
                 'THANKS FOR READING',
                 `<span style="font-size: 42px">🚨</span> HEAT ALARM <span style="font-size: 42px">🚨</span>`,
                 `<span style=" color: red; font-size: 54px; animation: rgb 2s infinite;">YOU'RE LUCKY!!</span>`
-                ``
             ];
             const logos = [
                 '../UIGALAXYTETO.PNG',
@@ -217,108 +215,109 @@ class="motionContentWrapper">
                 '../uiGalaxyMira.png',
                 '../tes123123t.png'
             ];
-
+        
             // Function to select a random image
             function getRandomImage(images) {
                 const randomIndex = Math.floor(Math.random() * images.length);
                 return images[randomIndex];
             }
-
-            // logo
+        
+            // Function to select a random logo
             function getRandomLogo(logos) {
                 const LogoIndex = Math.floor(Math.random() * logos.length);
                 return logos[LogoIndex];
             }
-
+        
+            // Function to select a random message
             function getRandomMessage(messages) {
                 const messageIndex = Math.floor(Math.random() * messages.length);
                 return messages[messageIndex];
             }
-
-            // Select a random image
+        
+            // Select a random image, logo, and message
             const randomImageUrl = getRandomImage(images);
             const randomLogoUrl = getRandomLogo(logos);
             const randomMsg = getRandomMessage(messages);
-            // Set the src attribute of the random image in the content to the same random image
+        
+            // Set the src attribute of the random image and logo
             const randomImage = document.getElementById('random-image');
             const randomLogo = document.getElementById('random-logo');
             randomImage.src = randomImageUrl;
             randomLogo.src = randomLogoUrl;
+        
+            // Set the innerHTML of the random message
             document.getElementById('randoMessage').innerHTML = randomMsg;
-
+        
+            // Clean the URL
             const currentUrl = window.location.href;
-            var clean = currentURL.replace('/portfolio','');
+            var clean = currentUrl.replace('/portfolio', '');
             document.getElementById('CURL').href = clean;
-
-           
         });
-    </script>
-    <script>
+        </script>
+        
+        <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-      </script>
-      <script defer src="../_vercel/insights/script.js"></script>
-    <script>
+        </script>
+        <script defer src="../_vercel/insights/script.js"></script>
+        <script>
         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-      </script>
-      <script defer src="../_vercel/speed-insights/script.js"></script>
-      <script>
+        </script>
+        <script defer src="../_vercel/speed-insights/script.js"></script>
+        
+        <script>
         window.addEventListener('scroll', () => {
             document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
         }, false);
-    </script>     
-    <script>
-let intervalId;
-var r = document.querySelector(':root');
-let mills = 0;
-
-function calculateTimeAgo() {
-
-
-    const timestampInput = 1660778258;
-    const unixTimestamp = parseInt(timestampInput, 10);
-    const now = Math.floor(Date.now() / 1000); // current Unix timestamp in seconds
-
-    const secondsAgo = now - unixTimestamp;
-    const minutes = Math.floor(secondsAgo / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(months / 12);
-
-    const displayYears = years;
-    const displayMonths = months % 12;
-    const displayDays = days % 30;
-    const displayHours = hours % 24;
-    const displayMinutes = minutes % 60;
-    const displaySeconds = secondsAgo % 60;
-
-    r.style.setProperty('--endvideo', secondsAgo);
-
-    if (displaySeconds - 10 < 0) {
-        document.getElementById('Motionsec').innerText = `0${displaySeconds}`;
-    }
-    else {
-        document.getElementById('Motionsec').innerText = `${displaySeconds}`;
-    }
-
-    document.getElementById('Motionmin').innerText = `${displayMinutes}`;
-    document.getElementById('Motionhr').innerText = `${displayHours}`;
-    document.getElementById('Motiond').innerText = `${displayDays}`;
-    document.getElementById('Motionmo').innerText = `${displayMonths}`;
-    document.getElementById('Motionyr').innerText = `${displayYears}`;
-
-
-}
-
-function startInterval() {
-    if (intervalId) {
-        clearInterval(intervalId);
-    }
-
-    intervalId = setInterval(calculateTimeAgo, 1000);
-}
-
-// Start the interval when the script loads
-startInterval();
-
-    </script>   
+        </script>
+        
+        <script>
+        let intervalId;
+        var r = document.querySelector(':root');
+        let mills = 0;
+        
+        function calculateTimeAgo() {
+            const timestampInput = 1660778258;
+            const unixTimestamp = parseInt(timestampInput, 10);
+            const now = Math.floor(Date.now() / 1000); // current Unix timestamp in seconds
+        
+            const secondsAgo = now - unixTimestamp;
+            const minutes = Math.floor(secondsAgo / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const months = Math.floor(days / 30);
+            const years = Math.floor(months / 12);
+        
+            const displayYears = years;
+            const displayMonths = months % 12;
+            const displayDays = days % 30;
+            const displayHours = hours % 24;
+            const displayMinutes = minutes % 60;
+            const displaySeconds = secondsAgo % 60;
+        
+            r.style.setProperty('--endvideo', secondsAgo);
+        
+            if (displaySeconds - 10 < 0) {
+                document.getElementById('Motionsec').innerText = `0${displaySeconds}`;
+            } else {
+                document.getElementById('Motionsec').innerText = `${displaySeconds}`;
+            }
+        
+            document.getElementById('Motionmin').innerText = `${displayMinutes}`;
+            document.getElementById('Motionhr').innerText = `${displayHours}`;
+            document.getElementById('Motiond').innerText = `${displayDays}`;
+            document.getElementById('Motionmo').innerText = `${displayMonths}`;
+            document.getElementById('Motionyr').innerText = `${displayYears}`;
+        }
+        
+        function startInterval() {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        
+            intervalId = setInterval(calculateTimeAgo, 1000);
+        }
+        
+        // Start the interval when the script loads
+        startInterval();
+        </script>
+        
