@@ -111,12 +111,65 @@
     height: 49px;
     font-size: 42px;
     overflow: hidden;
+    margin-bottom: 0px;
 }
+.ExperienceDescription {
+    width: calc(48vw + 77px);
+    height: 100px;
+    box-shadow: 0 0 184px rgba(36, 230, 155, 0.5),
+     -100px 0 184px rgba(36, 230, 155, 0.3),
+     100px 0 184px rgba(36, 230, 155, 0.3);
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    min-width: 390px;
+}
+
+.PortfolioHeader, .PortfolioHeader2 {
+    margin-left: 10px;
+    height: 56px;
+    width: calc(48vw + 77px);
+    min-width: 390px;
+    background-color: rgb(36, 230, 155); 
+    box-shadow: 0 0 184px rgba(36, 230, 155, 0.5);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    clip-path: polygon(7% 0%, 93% 0%, 100% 100%, 0% 100%);
+}
+.PortfolioHeader2 {
+    clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+}
+.porText {
+    font-size: 54px;
+    margin: 0 0 0 0;
+}
+.desc  {
+    font-family: "B612";
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    margin-left: 6px;
+    text-align: left;
+    color: white;
+    text-shadow: 0 0 12px rgba(36, 230, 155, 0.5);
+    text-shadow: 0 0 6px rgba(36, 230, 155, 0.8);
+}
+@media only screen and (max-width: 1300px) {
+    .desc {
+        font-size: 0.72rem;
+    }
+  }
+
 .TimeWrapper {
     display: flex;
     flex-direction: row;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 .motionWrapper {
     margin-top: 4vh;
@@ -278,6 +331,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     color: rgb(255,212,212);
     animation: rgb 4s infinite;
 }
+
 .secCountTxt, .secCountTotal, .inbetween {
     font-family: "B612";
     font-size: 1.3rem;
