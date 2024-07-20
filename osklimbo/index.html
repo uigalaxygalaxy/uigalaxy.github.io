@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
+    <link rel="stylesheet" href="../styleBackup.css">
+    <link rel="stylesheet" href="../limbo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETR.IO Limbo</title>
+    <meta name="description" content="Personal website for uiGalaxy. Place of all things galaxy.">
+</head>
+<body>
+<div class="Wrapper123">
+    <div class="KeyRow1"><img id="redkey" src="../limboKeys/redkey.png">
+        <img id="cyankey" data-href="http://tetr.io/admin" src="../limboKeys/cyankey.png">
+        <img id="greenkey" data-href="http://tetr.io/admin" src="../limboKeys/greenkey.png">
+        <img id="orangekey" data-href="http://tetr.io/admin" src="../limboKeys/orangekey.png"></div>
+    <div class="Glow">
+    <div class="TextWrapper1">
+<p class="PickKey">CHOOSE WISELY</p>
+</div>
+</div>
+<div class="KeyRow2"><img data-href="http://tetr.io/admin" src="../limboKeys/pinkkey.png">
+    <img id="yellowkey" data-href="../limboKeys/LvlComplete.mp4" src="../limboKeys/yellowkey.png">
+    <img id="purplekey" data-href="http://tetr.io/admin" src="../limboKeys/purplekey.png">
+    <img id="bluekey" data-href="http://tetr.io/admin" src="../limboKeys/bluekey.png"></div>
+</div>
+
+
+
+
+
+  
+        <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/insights/script.js"></script>
+        <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/speed-insights/script.js"></script>
+        <script>
+var aTags = document.querySelectorAll('img[data-href]');
+
+for(var i = 0; i < aTags.length; i++){
+    var aTag = aTags[i];
+    aTag.addEventListener('click', function(e){
+        var ele = e.target;
+        window.location.replace(ele.getAttribute('data-href'));
+    });    
+}
+        </script>
+    </body>
