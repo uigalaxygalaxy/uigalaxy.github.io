@@ -232,7 +232,7 @@ body {
         filter: hue-rotate(360deg);
     }
 }
-.tetriobutton, .portfoliobutton, .twitterbutton, .youtubebutton {
+.tetriobutton, .limbobutton, .portfoliobutton, .twitterbutton, .youtubebutton {
     text-decoration: none;
     position: absolute;
     display: inline-block;
@@ -255,14 +255,14 @@ body {
     text-shadow: 0 0 12px rgba(36, 230, 155, 0.4);
 
 }
-.tetriobutton:hover, .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover, .ytbutton:hover {
+.tetriobutton:hover, .limbobutton:hover,  .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover, .ytbutton:hover {
     background-color: rgb(36, 230, 155);
     margin-top: -57px;
     box-shadow: 0 0 95px rgb(36, 230, 155, 0.52);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
     color: white;
 }
-.tetriobutton::after, .portfoliobutton::after, .twitterbutton::after, .youtubebutton::after, .ytbutton::after {
+.tetriobutton::after, .limbobutton::after, .portfoliobutton::after, .twitterbutton::after, .youtubebutton::after, .ytbutton::after {
     display: block;
     content: '';
     position: absolute;
@@ -274,7 +274,7 @@ body {
     top: -23px;
     left: -115px;
 }
-.tetriobutton:hover::after, .portfoliobutton:hover::after, .twitterbutton:hover::after, .youtubebutton:hover::after, .ytbutton:hover::after {
+.tetriobutton:hover::after, .limbobutton:hover::after, .portfoliobutton:hover::after, .twitterbutton:hover::after, .youtubebutton:hover::after, .ytbutton:hover::after {
     animation: LightSweep 1.6s linear infinite;}
 @keyframes LightSweep {
     0% {
