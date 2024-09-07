@@ -163,13 +163,28 @@
         font-size: 0.72rem;
     }
   }
+.TimeDesc {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    margin-bottom: 31px;
+}
+.TimeDescTxt {
+    font-size: 26px;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    color: rgb(36,230,155);
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
 
+}
 .TimeWrapper {
     display: flex;
     flex-direction: row;
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 10px;
+    justify-content: center;
 }
 .motionWrapper {
     margin-top: 4vh;
@@ -314,7 +329,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     width: calc(6vw + 60px); 
 }
 .SmolSquare {
-    min-width: 100px;
+    min-width: 120px;
     width: calc(3vw + 40px);
 }
 .secCount {
@@ -334,7 +349,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
 
 .secCountTxt, .secCountTotal, .inbetween {
     font-family: "B612";
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 15px;
     margin-bottom: 15px;
     margin-left: 0;
@@ -355,7 +370,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     
     border-width: 3px;
     height: 38px;
-    min-width: 70px;
+    min-width: 120px;
     background-color: rgb(36, 230, 155); 
     margin: 0 0 0 0;
     box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
