@@ -1,5 +1,5 @@
 
-
+/*
 @media only screen and (max-width: 1260px) {
 .mean {
     margin-top: 160px;
@@ -15,7 +15,7 @@
         margin-top: 450px;
     }
   }
-
+*/
 
 
 
@@ -29,9 +29,10 @@
 }
 
 :root {
-    --TC: 36, 230, 155; /* 181, 24, 110 */
-    --PC: 36, 230, 155; /* 200 23 23 */
     --CC: 36, 230, 155;
+    --C2: 14, 137, 90;
+    --PB: brightness(12200%);
+    --PBN: none;
 
     
 }
@@ -44,13 +45,13 @@ body {
     height: 8px;
 }
 ::-webkit-scrollbar-button {
-    background: rgb(14, 137, 90);
+    background: rgb(var(--C2));
 }
 ::-webkit-scrollbar-track-piece {
     background: rgb(6, 6, 6);
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(36, 230, 155);
+    background: rgb(var(--CC));
 }
 html::-webkit-scrollbar {
     display: none;
@@ -130,8 +131,8 @@ body {
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
     animation-timing-function: cubic-bezier(.05,.67,.37,.91);
-    width: 100vh;
-    height: 35vh;
+    width: 100vw;
+    height: 45vh;
     min-height: 75px;
     z-index: -1;
     opacity: 1;
@@ -176,6 +177,102 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.tooltip, .tooltip2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: -12px;
+}
+/* Tooltip text */
+.tooltip .tooltiptext, .tooltip2 .tooltiptext2 {
+    visibility: hidden;
+    margin-bottom: 26px;
+
+    width: 120px;
+    background-color: rgba(var(--CC), 0.15);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: -125%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+  }
+  
+  /* Tooltip arrow */
+  .tooltip .tooltiptext::after, .tooltip2 .tooltiptext2::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(var(--CC), 0.15) transparent transparent transparent;
+    transform: rotateX(180deg)
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext, .tooltip2:hover, .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(10px);
+    text-shadow: 0 0 6px rgba(var(--CC), 1);
+
+  }
+
+.bttnwrapper {
+    display: flex;
+    justify-content: center;
+}
+.ColorBttn {
+    justify-self: center;
+    display: flex;
+    background-color: rgb(9, 9, 15, 0);
+    border-radius: 6px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(var(--CC));
+    padding: 4px;
+    filter: var(--PBN);
+    margin-left: 184px;
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
+
+.ColorBttn:hover .clrimg {
+    margin-left: 0px;
+    filter: var(--PB);
+    box-shadow: 0 0 95px rgb(255, 255, 255, 0.52);
+}
+.ColorBttn:hover {
+    background-color: rgb(var(--CC));
+    box-shadow: 0 0 95px rgb(var(--CC), 0.52);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    color: white;
+    box-shadow: 0 0 95px rgb(var(--CC), 0.52);
+}
+.colorPanel {
+    border-radius: 9px;
+    color: white;
+    padding: 0px 48px;
+    overflow: hidden;
+    background-color: none;
+    box-shadow: 0 0 95px rgb(var(--CC), 0.52);
+    max-height: 0px;
+    width: 322px;
+    display: flex;
+    justify-items: center;
+    margin-top: 12px;
+    text-align: center;
+    transition: max-height 0.2s ease-out;
 }
 .wegetit {
     color: white;
@@ -245,20 +342,20 @@ body {
     border-style: solid;
     border-width: 3px;
     text-align: middle;
-    border-color: rgb(36, 230, 155);
+    border-color: rgb(var(--CC));
     background-color: rgb(9, 9, 15, 0);
-    color: rgb(36, 230, 155);
+    color: rgb(var(--CC));
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
     overflow: hidden;
     border-radius: 4px;
     margin-top: -50px;
-    text-shadow: 0 0 12px rgba(36, 230, 155, 0.4);
+    text-shadow: 0 0 12px rgba(var(--CC), 0.4);
 
 }
 .tetriobutton:hover, .limbobutton:hover,  .portfoliobutton:hover, .twitterbutton:hover, .youtubebutton:hover, .ytbutton:hover {
-    background-color: rgb(36, 230, 155);
+    background-color: rgb(var(--CC));
     margin-top: -57px;
-    box-shadow: 0 0 95px rgb(36, 230, 155, 0.52);
+    box-shadow: 0 0 95px rgb(var(--CC), 0.52);
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
     color: white;
 }
@@ -302,9 +399,9 @@ body {
     height: 56px;
     width: calc(22vw + 30px);
     min-width: 390px;
-    background-color: rgb(36, 230, 155); 
+    background-color: rgb(var(--CC)); 
     margin: 0 0 0 0;
-    box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -312,12 +409,12 @@ body {
 }
 
 .PHeader {
-    background-color: rgb(36, 230, 155); 
-    box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
+    background-color: rgb(var(--CC)); 
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
 }
 .CHeader {
-    background-color: rgb(36, 230, 155); 
-    box-shadow: 0 0 134px rgba(36, 230, 155, 0.35);
+    background-color: rgb(var(--CC)); 
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
 
 }
 .THeaderimg, .FHeaderimg, .PHeaderimg, .CHeaderimg, .MHeaderimg, .AHeaderimg, .DHeaderimg  {
@@ -372,13 +469,13 @@ body {
     height: calc(10vh - 6vw + 209px);
     width: calc(22vw + 24px);
     background-color: rgba(0, 128, 0, 0); 
-    box-shadow: 0 0 134px rgba(36, 230, 155, 0.15);
+    box-shadow: 0 0 134px rgba(var(--CC), 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-width: 385px;
     animation: ReadTcPc 4s -2.67s infinite;
-    border-image: linear-gradient(to right, rgb(36, 230, 155), rgb(8, 144, 81))2 3 100%;
+    border-image: linear-gradient(to right, rgb(var(--CC)), rgb(var(--C2)))2 3 100%;
 }
 .MrRead {
     height: calc(21.5vh - 7vw + 164px);
@@ -412,16 +509,108 @@ body {
     line-break: auto;
     line-height: 22px;
     color: white;
-    text-shadow: 0 0 8px rgba(36, 230, 155, 0.5);
+    text-shadow: 0 0 8px rgba(var(--CC), 0.5);
     display: inline-block;
     margin-bottom: 25px;
 
 }
+.showdown123 {
+    height: 100%;
+    width: 100%;
+    margin-left: -12px;
+    display: grid;
+    margin-top: 12px;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+grid-gap: 12px;
 
-.PreadTxt {
 }
-.CreadTxt {
+.azureColor, .TriangleColor, .PacificiColor, .LomadexColor, .whiskeyColor, .NineElevenColor, .prideColor, .jennaColor, .javaColor {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: center;
+    background-size: 200% auto;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    background-image: linear-gradient(to right, rgb(107, 174, 255), rgb(32, 88, 255));
+    border: none;
+    width: 86px;
+    height: 86px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-wrap: nowrap; 
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 }
+.azureColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(107, 174, 255, 0.7);
+}
+.NineElevenColor {
+    background-image: linear-gradient(to right, rgb(255, 167, 123), rgb(254, 195, 119));
+
+}
+.NineElevenColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(255, 167, 123, 0.7);
+
+}
+.PacificiColor {
+    background-image: linear-gradient(to right, rgb(153, 179, 157), rgb(173, 212, 193));
+    color: black;
+}
+.PacificiColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(153, 179, 157, 0.7);
+}
+.prideColor {
+    background-image: linear-gradient(to right, rgb(123, 123, 255), rgb(134, 82, 255));
+
+}
+.prideColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(123, 123, 255, 0.7);
+}
+.jennaColor {
+    background-image: linear-gradient(to right, rgb(255, 72, 85), rgb(232, 64, 75));
+
+}
+.jennaColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(255, 72, 85, 0.7);
+}
+.whiskeyColor {
+    background-image: linear-gradient(to right, rgb(213, 175, 143), rgb(217, 159, 112));
+
+}
+.whiskeyColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(213, 175, 143, 0.7);
+}
+.TriangleColor {
+    background-image: linear-gradient(to right, rgb(255, 74, 228), rgb(240, 119, 222));
+}
+.TriangleColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(240, 119, 222, 0.7);
+}
+.javaColor { 
+    background-image: linear-gradient(to right, rgb(36, 230, 155), rgb(14, 137, 90));
+}
+.javaColor:hover { 
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(36, 230, 155, 0.7);
+}
+.LomadexColor {
+    color: black;
+    background-image: linear-gradient(to right, rgb(226, 200, 232), rgb(195, 191, 199));
+}
+.LomadexColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(226, 200, 232, 0.7);
+}
+
 .AreadTxt {
     height: 100%;
     line-break: auto;
