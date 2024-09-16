@@ -200,7 +200,7 @@ body {
     z-index: 1;
     bottom: -125%;
     left: 50%;
-    margin-left: -66px;
+    margin-left: -61px;
   
     /* Fade in tooltip */
     opacity: 0;
@@ -243,7 +243,7 @@ body {
     border-color: rgb(var(--CC));
     padding: 4px;
     filter: var(--PBN);
-    margin-left: 266px; 
+    margin-left: 253px; 
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 }
 
