@@ -1,5 +1,7 @@
 
-
+:root {
+    --AC: var(-CC)
+}
 @property --video {
     syntax: '<integer>';
     initial-value: 0;
@@ -57,9 +59,9 @@
     clip-path: polygon(9% 0%, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0% 50%);
     height: 70px;
     width: 45vw;
-    background-color: rgb(var(--CC));
+    background-color: rgb(var(--AC));
     position: relative;
-    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.35);
 
 }
 .motionContentWrapper {
@@ -87,8 +89,8 @@
     margin-right: 0;
     text-align: center;
     color: white;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
-    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+    text-shadow: 0 0 12px rgba(var(--AC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--AC), 0.8);
 }
 
 .youtubeTitle {
@@ -102,8 +104,8 @@
     margin-right: 0;
     text-align: center;
     color: white;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
-    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+    text-shadow: 0 0 12px rgba(var(--AC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--AC), 0.8);
 }
 .experience, .motion {
     margin-top: 5vh;
@@ -116,9 +118,9 @@
 .ExperienceDescription {
     width: calc(48vw + 77px);
     height: 100px;
-    box-shadow: 0 0 184px rgba(var(--CC), 0.5),
-     -100px 0 184px rgba(var(--CC), 0.3),
-     100px 0 184px rgba(var(--CC), 0.3);
+    box-shadow: 0 0 184px rgba(var(--AC), 0.5),
+     -100px 0 184px rgba(var(--AC), 0.3),
+     100px 0 184px rgba(var(--AC), 0.3);
     border-radius: 5px;
     margin-top: 0px;
     margin-left: 10px;
@@ -132,8 +134,8 @@
     height: 56px;
     width: calc(48vw + 77px);
     min-width: 390px;
-    background-color: rgb(var(--CC)); 
-    box-shadow: 0 0 184px rgba(var(--CC), 0.5);
+    background-color: rgb(var(--AC)); 
+    box-shadow: 0 0 184px rgba(var(--AC), 0.5);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -155,8 +157,8 @@
     margin-left: 6px;
     text-align: left;
     color: white;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
-    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+    text-shadow: 0 0 12px rgba(var(--AC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--AC), 0.8);
 }
 @media only screen and (max-width: 1300px) {
     .desc {
@@ -214,19 +216,19 @@
     margin-left: 12px;
     height: 49px;
     transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
-    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.35);
 
 }
 .motionWrapper:hover .motionstuff {
     margin-left: 30px;
 }
 .motionWrapper:hover .motion{
-    box-shadow: 0 0 134px rgba(var(--CC), 0.55);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.55);
     transform: skew(-26deg);
     animation: rgb 5s infinite;
 }
 .motionWrapper:hover .motionstuff {
-    box-shadow: 0 0 134px rgba(var(--CC), 0.55);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.55);
     transform: skew(-26deg);
     animation: rgb 5s infinite;
 }
@@ -239,7 +241,7 @@
     height: 100%;
 }
 .motionGlow {
-    filter: drop-shadow(0 0 134px rgba(var(--CC), 0.24));
+    filter: drop-shadow(0 0 134px rgba(var(--AC), 0.24));
 }
 .motionShow {
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
@@ -269,18 +271,18 @@
     border-style: solid;
     border-width: 3px;
     text-align: middle;
-    border-color: rgb(var(--CC));
+    border-color: rgb(var(--AC));
     background-color: rgb(9, 9, 15, 0);
-    color: rgb(var(--CC));
+    color: rgb(var(--AC));
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
     overflow: hidden;
     border-radius: 4px;
     margin-top: -50px;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.4);
+    text-shadow: 0 0 12px rgba(var(--AC), 0.4);
 }
 .motionContentWrapper {
     text-decoration: none;
-    box-shadow: 0 0 134px rgba(var(--CC), 0.18);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.18);
     transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
 }
 
@@ -338,7 +340,7 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.35);
 
 }
 .warn {
@@ -356,8 +358,8 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     margin-right: 0;
     text-align: center;
     color: white;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
-    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+    text-shadow: 0 0 12px rgba(var(--AC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--AC), 0.8);
     counter-set: video var(--video);
     animation: videoKey 7.6s forwards;
     animation-timing-function: cubic-bezier(0,0.98,0,0.98);
@@ -371,9 +373,9 @@ animation: LightSweepTheader 3.2s 1s linear infinite;
     border-width: 3px;
     height: 38px;
     min-width: 120px;
-    background-color: rgb(var(--CC)); 
+    background-color: rgb(var(--AC)); 
     margin: 0 0 0 0;
-    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    box-shadow: 0 0 134px rgba(var(--AC), 0.35);
     overflow: hidden;
     display: flex;
     align-items: center;
