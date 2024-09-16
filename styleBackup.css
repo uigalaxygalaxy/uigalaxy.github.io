@@ -200,7 +200,7 @@ body {
     z-index: 1;
     bottom: -125%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -66px;
   
     /* Fade in tooltip */
     opacity: 0;
@@ -243,7 +243,7 @@ body {
     border-color: rgb(var(--CC));
     padding: 4px;
     filter: var(--PBN);
-    margin-left: 184px;
+    margin-left: 249px;
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 }
 
@@ -267,7 +267,7 @@ body {
     background-color: none;
     box-shadow: 0 0 95px rgb(var(--CC), 0.52);
     max-height: 0px;
-    width: 322px;
+    width: 462px;
     display: flex;
     justify-items: center;
     margin-top: 12px;
@@ -517,15 +517,15 @@ body {
 .showdown123 {
     height: 100%;
     width: 100%;
-    margin-left: -12px;
+    margin-left: -7px;
     display: grid;
     margin-top: 12px;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-rows: 1fr 1fr 1fr;
 grid-gap: 12px;
 
 }
-.azureColor, .TriangleColor, .PacificiColor, .LomadexColor, .whiskeyColor, .NineElevenColor, .prideColor, .jennaColor, .javaColor {
+.azureColor, .SylveonColor, .RivuletColor, .UnfDevColor, .TriangleColor, .PacificiColor, .LomadexColor, .whiskeyColor, .NineElevenColor, .prideColor, .jennaColor, .javaColor {
     font-size: 15px;
     font-weight: normal;
     text-align: center;
@@ -610,6 +610,45 @@ grid-gap: 12px;
     margin-top: -10px;
     box-shadow: 0 0 50px rgb(226, 200, 232, 0.7);
 }
+.SylveonColor {
+    background-image: linear-gradient(to right, rgb(255, 178, 243), rgb(255, 141, 238));
+    color: black;
+}
+.SylveonColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(255, 178, 243, 0.7);
+}
+.RivuletColor {
+    background-image: linear-gradient(to right, rgb(186, 223, 255), rgb(134, 188, 249));
+    color: black;
+}
+.RivuletColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(186, 223, 255, 0.7);
+}
+.UnfDevColor {
+    background-image: linear-gradient(to right, rgb(0, 79, 224), rgb(0, 4, 135));
+    color: white;
+}
+.UnfDevColor:hover {
+    margin-top: -10px;
+    box-shadow: 0 0 50px rgb(0, 79, 224, 0.7);
+}
+
+
+.appear {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    transition: left 0.5s cubic-bezier(0,.77,.37,1.18), opacity 0.2s;
+    text-align: center;
+    right: 0;
+    left: -70%;
+    top: 372px;
+    margin: 0 auto;
+    text-shadow: 0 0 8px rgba(var(--CC), 0.5);
+    font-family: "B612";
+}
 
 .AreadTxt {
     height: 100%;
@@ -619,6 +658,7 @@ grid-gap: 12px;
     margin-bottom: 0px;
 
 }
+
 .THeaderTxt, .FHeaderTxt, .CHeaderTxt, .PHeaderTxt, .MHeaderTxt, .AHeaderTxt, .DHeaderTxt {
     display: inline-block;
     position: relative;
