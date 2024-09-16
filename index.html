@@ -37,15 +37,22 @@
         <button type="button" class="ColorBttn"> <img class="clrimg" src="icons/format_color_fill_24dp_24E69B_FILL0_wght400_GRAD0_opsz24.svg" alt="paintbrush" width="35" height="30"> </button>
         <div class="colorPanel">
 <div class="showdown123">
-            <button id="Mint" class="javaColor"> Mint </button>
-            <button id="Pride" class="prideColor"> Grape </button>
-            <button id="Mango" class="NineElevenColor"> Mango </button>
-            <button id="Jenna" class="jennaColor"> Cuprite </button>
-            <button id="Azure" class="azureColor"> Azuzle </button>
-            <button id="Whiskey" class="whiskeyColor">Bourbon</button>
-            <button id="Lomadex" class="LomadexColor">Lomadex</button>
-            <button id="Pacifici" class="PacificiColor">Pacifici</button>
-            <button id="Triangle" class="TriangleColor">Triangle</button>
+            <button data-type="special" data-text="Mint (#24e69b)" id="hoverButton" id="Mint" class="javaColor"> Mint </button>
+            <p class="appear" id="hoverText">asd</p>
+            <button data-type="special" data-text="Grape (#7b7bff)" id="Pride" class="prideColor"> Grape </button>
+            <button data-type="special" data-text="Mango (#ffa77b)" id="Mango" class="NineElevenColor"> Mango () </button>
+            <button data-type="special" data-text="Cuprite (#ff4855)" id="Jenna" class="jennaColor"> Cuprite </button>
+            <button data-type="special" data-text="Azure (#6baeff)" id="Azure" class="azureColor"> Azuzle </button>
+            <button data-type="special" data-text="Bourbon (Whiskey) (#d5af8f)" id="Whiskey" class="whiskeyColor">Bourbon</button>
+            <button data-type="special" data-text="Lomadex (#e2c8e8)" id="Lomadex" class="LomadexColor">Lomadex</button>
+            <button data-type="special" data-text="Grape (#7b7bff)" id="Pacifici" class="PacificiColor">Pacifici</button>
+            <button data-type="special" data-text="Pacifici (#99b39d)" id="Triangle" class="TriangleColor">Triangle</button>
+            <button data-type="special" data-text="Sylveon (#ffb2f3)" id="Sylveon" class="SylveonColor">Sylveon</button>
+            <button data-type="special" data-text="Rivulet (#badfff)"id="Rivulet" class="RivuletColor">Rivulet</button>
+            <button data-type="special" data-text="Unfortunate Development (#004fe0)" id="UnfDev" class="UnfDevColor">Unf. Dev.</button>
+
+
+
 
 
 
@@ -126,6 +133,7 @@
                 </div>
                 <div class="ARead">
                     <p class=AreadTxt>
+                        <span class=time>September 15, 2024 8:37PM EST</span><br>Added 4 more color theme buttons and added a description at the bottom, which took WAYYY too long.<br><span class="down"></span> <br>
                         <span class=time>September 15, 2024 1:08AM EST</span><br>Been a while since the last update, but brought Color Themes to the main portion of the website! Also, clicking the logo brings you back here.<br><span class="down"></span> <br>
                         <span class=time>July 23, 2024 1:51AM EST</span><br>Created Hall of Beginnings Limbo! Check it out in the new "FUN" section. Check out the portfolio for new things.<br><span class="down"></span> <br>
                         <span class=time>July 17, 2024 4:30PM EST</span><br>16.802 SECOND TETR.IO SPRINT: <a href=https://tetr.io/#r:669829ed98d17f6d5d77f75d class="uiURL">https://tetr.io/#r:669829ed98d17f6d5d77f75d</a> SUB-17 AFTER 8+ MONTHS<br><span class="down"></span> <br>
@@ -256,6 +264,32 @@
     </script>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all buttons with a data-type attribute value of 'special'
+    const specialButtons = document.querySelectorAll('button[data-type="special"]');
+    const hoverText = document.getElementById('hoverText');
+
+    specialButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            // Change the text of <p> based on the button's data-text attribute
+            hoverText.textContent = button.getAttribute('data-text');
+            hoverText.style.left = '0%'; // Slide in to the middle
+            hoverText.style.opacity = '1'; // Full opacity
+        });
+
+        button.addEventListener('mouseout', () => {
+            hoverText.style.left = '70%'; // Slide out to the right
+            hoverText.style.opacity = '0'; // No opacity
+        });
+    });
+});
+
+</script>
+
+
+
+
+<script>
     document.getElementById('Mango').addEventListener('click', function() {
 // Get the root element (usually <html> or <body>)
 const root = document.documentElement;
@@ -384,6 +418,55 @@ document.documentElement.style.setProperty('--PB', 'brightness(42000)');
 document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%) invert(80%) sepia(37%) saturate(145%) hue-rotate(243deg) brightness(99%) contrast(87%)');
 });
 </script>
+
+<script>
+    document.getElementById('Sylveon').addEventListener('click', function() {
+// Get the root element (usually <html> or <body>)
+const root = document.documentElement;
+
+
+const newColorBecauseJSIsGay1 = '255, 178, 243';
+const newColorBecauseJSIsGay2 = '255, 141, 238';
+// Update the CSS variable
+document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
+document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
+document.documentElement.style.setProperty('--PB', 'brightness(42000)');
+document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%) invert(78%) sepia(32%) saturate(645%) hue-rotate(281deg) brightness(102%) contrast(105%)');
+});
+</script>
+
+<script>
+    document.getElementById('Rivulet').addEventListener('click', function() {
+// Get the root element (usually <html> or <body>)
+const root = document.documentElement;
+
+
+const newColorBecauseJSIsGay1 = '186, 223, 255';
+const newColorBecauseJSIsGay2 = '134, 188, 249';
+// Update the CSS variable
+document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
+document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
+document.documentElement.style.setProperty('--PB', 'brightness(42000)');
+document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%) invert(88%) sepia(6%) saturate(3208%) hue-rotate(179deg) brightness(100%) contrast(102%)');
+});
+</script>
+
+<script>
+    document.getElementById('UnfDev').addEventListener('click', function() {
+// Get the root element (usually <html> or <body>)
+const root = document.documentElement;
+
+
+const newColorBecauseJSIsGay1 = '0, 79, 224';
+const newColorBecauseJSIsGay2 = '0, 4, 135';
+// Update the CSS variable
+document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
+document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
+document.documentElement.style.setProperty('--PB', 'brightness(42000)');
+document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%) invert(14%) sepia(97%) saturate(6735%) hue-rotate(217deg) brightness(97%) contrast(100%)');
+});
+</script>
+
 
 
     <script>
