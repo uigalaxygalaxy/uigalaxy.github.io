@@ -274,6 +274,21 @@ class="motionContentWrapper">
                 return messages[messageIndex];
             }
         
+ const savedColor = localStorage.getItem('CC');
+            if (savedColor) {
+        document.documentElement.style.setProperty('--CC', savedColor);
+    }
+
+    const barackObama = localStorage.getItem('C2');
+    if (barackObama) {
+        document.documentElement.style.setProperty('--C2', barackObama);
+    }
+
+    
+    const michelleObama = localStorage.getItem('PBN');
+    if (michelleObama) {
+        document.documentElement.style.setProperty('--PBN', michelleObama);
+    }
             // Select a random image, logo, and message
             const randomImageUrl = getRandomImage(images);
             const randomLogoUrl = getRandomLogo(logos);
