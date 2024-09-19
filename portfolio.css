@@ -1,378 +1,386 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
-    <link rel="stylesheet" href="../styleBackup.css">
-    <link rel="stylesheet" href="../portfolio.css">
+:root {
+    -CC: 123, 123, 123;
+}
+@property --video {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+  }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uiGalaxy Website</title>
-    <meta name="description" content="Personal website for uiGalaxy. Place of all things galaxy.">
-</head>
-
-<body class="b">
-    <a href="/">
-    <div class="dashboardLogo">
-      <img class="rnlogo" id="random-logo" src="" alt="Boo!!!!!!! ">
-    </div>
-</a>
-    <div class="dashboard">
-        <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!">
-    </div>
-    <div class="dashboardplace">
-        <div class="boo">Boo!!</div>
-    </div>
-    <div class="dashboardblack">
-    </div>
-    <div style="height: 0px;"> </div>
-    <div class="center">
-     <!--
-    <div class="portfolio">PORTFOLIO</div> -->
-
-
-<div>
-<div class="PortfolioHeader"><p class=porText>PORTFOLIO</p></div>
-<div class="ExperienceDescription"><p class="desc">Hey there! Kudos for checking out my portfolio! I've been doing video work and graphic work for some time now and this is an organized place for you to see it. By the way, the compliment below is chosen from a random list. Refresh a couple times! </p></div>
-<div class="PortfolioHeader2"><p class=porText id="randoMessage">LOADING</p></div>
-</div>
-</div>
-<p class="warn">Warning! This page is unfinished. Take everything you see with a grain of salt.</p>
-<div class="motionWrapper">
-<div class="motion"><p class="motionTxt">MOTION VFX</p></div>
-<div class="motionstuff"> </div>
-<div class="motionstuff"> </div>
-</div>
-</div>
-<div class="motionGlow">
-<div class="motionShow">
-
-    <a href="https://youtu.be/ID9xsEtvI9g" target="_blank" rel="noopener noreferrer"
-    class="motionContentWrapper">
-        <img class="motionImg" src="../portfolioMedia/TWC.png">
-        <div class="motionInfo">
-        <p class="motionTitle">TETR.IO Championship Stinger Mock</p>
-        <p class="motionDate">July 23, 2024</p>
-    </div>
-</a>
-
-    <a href="https://www.youtube.com/watch?v=p_AlkOz-hT4" target="_blank" rel="noopener noreferrer"
-    class="motionContentWrapper">
-        <img class="motionImg" src="../portfolioMedia/shoppreview.png">
-        <div class="motionInfo">
-        <p class="motionTitle">Sphere Advertisement Mock</p>
-        <p class="motionDate">July 14, 2024</p>
-    </div>
-</a>
-
-
-    <a href="https://www.youtube.com/watch?v=QjaDB1WIS5Y" target="_blank" rel="noopener noreferrer"
-     class="motionContentWrapper">
-        <img class="motionImg" src="../portfolioMedia/Seashore123123.PNG">
-        <div class="motionInfo">
-        <p class="motionTitle">Seashore on the Moon [TETR.IO Montage]</p>
-        <p class="motionDate">March 27, 2024</p>
-    </div>
-</a>
-
-
-
-<a href="https://www.youtube.com/watch?v=d_T223QAbO4" target="_blank" rel="noopener noreferrer"
-class="motionContentWrapper">
-    <img class="motionImg" src="../portfolioMedia/shimmer.png">
-    <div class="motionInfo">
-    <p class="motionTitle">Shimmer, Shimmer Stinger</p>
-    <p class="motionDate">October 14, 2023</p>
-</div>
-</a>
-
-    <a href="https://www.youtube.com/watch?v=WQsdm8MFIc0" target="_blank" rel="noopener noreferrer"
-     class="motionContentWrapper">
-        <img class="motionImg" src="../portfolioMedia/Ublockactual.png">
-        <div class="motionInfo">
-        <p class="motionTitle">U-Block Origin Stinger</p>
-        <p class="motionDate">June 30, 2023</p>
-    </div>
-</a>
-  <div class="motionContentWrapper">
-        <p class="youtubeTitle">View More on my YouTube!</p>
-        <a href="https://youtube.com/@uiGalaxy" target="_blank" rel="noopener noreferrer"
-        class="nodeco"><button class="ytbutton">YOUTUBE (@uiGalaxy)</button></a>
-        </div>
-    <div>123</div>
-    <div>123</div>
-
-</div>
-</div>
-<!-- Memes -->
-<div class="motionWrapper">
-    <div class="motion"><p class="motionTxt">FUNSIES</p></div>
-    <div class="motionstuff"> </div>
-    <div class="motionstuff"> </div>
-    </div>
-<div class="motionGlow">
-    <div class="motionShow">
-
-
-        <a href="https://www.youtube.com/watch?v=UmnYMTJgaMI" target="_blank" rel="noopener noreferrer"
-        class="motionContentWrapper">
-           <img class="motionImg" src="../portfolioMedia/limbo.png">
-           <div class="motionInfo">
-           <p class="motionTitle">Limbo Keys TETR.IO Season Two</p>
-           <p class="motionDate">July 20, 2024</p>
-        </div>
-        </a>
-
-
-        <a href="https://www.youtube.com/watch?v=UmnYMTJgaMI" target="_blank" rel="noopener noreferrer"
-class="motionContentWrapper">
-   <img class="motionImg" src="../portfolioMedia/doxxed.png">
-   <div class="motionInfo">
-   <p class="motionTitle">Letter to the Doxxed Out World</p>
-   <p class="motionDate">March 2, 2024</p>
-</div>
-</a>
-
-    </div>
-</div>
-<div class="motionWrapper">
-    <div class="motion"><p class="motionTxt">EXPERIENCE</p></div>
-    <div class="motionstuff"> </div>
-    <div class="motionstuff"> </div>
-    </div>
-    <div class="video"></div>
-
-    </div>
-    <div class="TimeDesc"> 
-    <p class="TimeDescTxt">How long have I been using After Effects to make VFX?</p>
-</div>
-    <div class="TimeWrapper">
-        <div class="SmolSquare">
-            <div class="secCount"> 
-                <p class="secCountTotal" id="Motionyr"></p>
-            </div>
-            <div class="secLabel"> 
-                <div class="secLabelTxt" >YEARS</div>
-            </div>
-            </div>
-            <p class="inbetween">/</p>
-
-        <div class="SmolSquare">
-            <div class="secCount"> 
-                <p class="secCountTotal" id="Motionmo"></p>
-            </div>
-            <div class="secLabel"> 
-                <div class="secLabelTxt" >MONTHS</div>
-            </div>
-            </div>
-            <p class="inbetween">/</p>
-
-        <div class="SmolSquare">
-            <div class="secCount"> 
-                <p class="secCountTotal" id="Motiond"></p>
-            </div>
-            <div class="secLabel"> 
-                <div class="secLabelTxt" >DAYS</div>
-            </div>
-            </div>
-            <p class="inbetween">&</p>
-        <div class="SmolSquare">
-            <div class="secCount"> 
-                <p class="secCountTotal" id="Motionhr"></p>
-            </div>
-            <div class="secLabel"> 
-                <div class="secLabelTxt" >HOURS</div>
-            </div>
-            </div>
-            <p class="inbetween">:</p>
-    <div class="SmolSquare">
-        <div class="secCount"> 
-            <p class="secCountTotal" id="Motionmin"></p>
-        </div>
-        <div class="secLabel"> 
-            <div class="secLabelTxt" >MINUTES</div>
-        </div>
-        </div>
-        <p class="inbetween">:</p>
-        <div class="SmolSquare">
-            <div class="secCount"> 
-                <p class="secCountTotal" id="Motionsec"></p>
-            </div>
-            <div class="secLabel"> 
-                <div class="secLabelTxt" >SECONDS</div>
-            </div>
-
-
-    </div>
-                <p class="inbetween">or</p>
-
-    <div class="SecSquare">
-        <div class="secCount"> 
-            <p class="secCountTxt"></p>
-        </div>
-        <div class="secLabel"> 
-            <div class="secLabelTxt">TOTAL SECONDS</div>
-        </div>
-
-
-</div>
-</div>
-
-
-
-
-
-
-
-    <div style="height: 2500px"></div>
-
-
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Array of image URLs
-            const images = [
-                '../daguhteer.jpg',
-                '../image0.jpg',
-                '../IMG_1722.jpg',
-                '../rainworld.png'
-            ];
-            const messages = [
-                'YOU ARE ENOUGH',
-                'NICE FIT BRO',
-                'THANKS FOR READING',
-                `<span style="font-size: 42px">🚨</span> HEAT ALARM <span style="font-size: 42px">🚨</span>`,
-                `<span style=" color: red; font-size: 54px; animation: rgb 2s infinite;">YOU'RE LUCKY!!</span>`
-            ];
-            const logos = [
-                '../UIGALAXYTETO.PNG',
-                '../uigalaxycat.png',
-                '../uiGalaxyMira.png',
-                '../tes123123t.png'
-            ];
-        
-            // Function to select a random image
-            function getRandomImage(images) {
-                const randomIndex = Math.floor(Math.random() * images.length);
-                return images[randomIndex];
-            }
-        
-            // Function to select a random logo
-            function getRandomLogo(logos) {
-                const LogoIndex = Math.floor(Math.random() * logos.length);
-                return logos[LogoIndex];
-            }
-        
-            // Function to select a random message
-            function getRandomMessage(messages) {
-                const messageIndex = Math.floor(Math.random() * messages.length);
-                return messages[messageIndex];
-            }
-        
- const savedColor = localStorage.getItem('CC');
-            if (savedColor) {
-        document.documentElement.style.setProperty('--CC', savedColor);
+  @property --photo {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+  }
+  @property --htmlcss {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+  }
+  :root {
+    --endvideo: 0;
+  }
+@keyframes ColorScroll {
+    0% {
     }
-
-    const barackObama = localStorage.getItem('C2');
-    if (barackObama) {
-        document.documentElement.style.setProperty('--C2', barackObama);
+    25% {
     }
+    50% {
+    }
+    75% {
+    }
+    to {
 
+    }
     
-    const michelleObama = localStorage.getItem('PBN');
-    if (michelleObama) {
-        document.documentElement.style.setProperty('--PBN', michelleObama);
+}
+.EverythingWrapper {
+    margin-top: 12px;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.portfolioWrapper {
+    display: block;
+    width: 100vw;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.portfolio, .experience, .motion {
+    font-size: 64px;
+    display: block;
+    text-align: center;
+    clip-path: polygon(9% 0%, 91% 0, 100% 50%, 91% 100%, 9% 100%, 0% 50%);
+    height: 70px;
+    width: 45vw;
+    background-color: rgb(var(--CC));
+    position: relative;
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+
+}
+.motionContentWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.motionImg {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+
+}
+.motionInfo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.motionTitle, .youtubeTitle {
+    font-family: "B612";
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+}
+
+.youtubeTitle {
+    margin-bottom: 84px;
+}
+.motionDate {
+    font-size: 0.8rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+}
+.experience, .motion {
+    margin-top: 5vh;
+    width: 28vw;
+    height: 49px;
+    font-size: 42px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.ExperienceDescription {
+    width: calc(48vw + 77px);
+    height: 100px;
+    box-shadow: 0 0 184px rgba(var(--CC), 0.5),
+     -100px 0 184px rgba(var(--CC), 0.3),
+     100px 0 184px rgba(var(--CC), 0.3);
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    min-width: 390px;
+}
+
+.PortfolioHeader, .PortfolioHeader2 {
+    margin-left: 10px;
+    height: 56px;
+    width: calc(48vw + 77px);
+    min-width: 390px;
+    background-color: rgb(var(--CC)); 
+    box-shadow: 0 0 184px rgba(var(--CC), 0.5);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    clip-path: polygon(7% 0%, 93% 0%, 100% 100%, 0% 100%);
+}
+.PortfolioHeader2 {
+    clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%);
+}
+.porText {
+    font-size: 54px;
+    margin: 0 0 0 0;
+}
+.desc  {
+    font-family: "B612";
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    margin-left: 6px;
+    text-align: left;
+    color: white;
+    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+}
+@media only screen and (max-width: 1300px) {
+    .desc {
+        font-size: 0.72rem;
     }
-            // Select a random image, logo, and message
-            const randomImageUrl = getRandomImage(images);
-            const randomLogoUrl = getRandomLogo(logos);
-            const randomMsg = getRandomMessage(messages);
-        
-            // Set the src attribute of the random image and logo
-            const randomImage = document.getElementById('random-image');
-            const randomLogo = document.getElementById('random-logo');
-            randomImage.src = randomImageUrl;
-            randomLogo.src = randomLogoUrl;
-        
-            // Set the innerHTML of the random message
-            document.getElementById('randoMessage').innerHTML = randomMsg;
-        
-            // Clean the URL
-            const currentUrl = window.location.href;
-            var clean = currentUrl.replace('/portfolio', '');
-            document.getElementById('CURL').href = clean;
-        });
-        </script>
-        
-        <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-        <script defer src="../_vercel/insights/script.js"></script>
-        <script>
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-        </script>
-        <script defer src="../_vercel/speed-insights/script.js"></script>
-        
-        <script>
-        window.addEventListener('scroll', () => {
-            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-        }, false);
-        </script>
-        
-        <script>
-        let intervalId;
-        var r = document.querySelector(':root');
-        let mills = 0;
-        
-        function calculateTimeAgo() {
-            const timestampInput = 1660778258;
-            const unixTimestamp = parseInt(timestampInput, 10);
-            const now = Math.floor(Date.now() / 1000); // current Unix timestamp in seconds
-        
-            const secondsAgo = now - unixTimestamp;
-            const minutes = Math.floor(secondsAgo / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-            const months = Math.floor(days / 30);
-            const years = Math.floor(months / 12);
-        
-            const displayYears = years;
-            const displayMonths = months % 12;
-            const displayDays = days % 30;
-            const displayHours = hours % 24;
-            const displayMinutes = minutes % 60;
-            const displaySeconds = secondsAgo % 60;
-        
-            r.style.setProperty('--endvideo', secondsAgo);
-        
-            if (displaySeconds - 10 < 0) {
-                document.getElementById('Motionsec').innerText = `0${displaySeconds}`;
-            } else {
-                document.getElementById('Motionsec').innerText = `${displaySeconds}`;
-            }
-        
-            document.getElementById('Motionmin').innerText = `${displayMinutes}`;
-            document.getElementById('Motionhr').innerText = `${displayHours}`;
-            document.getElementById('Motiond').innerText = `${displayDays}`;
-            document.getElementById('Motionmo').innerText = `${displayMonths}`;
-            document.getElementById('Motionyr').innerText = `${displayYears}`;
-        }
-        
-        function startInterval() {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        
-            intervalId = setInterval(calculateTimeAgo, 1000);
-        }
-        
-        // Start the interval when the script loads
-        startInterval();
-        </script>
-        
+  }
+.TimeDesc {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    margin-bottom: 31px;
+}
+.TimeDescTxt {
+    font-size: 26px;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    color: rgb(var(-CC));
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
+
+}
+.TimeWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: center;
+}
+.motionWrapper {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 32%;
+    margin-left: 15px;
+}
+.motion {
+    margin-top: 0;
+    clip-path: none;
+    transform: skew(-10deg);
+    background: rgb(var(-CC));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
+    min-width: 290px;
+
+
+}
+.motionstuff {
+    transform: skew(-10deg);
+    background: rgb(var(-CC));
+    width: 25px;
+    margin-left: 12px;
+    height: 49px;
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+
+}
+.motionWrapper:hover .motionstuff {
+    margin-left: 30px;
+}
+.motionWrapper:hover .motion{
+    box-shadow: 0 0 134px rgba(var(--CC), 0.55);
+    transform: skew(-26deg);
+    animation: rgb 5s infinite;
+}
+.motionWrapper:hover .motionstuff {
+    box-shadow: 0 0 134px rgba(var(--CC), 0.55);
+    transform: skew(-26deg);
+    animation: rgb 5s infinite;
+}
+
+.motionTxt {
+    font-size: 48px;
+    text-align: center;
+    vertical-align: center;
+    width: 100%;
+    height: 100%;
+}
+.motionGlow {
+    filter: drop-shadow(0 0 134px rgba(var(--CC), 0.24));
+}
+.motionShow {
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+    width: 100vw;
+    background-color: rgb(0,0,0,0);
+    height: 20vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(13, 25vw);
+    min-height: 200px;
+    min-width: 500px;
+    grid-template-rows: 21vh;
+    grid-column-gap: 12px;
+
+}
+.ytbutton {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    width: 23vw;
+    font-family: "Carbon Bold";
+    padding: 8px 0 8px;
+    border: none;
+    margin-top: 0px;
+    border-style: solid;
+    border-width: 3px;
+    text-align: middle;
+    border-color: rgb(var(--CC));
+    background-color: rgb(9, 9, 15, 0);
+    color: rgb(var(--CC));
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+    overflow: hidden;
+    border-radius: 4px;
+    margin-top: -50px;
+    text-shadow: 0 0 12px rgba(var(--CC), 0.4);
+}
+.motionContentWrapper {
+    text-decoration: none;
+    box-shadow: 0 0 134px rgba(var(--CC), 0.18);
+    transition: all 0.9s cubic-bezier(.05,.67,.37,.91);
+}
+
+.motionContentWrapper:hover {
+    transform: skew(-7deg);
+}
+.portfolio::before, .experience::before {
+display: inline-block;  
+content: '';
+position: absolute;
+height: 75px;
+width: 169px;
+filter: blur(2px);
+background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0.32) 50%, transparent 55%);
+transform: skew(-45deg);
+top: -10px;
+left: -150px;
+z-index: 3;
+animation: LightSweepTheader 3.2s 1s linear infinite;
+}
+@keyframes LightSweepTheader {
+0% {
+    left: -150px;
+}
+9% {
+    left: calc(100% + 50px);
+}
+100% {
+    left: calc(100% + 50px);
+}
+}
+
+.secCountTxt::after {
+    content: counter(video);
+  }
+  @keyframes videoKey {
+    from{ 
+        --video: 0;
+    }
+    to{ 
+        --video: var(--endvideo);
+    }
+  }
+  .SecSquare {
+    min-width: 180px;
+    width: calc(6vw + 60px); 
+}
+.SmolSquare {
+    min-width: 120px;
+    width: calc(3vw + 40px);
+}
+.secCount {
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+
+}
+.warn {
+    font-size: 32px;
+    color: rgb(255,212,212);
+    animation: rgb 4s infinite;
+}
+
+.secCountTxt, .secCountTotal, .inbetween {
+    font-family: "B612";
+    font-size: 1.4rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 12px rgba(var(--CC), 0.5);
+    text-shadow: 0 0 6px rgba(var(--CC), 0.8);
+    counter-set: video var(--video);
+    animation: videoKey 7.6s forwards;
+    animation-timing-function: cubic-bezier(0,0.98,0,0.98);
+    animation-delay: 0.7s;
+}
+.secCountTotal {
+    animation: none;
+}
+.secLabel {
+    
+    border-width: 3px;
+    height: 38px;
+    min-width: 120px;
+    background-color: rgb(var(--CC)); 
+    margin: 0 0 0 0;
+    box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: -4px;
+
+}
