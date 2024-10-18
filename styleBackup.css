@@ -246,7 +246,7 @@ body {
     border-color: rgb(var(--CC));
     padding: 4px;
     filter: var(--PBN);
-    margin-left: 253px; 
+    margin-left: 0px; 
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 }
 
