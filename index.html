@@ -133,6 +133,7 @@
                 </div>
                 <div class="ARead">
                     <p class=AreadTxt>
+                        <span class=time>October 17, 2024 11:15PM EST</span><br>Made each border a gradient and made the color change more pronounced! Added my Bluesky account, Go follow!!!! Added a drop shadow on the top bar. Fixed weird button spacing on smaller devices, Light sweep showing above the bar, etc.,<br><span class="down"></span> <br>
                         <span class=time>September 18, 2024 10:14PM EST</span><br>Colors are now cached into local storage so subdirectories and subsequent visits should have the color choice you picked! Moved the color button to teh right 120 more pixels<br><span class="down"></span> <br>
                         <span class=time>September 15, 2024 8:45PM EST</span><br>Every time you complain about the color button I move it to the right 3 more pixels<br><span class="down"></span> <br>
                         <span class=time>September 15, 2024 8:37PM EST</span><br>Added 4 more color theme buttons and added a description at the bottom, which took WAYYY too long.<br><span class="down"></span> <br>
@@ -198,8 +199,11 @@
                             class="youtubebutton">DISCORD (@uiGalaxy)</button></a>
                     <a href="https://www.twitch.tv/uigalaxy" target="_blank" rel="noopener noreferrer"
                         class="nodeco"><button class="youtubebutton">TWITCH (@uiGalaxy)</button></a>
+                        <a href="https://bsky.app/profile/uigalaxy.net" target="_blank" rel="noopener noreferrer"
+                        class="nodeco"><button class="youtubebutton">BLUESKY (@uigalaxy.net)</button></a>
                     <a href="./Lost.mp4" target="_blank" rel="noopener noreferrer" class="nodeco"><button
                             class="youtubebutton">TINDER (@uiGalaxy)</button></a>
+                            
                 </div>
             </div>
 
@@ -301,7 +305,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '254, 195, 119';
-const newColorBecauseJSIsGay2 = '255, 167, 123';
+const newColorBecauseJSIsGay2 = '255, 121, 79';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 localStorage.setItem('CC', newColorBecauseJSIsGay1);
@@ -322,7 +326,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '123, 123, 255';
-const newColorBecauseJSIsGay2 = '134, 82, 255';
+const newColorBecauseJSIsGay2 = '85, 45, 223';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -342,7 +346,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '240, 119, 222';
-const newColorBecauseJSIsGay2 = '255, 74, 228';
+const newColorBecauseJSIsGay2 = '250, 40, 204';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -365,7 +369,13 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '36, 230, 155';
-const newColorBecauseJSIsGay2 = '14, 137, 90';
+const newColorBecauseJSIsGay2 = '9, 219, 104';
+const TxtColor = "0, 0, 0"; 
+localStorage.setItem('TCC', TxtColor);
+document.documentElement.style.setProperty('--TCC', TxtColor);
+
+
+
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -384,7 +394,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '255, 72, 85';
-const newColorBecauseJSIsGay2 = '232, 64, 75';
+const newColorBecauseJSIsGay2 = '214, 24, 36';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -403,7 +413,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '213, 175, 143';
-const newColorBecauseJSIsGay2 = '217, 159, 112';
+const newColorBecauseJSIsGay2 = '207, 138, 90';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -421,7 +431,7 @@ document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%
 const root = document.documentElement;
 
 const newColorBecauseJSIsGay1 = '166, 237, 176';
-const newColorBecauseJSIsGay2 = '153, 179, 157';
+const newColorBecauseJSIsGay2 = '92, 161, 101';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -440,14 +450,16 @@ document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%
 // Get the root element (usually <html> or <body>)
 const root = document.documentElement;
 
-
 const newColorBecauseJSIsGay1 = '226, 200, 232';
 const newColorBecauseJSIsGay2 = '195, 191, 199';
+const TxtColor = "0, 0, 0"; 
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
+document.documentElement.style.setProperty('--TCC', TxtColor);
 localStorage.setItem('CC', newColorBecauseJSIsGay1);
 localStorage.setItem('C2', newColorBecauseJSIsGay2);
+localStorage.setItem('TCC', TxtColor);
 localStorage.setItem('PBN', 'brightness(0) saturate(100%) invert(80%) sepia(37%) saturate(145%) hue-rotate(243deg) brightness(99%) contrast(87%)');
 document.documentElement.style.setProperty('--PB', 'brightness(42000)');
 document.documentElement.style.setProperty('--PBN', 'brightness(0) saturate(100%) invert(80%) sepia(37%) saturate(145%) hue-rotate(243deg) brightness(99%) contrast(87%)');
@@ -461,7 +473,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '255, 178, 243';
-const newColorBecauseJSIsGay2 = '255, 141, 238';
+const newColorBecauseJSIsGay2 = '237, 69, 212';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -480,7 +492,7 @@ const root = document.documentElement;
 
 
 const newColorBecauseJSIsGay1 = '186, 223, 255';
-const newColorBecauseJSIsGay2 = '134, 188, 249';
+const newColorBecauseJSIsGay2 = '110, 178, 255';
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
@@ -500,6 +512,10 @@ const root = document.documentElement;
 
 const newColorBecauseJSIsGay1 = '0, 79, 224';
 const newColorBecauseJSIsGay2 = '0, 4, 135';
+
+const TxtColor = "0, 0, 0"; 
+localStorage.setItem('TCC', TxtColor);
+document.documentElement.style.setProperty('--TCC', TxtColor);
 // Update the CSS variable
 document.documentElement.style.setProperty('--CC', newColorBecauseJSIsGay1);
 document.documentElement.style.setProperty('--C2', newColorBecauseJSIsGay2);
