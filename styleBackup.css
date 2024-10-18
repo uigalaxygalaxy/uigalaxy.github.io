@@ -33,6 +33,7 @@
     --C2: 14, 137, 90;
     --PB: brightness(12200%);
     --PBN: none;
+    --TCC: black;
 
     
 }
@@ -99,8 +100,10 @@ body {
     height: 35%;
     min-height: 75px;
     opacity: 1;
-    left: 0px
+    left: 0px;
+    box-shadow: 0 8px 64px rgba(9, 9, 15, 0.84); 
 }
+
 .dashboardLogo {
     animation: dbph 0.25s forwards;
     animation-play-state: paused;
@@ -399,7 +402,7 @@ body {
     height: 56px;
     width: calc(22vw + 30px);
     min-width: 390px;
-    background-color: rgb(var(--CC)); 
+    background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2))); 
     margin: 0 0 0 0;
     box-shadow: 0 0 134px rgba(var(--CC), 0.35);
     overflow: hidden;
@@ -409,11 +412,11 @@ body {
 }
 
 .PHeader {
-    background-color: rgb(var(--CC)); 
+    background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2))); 
     box-shadow: 0 0 134px rgba(var(--CC), 0.35);
 }
 .CHeader {
-    background-color: rgb(var(--CC)); 
+    background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2))); 
     box-shadow: 0 0 134px rgba(var(--CC), 0.35);
 
 }
@@ -423,7 +426,7 @@ body {
     height: 85%;
     margin-left: 12px;
 }
-.THeader::before, .Fheader::before, .PHeader::before, .CHeader::before, .MHeader::before, .AHeader::before, .DHeader::before, .PortfolioHeader::before, .PortfolioHeader2::before, .motion::before, .experience::before {
+.THeader::before, .Fheader::before, .PHeader::before, .CHeader::before, .MHeader::before, .AHeader::before, .DHeader::before, .FHeader::before, .PortfolioHeader::before, .PortfolioHeader2::before, .motion::before, .experience::before {
     display: inline-block;  
     content: '';
     position: absolute;
@@ -434,7 +437,7 @@ body {
     transform: skew(-45deg);
     top: -10px;
     left: -150px;
-    z-index: 3;
+    z-index: 0;
     animation: LightSweepTheader 3.2s 1s linear infinite;
 }
 @keyframes LightSweepTheader {
@@ -466,7 +469,7 @@ body {
     margin: 0 0 0 0;
     border: 3px solid white;
     border-top: none;
-    height: calc(10vh - 6vw + 209px);
+    height: calc(240px);
     width: calc(22vw + 24px);
     background-color: rgba(0, 128, 0, 0); 
     box-shadow: 0 0 134px rgba(var(--CC), 0.15);
@@ -478,7 +481,7 @@ body {
     border-image: linear-gradient(to right, rgb(var(--CC)), rgb(var(--C2)))2 3 100%;
 }
 .MrRead {
-    height: calc(21.5vh - 7vw + 164px);
+    height: calc(180px + 60px);
 
 }
 .PRead {
@@ -487,16 +490,16 @@ body {
 }
 .CRead {
     animation: ReadTcPc 4s -0s infinite;
-    height: calc(22.5vh - 4.8vw + 264px);
+    height: calc(340px + 125px);
 }
 .MRead {
-    height: calc(7vh - 4.8vw + 137px);
+    height: calc(180px);
 }
 .DRead {
-    height: calc(24.5vh - 4.8vw + 244px);
+    height: calc(360px + 70px);
 }
 .ARead {
-    height: calc(14vh - 6vw + 239px);
+    height: calc(329px);
 }
 .TreadTxt, .FreadTxt, .CreadTxt, .PreadTxt, .MreadTxt, .AreadTxt, .DreadTxt {
     font-family: "B612";
@@ -670,5 +673,5 @@ grid-gap: 12px;
     line-height: 56px;
     margin: 0 0px 0 0px;
     margin-right: 12px;
-    
+    color: rgb(var(--TCC));
 }
