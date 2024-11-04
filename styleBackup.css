@@ -30,10 +30,11 @@
 
 :root {
     --CC: 36, 230, 155;
-    --C2: 14, 137, 90;
+    --C2: 9, 219, 104;
     --PB: brightness(12200%);
     --PBN: none;
     --TCC: black;
+    --AMERICA: #246ce6;
 
     
 }
@@ -103,7 +104,34 @@ body {
     left: 0px;
     box-shadow: 0 8px 64px rgba(9, 9, 15, 0.84); 
 }
-
+.polls {
+    width: 100%;
+    z-index: 999;
+    font-size: 1.35em;
+    position: absolute;
+    text-align: center;
+    color: rgb(255, 211, 211);
+    text-shadow: 0 0 12px rgba(255, 211, 211, 0.8);
+    animation: rgb 3s infinite;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
+.polls:hover, .pollsText:hover {
+    font-size: 2em;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 211, 211, 1);
+}
+.pollsText:hover {
+    font-size: 1.55em;
+}
+.pollsText {
+    font-size: 1.35em;
+    text-align: center;
+    color: rgb(255, 211, 211);
+    text-shadow: 0 0 12px rgba(255, 211, 211, 0.8);
+    animation: rgb 3s infinite;
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
 .dashboardLogo {
     animation: dbph 0.25s forwards;
     animation-play-state: paused;
@@ -534,7 +562,7 @@ grid-gap: 12px;
     text-align: center;
     vertical-align: center;
     background-size: 200% auto;
-    border-radius: 5px;
+    border-radius: 100%;
     color: white;
     display: inline-block;
     background-image: linear-gradient(to right, rgb(107, 174, 255), rgb(32, 88, 255));
@@ -606,6 +634,7 @@ grid-gap: 12px;
     box-shadow: 0 0 50px rgb(36, 230, 155, 0.7);
 }
 .LomadexColor {
+    border-radius: 100%;
     color: black;
     background-image: linear-gradient(to right, rgb(226, 200, 232), rgb(195, 191, 199));
 }
