@@ -27,7 +27,10 @@
     font-family: "B612";
     src: url(B612\ Regular.woff)
 }
-
+@font-face {
+    font-family: "Apple Casual";
+    src: url(Apple\ Casual\ Regular.ttf)
+}
 :root {
     --CC: 36, 230, 155;
     --C2: 9, 219, 104;
@@ -35,6 +38,7 @@
     --PBN: none;
     --TCC: black;
     --AMERICA: #246ce6;
+    --fontlol: "Carbon Bold"
 
     
 }
@@ -79,7 +83,7 @@ html {
     line-height: 18px;
 }
 * {
-    font-family: "Carbon Bold";
+    font-family: var(--fontlol);
     font-size: 20px;
     font-weight: 300;
     text-align: middle;
@@ -562,7 +566,7 @@ grid-gap: 12px;
     text-align: center;
     vertical-align: center;
     background-size: 200% auto;
-    border-radius: 100%;
+    border-radius: 6px;
     color: white;
     display: inline-block;
     background-image: linear-gradient(to right, rgb(107, 174, 255), rgb(32, 88, 255));
@@ -634,7 +638,6 @@ grid-gap: 12px;
     box-shadow: 0 0 50px rgb(36, 230, 155, 0.7);
 }
 .LomadexColor {
-    border-radius: 100%;
     color: black;
     background-image: linear-gradient(to right, rgb(226, 200, 232), rgb(195, 191, 199));
 }
