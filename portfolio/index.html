@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script async src="https://count.cab/hit/NyhVBr67Y6"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
@@ -220,6 +222,26 @@ class="motionContentWrapper">
 
 </div>
 </div>
+<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">11</span>! What's up?</p> </div>
+
+<script async>
+    async function getClickValue() {
+      // Fetch the response
+      const response = await fetch('https://count.cab/get/NyhVBr67Y6');
+      
+      // Parse the response body as JSON
+      const data = await response.json();
+      
+      // Get the click value
+      const clickValue = data.click;
+      
+      // Output the click value
+      document.getElementById('numbers123').innerText = `${clickValue}`;
+    }
+  
+    // Call the function
+    getClickValue();
+  </script>
 
 
 
