@@ -263,10 +263,31 @@ body {
     text-shadow: 0 0 6px rgba(var(--CC), 1);
 
   }
+  .visitorWrapper  {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .NumberText {
+    color: rgb(var(--CC));
+    text-shadow: 0 0 15px rgba(var(--CC), 0.74);
+    font-size: 18px;
+    border: none;
+    font-family: 'B612';
+  }
+  .counterText {
+    color: rgb(var(--CC));
+    text-shadow: 0 0 21px rgba(var(--CC), 0.94);
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Carbon Bold';
+    border: none;
+  }
 
 .bttnwrapper {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 .ColorBttn {
     justify-self: center;
