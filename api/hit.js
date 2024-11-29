@@ -30,7 +30,7 @@ const TIME_FRAME = 60 * 60 * 1000; // 1 hour in milliseconds
 
   // Check if the rate limit has been exceeded
   if (ipRequests[ip].count > RATE_LIMIT) {
-    res.status(429).json({ error: 'Rate limit exceeded. Please try again later.' });
+    res.status(429).json({ error: 'Rate limit exceeded.' });
     return;
   }
 
@@ -59,7 +59,12 @@ const TIME_FRAME = 60 * 60 * 1000; // 1 hour in milliseconds
             return res.status(500).json({ error: "API key not configured" });
         }
 
+        if (ipRequests[ip].count > RATE_LIMIT < 1) {
         const url = `https://count.cab/hit/vvkUhWyiT3/${apiKey}`;
+        }
+        if (ipRequests[ip].count > RATE_LIMIT > 150) {
+        const url = `1`;
+        }
 
         try {
             const response = await fetch(url);
