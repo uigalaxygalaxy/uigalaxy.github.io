@@ -1,39 +1,31 @@
 // api/visitor.js
+import Redis from 'ioredis';
 export default async function handler(req, res) {
-    let ipRequests = {};  // In-memory store for IP rate-limiting
 
-const RATE_LIMIT = 1; // Max number of requests per IP per hour
-const TIME_FRAME = 60 * 60 * 1000; // 1 hour in milliseconds
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;  // Get the IP address of the client
-
-  // If the IP doesn't exist in the store, initialize it
-  if (!ipRequests[ip]) {
-    ipRequests[ip] = {
-      count: 1, // Start with the first request
-      timestamp: Date.now(), // Current time
-    };
-  } else {
-    // Check if 1 hour has passed since the last request
-    const timeElapsed = Date.now() - ipRequests[ip].timestamp;
-
-    if (timeElapsed > TIME_FRAME) {
-      // Reset the request count and timestamp after 1 hour
-      ipRequests[ip] = {
-        count: 1, // First request in the new hour
-        timestamp: Date.now(),
-      };
-    } else {
-      // If requests within the same hour, increment count
-      ipRequests[ip].count += 1;
+  const redis = new Redis(process.env.REDIS_URL);  // Connect to your Redis instance
+  
+  const RATE_LIMIT = 1; // Max number of requests per IP per hour
+  const TIME_FRAME = 60 * 60;  // 1 hour in seconds
+  
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress; // Get the IP address of the client
+  
+    // Redis key for the IP's request count and timestamp
+    const redisKey = `rate_limit:${ip}`;
+  
+    // Check the current request count for the IP
+    const currentCount = await redis.get(redisKey);
+  
+    // If the IP has exceeded the rate limit
+    if (currentCount && parseInt(currentCount) >= RATE_LIMIT) {
+      res.status(429).json({ error: 'Rate limit exceeded. Try again later.' });
+      return;
     }
-  }
-
-  // Check if the rate limit has been exceeded
-  if (ipRequests[ip].count > RATE_LIMIT) {
-    res.status(429).json({ error: 'Rate limit exceeded.' });
-    return;
-  }
-
+  
+    // Increment the request count and set expiration time for 1 hour
+    await redis.multi()
+      .incr(redisKey) // Increment the count
+      .expire(redisKey, TIME_FRAME) // Set the expiration time to 1 hour
+      .exec();
     const allowedOrigins = [
         'https://www.uigala.xyz',
         'https://www.uigalaxy.net',
