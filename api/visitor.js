@@ -1,6 +1,9 @@
 // api/visitor.js
   export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.uigala.xyz');  // Allow your domain
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigalaxy.net');  // Allow your domain
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigalaxy.com');  // Allow your domain
+
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');  // Allow specific HTTP methods
 
     if (req.method === 'OPTIONS') {
