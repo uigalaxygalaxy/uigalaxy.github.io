@@ -1,5 +1,39 @@
 // api/visitor.js
 export default async function handler(req, res) {
+    let ipRequests = {};  // In-memory store for IP rate-limiting
+
+const RATE_LIMIT = 1; // Max number of requests per IP per hour
+const TIME_FRAME = 60 * 60 * 1000; // 1 hour in milliseconds
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;  // Get the IP address of the client
+
+  // If the IP doesn't exist in the store, initialize it
+  if (!ipRequests[ip]) {
+    ipRequests[ip] = {
+      count: 1, // Start with the first request
+      timestamp: Date.now(), // Current time
+    };
+  } else {
+    // Check if 1 hour has passed since the last request
+    const timeElapsed = Date.now() - ipRequests[ip].timestamp;
+
+    if (timeElapsed > TIME_FRAME) {
+      // Reset the request count and timestamp after 1 hour
+      ipRequests[ip] = {
+        count: 1, // First request in the new hour
+        timestamp: Date.now(),
+      };
+    } else {
+      // If requests within the same hour, increment count
+      ipRequests[ip].count += 1;
+    }
+  }
+
+  // Check if the rate limit has been exceeded
+  if (ipRequests[ip].count > RATE_LIMIT) {
+    res.status(429).json({ error: 'Rate limit exceeded. Please try again later.' });
+    return;
+  }
+
     const allowedOrigins = [
         'https://www.uigala.xyz',
         'https://www.uigalaxy.net',
