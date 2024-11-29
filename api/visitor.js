@@ -1,5 +1,13 @@
 // api/visitor.js
   export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigala.xyz');  // Allow your domain
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');  // Allow specific HTTP methods
+
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();  // Handle pre-flight OPTIONS request
+        return;
+    }
+
     if (req.method === "GET") {
         const apiKey = process.env.API_KEY; // Securely access the key
 
@@ -7,7 +15,7 @@
             return res.status(500).json({ error: "API key not configured" });
         }
 
-        const url = `https://count.cab/hit/vvkUhWyiT3/${apiKey}`;
+        const url = `https://count.cab/get/vvkUhWyiT3/${apiKey}`;
 
         try {
             const response = await fetch(url);
@@ -24,3 +32,4 @@
         res.status(405).json({ error: "Method Not Allowed" }); // Handle non-GET requests
     }
 }
+
