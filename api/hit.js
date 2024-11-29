@@ -59,10 +59,10 @@ const TIME_FRAME = 60 * 60 * 1000; // 1 hour in milliseconds
             return res.status(500).json({ error: "API key not configured" });
         }
 
-        if (ipRequests[ip].count > RATE_LIMIT < 1) {
+        if (ipRequests[ip].count < RATE_LIMIT) {
         const url = `https://count.cab/hit/vvkUhWyiT3/${apiKey}`;
         }
-        if (ipRequests[ip].count > RATE_LIMIT > 150) {
+        if (ipRequests[ip].count > 150) {
         const url = `1`;
         }
 
