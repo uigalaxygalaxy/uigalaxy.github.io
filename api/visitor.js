@@ -1,15 +1,22 @@
 // api/visitor.js
   export default async function handler(req, res) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigala.xyz');  // Allow your domain
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigalaxy.net');  // Allow your domain
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.uigalaxy.com');  // Allow your domain
-
-    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');  // Allow specific HTTP methods
-
-    if (req.method === 'OPTIONS') {
-        res.status(200).end();  // Handle pre-flight OPTIONS request
+    const allowedOrigins = [
+        'https://www.uigala.xyz',
+        'https://www.uigalaxy.net',
+        'https://www.uigalaxy.com',
+      ];
+    
+      const origin = req.headers.origin;
+      if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);  // Dynamically set the origin
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      }
+    
+      if (req.method === 'OPTIONS') {
+        res.status(200).end();  // Handle preflight OPTIONS request
         return;
-    }
+      }
 
     if (req.method === "GET") {
         const apiKey = process.env.API_KEY; // Securely access the key
