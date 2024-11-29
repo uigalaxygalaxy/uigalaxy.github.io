@@ -25,7 +25,7 @@
             return res.status(500).json({ error: "API key not configured" });
         }
 
-        const url = `https://count.cab/get/vvkUhWyiT3/${apiKey}`;
+        const url = `https://count.cab/hit/vvkUhWyiT3/${apiKey}`;
 
         try {
             const response = await fetch(url);
