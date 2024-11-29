@@ -256,7 +256,6 @@
 
 
 
-
     <div style="height: 2000px;"></div>
 
     <script>
@@ -663,6 +662,7 @@ for (i = 0; i < coll.length; i++) {
     </script>
 <script async>
     async function getClickValue() {
+        /*
       // Fetch the response
       const response = await fetch('https://count.cab/get/NyhVBr67Y6');
       
@@ -674,6 +674,17 @@ for (i = 0; i < coll.length; i++) {
       
       // Output the click value
       document.getElementById('numbers123').innerText = `${clickValue}`;
+      */
+
+
+
+      fetch('https://uigalaxy-github-io.vercel.app/api/visitor')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('numbers123').innerText = data.click;
+  })
+  .catch(error => console.error("Error fetching visitor count:", error));
+
     }
   
     // Call the function
