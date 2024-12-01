@@ -397,19 +397,16 @@ class="motionContentWrapper">
                 if (!response.ok) {
                     const errorMessage = `Network error: ${response.status}`;
                     console.error(errorMessage); // Log to console for debugging
-                    document.getElementById('errorLog').innerText = errorMessage; // Show error on the page
                     throw new Error(errorMessage);
                 }
 
                 const text = await response.text();  // Get raw text response
                 console.log('Response text:', text);  // Log the raw text of the response
-                document.getElementById('responseLog').innerText = `Response text: ${text}`; // Show response on the page
 
                 // If the response text is not empty, parse it as JSON
                 if (text) {
                     const data = JSON.parse(text);
                     console.log(data);  // Log the parsed data
-                    document.getElementById('parsedLog').innerText = `Parsed Data: ${JSON.stringify(data)}`; // Show parsed data on the page
 
                     // Update the element with ID "numbers123" with the 'click' value
                     if (data.click !== undefined) {
@@ -420,13 +417,11 @@ class="motionContentWrapper">
                 } else {
                     const emptyMessage = 'Response body is empty';
                     console.error(emptyMessage); // Log to console
-                    document.getElementById('errorLog').innerText = emptyMessage; // Show error on the page
                     document.getElementById('numbers123').innerText = "Error: No data received";
                 }
             } catch (error) {
                 const fetchError = `Failed to fetch data: ${error.message}`;
                 console.error(fetchError); // Log to console
-                document.getElementById('errorLog').innerText = fetchError; // Show fetch error on the page
                 document.getElementById('numbers123').innerText = "Error fetching data";
             }
         }
