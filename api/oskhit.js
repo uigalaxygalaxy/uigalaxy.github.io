@@ -1,6 +1,7 @@
 import Redis from 'ioredis';
 
 export default async function handler(req, res) {
+  /*
   const redis = new Redis(process.env.REDIS_URL);
   redis.on('error', (err) => console.error('Redis connection error:', err));
 
@@ -24,6 +25,7 @@ export default async function handler(req, res) {
     await redis.multi()
       .incr(redisKey)
       .exec();
+      */
 
     const allowedOrigins = [
       'https://www.uigala.xyz',
@@ -34,12 +36,13 @@ export default async function handler(req, res) {
     const origin = req.headers.origin;
 
     if (allowedOrigins.includes(origin)) {
-      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.json('header ', origin);
+      res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
       res.setHeader('Access-Control-Allow-Credentials', 'true');
     }
-
+    res.json('header2 ', origin);
     if (req.method === 'OPTIONS') {
       res.status(200).end();
       await redis.quit();
@@ -70,7 +73,10 @@ export default async function handler(req, res) {
     } else {
       res.status(405).json({ error: 'Method Not Allowed' });
     }
+    /*
   } finally {
     await redis.quit();
+
   }
+        */
 }
