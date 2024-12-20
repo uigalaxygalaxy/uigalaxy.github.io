@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     signatureButton.addEventListener('click', async function () {
+        await fetch('https://uigalaxy.net/api/oskhit');
         try {
             const response = await fetch('https://uigalaxy-github-io.vercel.app/api/osk');
 
