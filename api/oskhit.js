@@ -1,31 +1,8 @@
 import Redis from 'ioredis';
 
 export default async function handler(req, res) {
-/*
-  const redis = new Redis(process.env.REDIS_URL);
-  redis.on('error', (err) => console.error('Redis connection error:', err));
 
-  // Ensure Redis is ready
-  if (redis.status !== 'ready') {
-    res.status(500).json({ error: 'Redis is unavailable' });
-    return;
-  }
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress; // Get the IP address of the client
-  const redisKey = `oskhit:${ip}`;
 
-  try {
-    const currentCount = await redis.get(redisKey);
-    if (currentCount && parseInt(currentCount) >= 1) {
-      res.status(429).json({ error: 'Only one hit allowed' });
-      await redis.quit();
-      return;
-    }
-
-    // Increment count and set expiration
-    await redis.multi()
-      .incr(redisKey)
-      .exec();
-*/
       const allowedOrigins = [
         'https://www.uigala.xyz',
         'https://www.uigalaxy-github-io.vercel.app',
@@ -44,6 +21,30 @@ export default async function handler(req, res) {
         console.warn('Origin not allowed:', origin);
         res.status(403).json({ error: 'CORS not allowed for this origin' });
       }
+
+      
+  const redis = new Redis(process.env.REDIS_URL);
+  redis.on('error', (err) => console.error('Redis connection error:', err));
+
+  // Ensure Redis is ready
+  if (redis.status !== 'ready') {
+    res.status(500).json({ error: 'Redis is unavailable' });
+    return;
+  }
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress; // Get the IP address of the client
+  const redisKey = `oskhit:${ip}`;
+
+  try {
+    const currentCount = await redis.get(redisKey);
+    if (currentCount && parseInt(currentCount) >= 1) {
+      res.status(429).json({ error: 'Only one hit allowed' });
+      return;
+    }
+
+    // Increment count and set expiration
+    await redis.multi()
+      .incr(redisKey)
+      .exec();
 
     if (req.method === 'OPTIONS') {
       res.status(200).end();
@@ -75,10 +76,8 @@ export default async function handler(req, res) {
       res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-  } /*finally {
-    await redis.quit();
-
+  } finally {
+  return;
   }
 
 }
-*/
