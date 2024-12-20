@@ -13,8 +13,7 @@ export default async function handler(req, res) {
   
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress; // Get the IP address of the client
   
-  const redisKey = `rate_limit:${ip}`;  // Redis key for the IP's request count
-  const redisTally = `total:${ip}`; //Keep tally of all IP's total connection count
+  const redisKey = `osk:${ip}`;  // Redis key for the IP's request count
   
 
 
@@ -37,7 +36,6 @@ export default async function handler(req, res) {
   // Increment the request count and set expiration time for 1 hour
   await redis.multi()
     .incr(redisKey)  // Increment the request count
-    .incr(redisTally) // Tallies IP connection
     .expire(redisKey, TIME_FRAME)  // Set expiration time to 1 hour
     .exec();
 
