@@ -55,7 +55,7 @@ export default async function handler(req, res) {
       const apiKey = process.env.API_KEY;
 
       if (!apiKey) {
-        res.status(500).json({ error: 'API key not configured' });
+       // res.status(500).json({ error: 'API key not configured' });
         await redis.quit();
         return;
       }
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         res.status(200).json(data);
       } catch (error) {
         console.error('API Fetch Error:', error.message);
-        res.status(500).json({ error: 'Failed to fetch visitor count' });
+        res.status(777).json({ error: 'Failed to fetch visitor count' });
       }
     } else {
       res.status(405).json({ error: 'Method Not Allowed' });
