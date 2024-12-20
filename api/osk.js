@@ -53,7 +53,7 @@ export default async function handler(req, res) {
         return;
       }
 
-      const url = `https://count.cab/hit/jT4vDQkTex/${apiKey}`;
+      const url = `https://count.cab/get/jT4vDQkTex/${apiKey}`;
       try {
         const response = await fetch(url);
         if (!response.ok) {
