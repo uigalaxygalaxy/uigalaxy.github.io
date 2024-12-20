@@ -20,7 +20,6 @@ export default async function handler(req, res) {
   // Check the current request count for the IP in Redis
   const [currentCount, TotalTally] = await Promise.all([
     redis.get(redisKey),
-    redis.get(redisTally),
   ]);
   // If the IP has exceeded the rate limit
   if (currentCount && parseInt(currentCount) >= RATE_LIMIT) {
