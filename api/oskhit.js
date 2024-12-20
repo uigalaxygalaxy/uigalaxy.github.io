@@ -27,6 +27,7 @@ export default async function handler(req, res) {
 
     const allowedOrigins = [
       'https://www.uigala.xyz',
+      'https://www.uigalaxy-github-io.vercel.app',
       'https://www.uigalaxy.net',
       'https://www.uigalaxy.com',
     ];
