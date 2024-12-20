@@ -34,7 +34,9 @@ export default async function handler(req, res) {
       ];
       
       let origin = req.headers.origin || req.headers.referer || ''; // Use referrer if origin is empty
-      
+      console.log('Yo origin is this:', req.headers.origin);
+      console.log('Yo ref is this:', req.headers.referer);
+      console.log('It chose  this:', origin);
       if (allowedOrigins.includes(origin)) {
         console.log('Setting CORS headers for:', origin);
         res.setHeader('Access-Control-Allow-Origin', origin);
