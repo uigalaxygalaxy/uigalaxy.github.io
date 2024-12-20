@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
 
 export default async function handler(req, res) {
-  /*
+
   const redis = new Redis(process.env.REDIS_URL);
   redis.on('error', (err) => console.error('Redis connection error:', err));
 
@@ -25,27 +25,27 @@ export default async function handler(req, res) {
     await redis.multi()
       .incr(redisKey)
       .exec();
-      */
 
-    const allowedOrigins = [
-      'https://www.uigala.xyz',
-      'https://www.uigalaxy-github-io.vercel.app',
-      'https://www.uigalaxy.net',
-      'https://www.uigalaxy.com',
-    ];
-    const origin = req.headers.origin;
+      const allowedOrigins = [
+        'https://www.uigala.xyz',
+        'https://www.uigalaxy-github-io.vercel.app',
+        'https://www.uigalaxy.net',
+        'https://www.uigalaxy.com',
+      ];
+      
+      let origin = req.headers.origin || req.headers.referer || ''; // Use referrer if origin is empty
+      
+      if (allowedOrigins.includes(origin)) {
+        console.log('Setting CORS headers for:', origin);
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+      } else {
+        console.warn('Origin not allowed:', origin);
+        res.status(403).json({ error: 'CORS not allowed for this origin' });
+      }
 
-    if (allowedOrigins.includes(origin)) {
-      res.json('header yippee ', origin);
-      console.log('yippee ', origin);
-      res.setHeader('Access-Control-Allow-Origin', origin);
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-      res.setHeader('Access-Control-Allow-Credentials', 'true');
-    }
-    console.log('header2 ', origin);
-    console.log('host ', req.headers.host);
-    console.log('ref ', req.headers.referer);
     if (req.method === 'OPTIONS') {
       res.status(200).end();
       await redis.quit();
@@ -76,10 +76,10 @@ export default async function handler(req, res) {
     } else {
       res.status(405).json({ error: 'Method Not Allowed' });
     }
-    /*
+
   } finally {
     await redis.quit();
 
   }
-        */
+
 }
