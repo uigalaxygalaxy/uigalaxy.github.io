@@ -209,7 +209,7 @@
                 const data = await response.json();
     
                 if (data && typeof data.click === 'number') {
-                    numbersText.innerText = `TOTAL CLICKS: ${data.click}`;
+                    numbersText.innerText = `SIGNATURE #${data.click}`;
                 } else {
                     throw new Error("Invalid data format: 'click' value not found");
                 }
