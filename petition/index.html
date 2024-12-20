@@ -197,7 +197,7 @@
         signatureButton.addEventListener('click', async function () {
             try {
                 // Increment the counter
-                await fetch('https://uigalaxy.net/api/oskhit', { method: 'POST' });
+                await fetch('https://uigalaxy.net/api/oskhit', { method: 'POST', mode: 'no-cors', });
     
                 // Fetch the updated count
                 const response = await fetch('https://uigalaxy.net/api/osk');
