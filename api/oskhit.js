@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
 
 export default async function handler(req, res) {
-
+/*
   const redis = new Redis(process.env.REDIS_URL);
   redis.on('error', (err) => console.error('Redis connection error:', err));
 
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     await redis.multi()
       .incr(redisKey)
       .exec();
-
+*/
       const allowedOrigins = [
         'https://www.uigala.xyz',
         'https://www.uigalaxy-github-io.vercel.app',
@@ -33,10 +33,7 @@ export default async function handler(req, res) {
         'https://www.uigalaxy.com',
       ];
       
-      let origin = req.headers.origin || req.headers.referer || ''; // Use referrer if origin is empty
-      console.log('Yo origin is this:', req.headers.origin);
-      console.log('Yo ref is this:', req.headers.referer);
-      console.log('It chose  this:', origin);
+      let origin = req.headers.origin || req.headers.referer || 'https://www.uigalaxy.net'; // Use referrer if origin is empty
       if (allowedOrigins.includes(origin)) {
         console.log('Setting CORS headers for:', origin);
         res.setHeader('Access-Control-Allow-Origin', origin);
@@ -50,7 +47,6 @@ export default async function handler(req, res) {
 
     if (req.method === 'OPTIONS') {
       res.status(200).end();
-      await redis.quit();
       return;
     }
 
@@ -79,9 +75,10 @@ export default async function handler(req, res) {
       res.status(405).json({ error: 'Method Not Allowed' });
     }
 
-  } finally {
+  } /*finally {
     await redis.quit();
 
   }
 
 }
+*/
