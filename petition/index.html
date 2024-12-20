@@ -237,6 +237,7 @@
     
                 if (data && typeof data.click === 'number') {
                     numbersText.innerText = `SIGNATURE #${data.click}`;
+                    document.getElementById('signaturesNumber').innerText = `${data.click} Signatures`;
                 } else {
                     throw new Error("Invalid data format: 'click' value not found");
                 }
