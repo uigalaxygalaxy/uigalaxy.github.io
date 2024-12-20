@@ -37,6 +37,7 @@ export default async function handler(req, res) {
 
     if (allowedOrigins.includes(origin)) {
       res.json('header yippee ', origin);
+      console.log('yippee ', origin);
       res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
@@ -45,10 +46,6 @@ export default async function handler(req, res) {
     console.log('header2 ', origin);
     console.log('host ', req.headers.host);
     console.log('ref ', req.headers.referer);
-    res.json('header2 ', origin);
-    res.json('host ', req.headers.host);
-    res.json('ref ', req.headers.referer);
-
     if (req.method === 'OPTIONS') {
       res.status(200).end();
       await redis.quit();
