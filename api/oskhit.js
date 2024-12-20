@@ -36,16 +36,16 @@ export default async function handler(req, res) {
     const origin = req.headers.origin;
 
     if (allowedOrigins.includes(origin)) {
-      res.json('header ', origin);
+      res.json('header yippee ', origin);
       res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
       res.setHeader('Access-Control-Allow-Credentials', 'true');
     }
-    res.json('header2 ', origin);
     console.log('header2 ', origin);
     console.log('host ', req.headers.host);
     console.log('ref ', req.headers.referer);
+    res.json('header2 ', origin);
     res.json('host ', req.headers.host);
     res.json('ref ', req.headers.referer);
 
