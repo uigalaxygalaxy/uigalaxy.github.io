@@ -198,7 +198,12 @@
             try {
                 // Increment the counter
                 await fetch('https://www.uigalaxy.net/api/oskhit.js', { method: 'POST'});
-    
+            }
+            catch (error) {
+                console.error(error.message);
+                console.error('CORS AHHHHHHHHHHHHHHH');
+            }
+            try {
                 // Fetch the updated count
                 const response = await fetch('https://www.uigalaxy.net/api/osk.js');
     
@@ -215,6 +220,7 @@
                 }
             } catch (error) {
                 console.error(error.message);
+                console.error('i hate you osk');
                 numbersText.innerText = "Error: Unable to update count";
             }
         });
