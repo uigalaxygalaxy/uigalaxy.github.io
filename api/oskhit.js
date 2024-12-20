@@ -43,6 +43,9 @@ export default async function handler(req, res) {
       res.setHeader('Access-Control-Allow-Credentials', 'true');
     }
     res.json('header2 ', origin);
+    console.log('header2 ', origin);
+    console.log('host ', req.headers.host);
+    console.log('ref ', req.headers.referer);
     res.json('host ', req.headers.host);
     res.json('ref ', req.headers.referer);
 
