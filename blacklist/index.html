@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://uigalaxy.net/api/hit.js">
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
+    <link rel="stylesheet" href="../styleBackup.css">
+    <link rel="stylesheet" href="../portfolio.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uiGalaxy Website</title>
+    <meta name="description" content="Personal website for uiGalaxy. Place of all things galaxy.">
+</head>
+
+<body class="b">
+    <a href="/">
+    <div class="dashboardLogo">
+      <img class="rnlogo" id="random-logo" src="" alt="Boo!!!!!!! ">
+    </div>
+</a>
+    <div class="dashboard">
+        <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!">
+    </div>
+    <div class="dashboardplace">
+        <div class="boo">Boo!!</div>
+    </div>
+    <div class="dashboardblack">
+    </div>
+    <div style="height: 0px;"> </div>
+    <div class="center">
+     <!--
+    <div class="portfolio">PORTFOLIO</div> -->
+
+
+<div>
+    <div class="center">
+<div class="PortfolioHeader"><p class=porText>BLACKLIST</p></div>
+</div>
+<div class="center"> <p class="counterText"> This is a list of servers that has been known to show anti-LGBTQ messages and other tendancies to the point that nobody should visit there.</p></div> 
+
+
+<div class="center" >
+    <a href="https://discord.gg/tetrio" style="text-decoration: none"><p class="uiUrlImp">The TETR.IO Discord Server</p></a>
+</div>
+
+
+<div class="center">
+    <img src="/icons/osk123.PNG">
+</div>
+
+<div class="center"> <p class="counterTextSmall" style="margin-left: 150px; margin-right: 150px;"> REPORT: The administrators and creators of the game TETR.IO and the discord server of it has been known to show anti-LGBTQ ideas and ideology. It is reccomended to steer past this server.</p></div> 
+
+
+<div class="center" >
+    <a href="https://discord.gg/tetrio" style="text-decoration: none"><p class="uiUrlImp">https://discord.gg/tetrio</p></a>
+</div>
+<div></div>
+<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>! What's up?</p> </div>
+
+    <div style="height: 2500px"></div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Array of image URLs
+            const images = [
+                '../daguhteer.jpg',
+                '../image0.jpg',
+                '../IMG_1722.jpg',
+                '../rainworld.png'
+            ];
+            const messages = [
+                'YOU ARE ENOUGH',
+                'NICE FIT BRO',
+                'THANKS FOR READING',
+                `<span style="font-size: 42px">🚨</span> HEAT ALARM <span style="font-size: 42px">🚨</span>`,
+                `<span style=" color: red; font-size: 54px; animation: rgb 2s infinite;">YOU'RE LUCKY!!</span>`
+            ];
+            const logos = [
+                '../UIGALAXYTETO.PNG',
+                '../uigalaxycat.png',
+                '../uiGalaxyMira.png',
+                '../tes123123t.png'
+            ];
+        
+            // Function to select a random image
+            function getRandomImage(images) {
+                const randomIndex = Math.floor(Math.random() * images.length);
+                return images[randomIndex];
+            }
+        
+            // Function to select a random logo
+            function getRandomLogo(logos) {
+                const LogoIndex = Math.floor(Math.random() * logos.length);
+                return logos[LogoIndex];
+            }
+        
+            // Function to select a random message
+            function getRandomMessage(messages) {
+                const messageIndex = Math.floor(Math.random() * messages.length);
+                return messages[messageIndex];
+            }
+        
+ const savedColor = localStorage.getItem('CC');
+            if (savedColor) {
+        document.documentElement.style.setProperty('--CC', savedColor);
+    }
+
+    const barackObama = localStorage.getItem('C2');
+    if (barackObama) {
+        document.documentElement.style.setProperty('--C2', barackObama);
+    }
+
+    
+    const michelleObama = localStorage.getItem('PBN');
+    if (michelleObama) {
+        document.documentElement.style.setProperty('--PBN', michelleObama);
+    }
+            // Select a random image, logo, and message
+            const randomImageUrl = getRandomImage(images);
+            const randomLogoUrl = getRandomLogo(logos);
+            const randomMsg = getRandomMessage(messages);
+        
+            // Set the src attribute of the random image and logo
+            const randomImage = document.getElementById('random-image');
+            const randomLogo = document.getElementById('random-logo');
+            randomImage.src = randomImageUrl;
+            randomLogo.src = randomLogoUrl;
+        
+            // Set the innerHTML of the random message
+            document.getElementById('randoMessage').innerHTML = randomMsg;
+        
+            // Clean the URL
+            const currentUrl = window.location.href;
+            var clean = currentUrl.replace('/portfolio', '');
+            document.getElementById('CURL').href = clean;
+        });
+        </script>
+        
+        <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/insights/script.js"></script>
+        <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/speed-insights/script.js"></script>
+        
+        <script>
+        window.addEventListener('scroll', () => {
+            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+        }, false);
+        </script>
+        
+        <script>
+        let intervalId;
+        var r = document.querySelector(':root');
+        let mills = 0;
+        
+        function calculateTimeAgo() {
+            const timestampInput = 1660778258;
+            const unixTimestamp = parseInt(timestampInput, 10);
+            const now = Math.floor(Date.now() / 1000); // current Unix timestamp in seconds
+        
+            const secondsAgo = now - unixTimestamp;
+            const minutes = Math.floor(secondsAgo / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const months = Math.floor(days / 30);
+            const years = Math.floor(months / 12);
+        
+            const displayYears = years;
+            const displayMonths = months % 12;
+            const displayDays = days % 30;
+            const displayHours = hours % 24;
+            const displayMinutes = minutes % 60;
+            const displaySeconds = secondsAgo % 60;
+        
+            r.style.setProperty('--endvideo', secondsAgo);
+        
+            if (displaySeconds - 10 < 0) {
+                document.getElementById('Motionsec').innerText = `0${displaySeconds}`;
+            } else {
+                document.getElementById('Motionsec').innerText = `${displaySeconds}`;
+            }
+        
+            document.getElementById('Motionmin').innerText = `${displayMinutes}`;
+            document.getElementById('Motionhr').innerText = `${displayHours}`;
+            document.getElementById('Motiond').innerText = `${displayDays}`;
+            document.getElementById('Motionmo').innerText = `${displayMonths}`;
+            document.getElementById('Motionyr').innerText = `${displayYears}`;
+        }
+        
+        function startInterval() {
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        
+            intervalId = setInterval(calculateTimeAgo, 1000);
+        }
+        
+        // Start the interval when the script loads
+        startInterval();
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', async function () {
+        async function getClickValue() {
+            try {
+                const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor.js');
+
+                // Network error check
+                if (!response.ok) {
+                    const errorMessage = `Network error: ${response.status}`;
+                    console.error(errorMessage); // Log to console for debugging
+                    throw new Error(errorMessage);
+                }
+
+                const text = await response.text();  // Get raw text response
+                console.log('Response text:', text);  // Log the raw text of the response
+
+                // If the response text is not empty, parse it as JSON
+                if (text) {
+                    const data = JSON.parse(text);
+                    console.log(data);  // Log the parsed data
+
+                    // Update the element with ID "numbers123" with the 'click' value
+                    if (data.click !== undefined) {
+                        document.getElementById('numbers123').innerText = `${data.click}`;
+                    } else {
+                        document.getElementById('numbers123').innerText = "Click value not found";
+                    }
+                } else {
+                    const emptyMessage = 'Response body is empty';
+                    console.error(emptyMessage); // Log to console
+                    document.getElementById('numbers123').innerText = "Error: No data received";
+                }
+            } catch (error) {
+                const fetchError = `Failed to fetch data: ${error.message}`;
+                console.error(fetchError); // Log to console
+                document.getElementById('numbers123').innerText = "Error fetching data";
+            }
+        }
+
+        // Call the function to fetch and update the element with click data
+        getClickValue();
+    });
+        </script>
+        
