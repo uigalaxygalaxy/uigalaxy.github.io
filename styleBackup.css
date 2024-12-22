@@ -75,6 +75,12 @@ html {
     color: rgb(193, 124, 242);
     text-shadow: 0 0 16px rgb(193, 124, 242);
 }
+.uiUrlImp {
+    text-decoration: none;
+    color: rgb(193, 124, 242);
+    text-shadow: 0 0 16px rgb(193, 124, 242);
+    font-size: 1.4rem; 
+}
 .time {
     font-size: 1.1rem;
     font-weight: bold;
@@ -279,6 +285,14 @@ body {
     color: rgb(var(--CC));
     text-shadow: 0 0 21px rgba(var(--CC), 0.94);
     font-size: 24px;
+    font-weight: bold;
+    font-family: 'Carbon Bold';
+    border: none;
+  }
+  .counterTextSmall {
+    color: rgb(var(--CC));
+    text-shadow: 0 0 21px rgba(var(--CC), 0.94);
+    font-size: 18px;
     font-weight: bold;
     font-family: 'Carbon Bold';
     border: none;
