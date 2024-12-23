@@ -99,9 +99,12 @@ body {
 }
 .dashboard {
     z-index: 2;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to top, rgb(var(--CC)), rgb(var(--C2)));
 }
 .dashboard, .dashboardblack, .dashboardLogo{
-    animation: dbfadeout 0.25s forwards;
+    animation: dbph 0.25s forwards;
     position: fixed;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
@@ -112,6 +115,7 @@ body {
     min-height: 75px;
     opacity: 1;
     left: 0px;
+    pointer-events: none;
     box-shadow: 0 8px 64px rgba(9, 9, 15, 0.84); 
 }
 .polls {
@@ -152,6 +156,7 @@ body {
     z-index: 4;
     margin: 0;
     padding: 0;
+
 }
 .dashboardblack {
     animation: dbph 0.25s forwards;
@@ -194,6 +199,19 @@ body {
     to {
         height: 6vh;
         min-height: 35px;
+    }
+}
+@keyframes blur {
+    from {
+        filter: blur(0.69px);
+        filter: contrast(1);
+        filter:invert(0);
+    }
+    to {
+    filter: blur(5px);
+    filter: contrast(.5);
+    filter:invert(100);
+
     }
 }
 @keyframes ui {
@@ -351,6 +369,12 @@ body {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    mix-blend-mode: screen;
+    animation: blur 0.25s forwards;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+    animation-timing-function: cubic-bezier(.05,.67,.37,.91);
+
 }
 
 .ButtonDb {
@@ -377,8 +401,12 @@ body {
     animation-timing-function: cubic-bezier(.05,.67,.37,.91);
     margin: 0;
     padding: 0;
+    z-index: 10000;
     border: none;
     position: absolute;
+    mix-blend-mode: multiply;
+    filter: none;
+
 }
 .wegetit {
     overflow: hidden;
