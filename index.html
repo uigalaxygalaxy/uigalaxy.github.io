@@ -19,10 +19,12 @@
 
 <body class="b">
     <div class="dashboardLogo">
-        <img class="rnlogo" id="random-logo" src="" alt="Boo!!!!!!! ">
     </div>
     <div class="dashboard">
-        <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!">
+        <img class="rnlogo"  src="" id="random-logo" src="" alt="Boo!!!!!!! ">
+        <!-- <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!"> !-->
+         <video class="rnimg" src="/icons/uiBG.mp4" autoplay loop muted >B</video>
+
     </div>
    <!-- <div> <a class="polls" href="https://x.com/ElbyNine/status/1852415639824298376" target="_blank" rel="noopener noreferrer"> TETR.GO TO THE POLLS! </a> </div>
     !-->
@@ -126,7 +128,7 @@
                 </div>
                 <div class="PRead">
                     <p class=PreadTxt>Graphic Artist for around 3 years with the obscure platform of paint.net. After
-                        Effects Motion/Editing Artist for around 2 years. Learned HTML/CSS 1 month ago. Take a look at
+                        Effects Motion/Editing Artist for around 2 years. Learned HTML/CSS 6 months ago. Take a look at
                         my portfolio by clicking the ✨Shiny✨ button below! </p>
                     <a href="./portfolio" target="_blank" rel="noopener noreferrer" class="nodeco"><button
                             class="portfoliobutton">PORTFOLIO OF SHAME</button></a>
@@ -253,7 +255,7 @@
 
 
     </div>
-<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">11</span>! What's up?</p> </div>
+<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>! What's up?</p> </div>
 <p class="NumberText" >My Code Doesn't Work </p>
 <p class="NumberText" >Error Log </p>
 
@@ -614,12 +616,7 @@ for (i = 0; i < coll.length; i++) {
         document.addEventListener("DOMContentLoaded", function () {
             // Array of image URLs
             
-            const images = [
-                'daguhteer.jpg',
-                'image0.jpg',
-                'IMG_1722.jpg',
-                'rainworld.png'
-            ];
+
             const logos = [
                 'UIGALAXYTETO.PNG',
                 'uigalaxycat.png',
@@ -627,11 +624,6 @@ for (i = 0; i < coll.length; i++) {
                 'tes123123t.png'
             ];
 
-            // Function to select a random image
-            function getRandomImage(images) {
-                const randomIndex = Math.floor(Math.random() * images.length);
-                return images[randomIndex];
-            }
 
             // logo
             function getRandomLogo(logos) {
@@ -640,12 +632,9 @@ for (i = 0; i < coll.length; i++) {
             }
 
             // Select a random image
-            const randomImageUrl = getRandomImage(images);
             const randomLogoUrl = getRandomLogo(logos);
             // Set the src attribute of the random image in the content to the same random image
-            const randomImage = document.getElementById('random-image');
             const randomLogo = document.getElementById('random-logo');
-            randomImage.src = randomImageUrl;
             randomLogo.src = randomLogoUrl;
 
             const savedColor = localStorage.getItem('CC');
