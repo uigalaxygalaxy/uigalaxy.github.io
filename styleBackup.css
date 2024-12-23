@@ -404,7 +404,7 @@ body {
     z-index: 10000;
     border: none;
     position: absolute;
-    mix-blend-mode: multiply;
+    mix-blend-mode: normal;
     filter: none;
 
 }
