@@ -19,13 +19,16 @@
 
 <body class="b">
     <a href="/">
-    <div class="dashboardLogo">
-      <img class="rnlogo" id="random-logo" src="" alt="Boo!!!!!!! ">
-    </div>
-</a>
-    <div class="dashboard">
-        <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!">
-    </div>
+
+        <div class="dashboardLogo">
+        </div>
+        <div class="dashboard">
+            <img class="rnlogo"  src="" id="random-logo" src="" alt="Boo!!!!!!! ">
+            <!-- <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!"> !-->
+             <video class="rnimg" src="/icons/uiBG.mp4" autoplay loop muted >B</video>
+    
+        </div>
+    </a>
     <div class="dashboardplace">
         <div class="boo">Boo!!</div>
     </div>
@@ -254,12 +257,7 @@ class="motionContentWrapper">
                 '../tes123123t.png'
             ];
         
-            // Function to select a random image
-            function getRandomImage(images) {
-                const randomIndex = Math.floor(Math.random() * images.length);
-                return images[randomIndex];
-            }
-        
+
             // Function to select a random logo
             function getRandomLogo(logos) {
                 const LogoIndex = Math.floor(Math.random() * logos.length);
@@ -288,14 +286,11 @@ class="motionContentWrapper">
         document.documentElement.style.setProperty('--PBN', michelleObama);
     }
             // Select a random image, logo, and message
-            const randomImageUrl = getRandomImage(images);
             const randomLogoUrl = getRandomLogo(logos);
             const randomMsg = getRandomMessage(messages);
         
             // Set the src attribute of the random image and logo
-            const randomImage = document.getElementById('random-image');
             const randomLogo = document.getElementById('random-logo');
-            randomImage.src = randomImageUrl;
             randomLogo.src = randomLogoUrl;
         
             // Set the innerHTML of the random message
