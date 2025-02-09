@@ -368,47 +368,46 @@ class="motionContentWrapper">
         // Start the interval when the script loads
         startInterval();
         </script>
-        <script>
-          document.addEventListener('DOMContentLoaded', async function () {
+ <script>
+    document.addEventListener('DOMContentLoaded', async function () {
         async function getClickValue() {
             try {
-                const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor.js');
+                const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor');
 
-                // Network error check
                 if (!response.ok) {
                     const errorMessage = `Network error: ${response.status}`;
-                    console.error(errorMessage); // Log to console for debugging
-                    throw new Error(errorMessage);
+                    console.error(errorMessage);
+                    document.getElementById('errorLog').innerText = errorMessage; 
+                    return;
                 }
 
-                const text = await response.text();  // Get raw text response
-                console.log('Response text:', text);  // Log the raw text of the response
+                const text = await response.text();
+                document.getElementById('responseLog').innerText = `Response text: ${text}`; 
 
-                // If the response text is not empty, parse it as JSON
-                if (text) {
-                    const data = JSON.parse(text);
-                    console.log(data);  // Log the parsed data
+                let data;
+                try {
+                    data = JSON.parse(text);
+                    document.getElementById('parsedLog').innerText = `Parsed Data: ${JSON.stringify(data)}`;
+                } catch (jsonError) {
+                    console.error("Error parsing JSON:", jsonError);
+                    document.getElementById('errorLog').innerText = "Invalid JSON response";
+                    return;
+                }
 
-                    // Update the element with ID "numbers123" with the 'click' value
-                    if (data.click !== undefined) {
-                        document.getElementById('numbers123').innerText = `${data.click}`;
-                    } else {
-                        document.getElementById('numbers123').innerText = "Click value not found";
-                    }
+                if (data.visitorCount !== undefined) {
+                    document.getElementById('numbers123').innerText = `${data.visitorCount}`;
                 } else {
-                    const emptyMessage = 'Response body is empty';
-                    console.error(emptyMessage); // Log to console
-                    document.getElementById('numbers123').innerText = "Error: No data received";
+                    document.getElementById('numbers123').innerText = "Click value not found";
                 }
             } catch (error) {
-                const fetchError = `Failed to fetch data: ${error.message}`;
-                console.error(fetchError); // Log to console
-                document.getElementById('numbers123').innerText = "Error fetching data";
+                console.error("Fetch error:", error);
+                document.getElementById('errorLog').innerText = "Failed to load data";
             }
         }
 
         // Call the function to fetch and update the element with click data
-        getClickValue();
+        await getClickValue();
     });
-        </script>
+</script>
+
         
