@@ -1,49 +1,47 @@
 import Redis from 'ioredis';
 
+
 export default async function handler(req, res) {
-  // Handle CORS inside the function
-  const allowedOrigins = [
-    'https://www.uigala.xyz',
-    'https://www.uigalaxy.net',
-    'https://www.uigalaxy.com',
-  ];
 
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  // Initialize Redis connection
+  const redis = new Redis(process.env.REDIS_URL);  // Connect to your Redis instance
+  redis.on('connect', () => console.log('Redis connected successfully.'));
+  redis.on('error', (err) => console.log('Redis connection error:', err));
+
+  const RATE_LIMIT = 1; // Max number of requests per IP per hour
+  const TIME_FRAME = 60 * 60;  // 1 hour in seconds
+  const MAX_LIMIT = 25;
+  
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress; // Get the IP address of the client
+  
+  const redisKey = `rate_limit:${ip}`;  // Redis key for the IP's request count
+  const redisTally = `total:${ip}`; //Keep tally of all IP's total connection count
+  
+
+
+  // Check the current request count for the IP in Redis
+  const [currentCount, TotalTally] = await Promise.all([
+    redis.get(redisKey),
+    redis.get(redisTally),
+  ]);
+  // If the IP has exceeded the rate limit
+  if (currentCount && parseInt(currentCount) >= RATE_LIMIT) {
+    res.status(429).json({ error: 'Rate limit exceeded.' });
+    return;
   }
 
-  // Handle preflight OPTIONS request
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+  if (redisTally && parseInt(TotalTally) >= MAX_LIMIT) {
+    res.status(429).json({ error: 'Your IP has sent too many requests.'})
+    return;
   }
 
-  // Ensure API key is available
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    return res.status(500).json({ error: "API key not configured" });
-  }
+  // Increment the request count and set expiration time for 1 hour
+  await redis.multi()
+    .incr(redisKey)  // Increment the request count
+    .incr(visitorCount)
+    .incr(redisTally) // Tallies IP connection
+    .expire(redisKey, TIME_FRAME)  // Set expiration time to 1 hour
+    .exec();
 
-  // Only handle GET requests
-  if (req.method !== "GET") {
-    return res.status(405).json({ error: "Method Not Allowed" });
-  }
 
-  try {
-    // Initialize Redis connection
-    const redis = new Redis(process.env.REDIS_URL);
-
-    // Retrieve visitor count from Redis
-    const visitorCount = await redis.get("visitorCount");
-
-    // Ensure visitorCount is a number (default to 0 if not set)
-    const count = visitorCount ? parseInt(visitorCount, 10) : 0;
-
-    res.status(200).json({ visitorCount: count });
-  } catch (error) {
-    console.error("Redis Error:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
 }
