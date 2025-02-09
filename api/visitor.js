@@ -1,45 +1,49 @@
-// api/visitor.js
-  export default async function handler(req, res) {
-    const allowedOrigins = [
-        'https://www.uigala.xyz',
-        'https://www.uigalaxy.net',
-        'https://www.uigalaxy.com',
-      ];
-    
-      const origin = req.headers.origin;
-      if (allowedOrigins.includes(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);  // Dynamically set the origin
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-      }
-    
-      if (req.method === 'OPTIONS') {
-        res.status(200).end();  // Handle preflight OPTIONS request
-        return;
-      }
+import Redis from 'ioredis';
 
-    if (req.method === "GET") {
-        const apiKey = process.env.API_KEY; // Securely access the key
+export default async function handler(req, res) {
+  // Handle CORS inside the function
+  const allowedOrigins = [
+    'https://www.uigala.xyz',
+    'https://www.uigalaxy.net',
+    'https://www.uigalaxy.com',
+  ];
 
-        if (!apiKey) {
-            return res.status(500).json({ error: "API key not configured" });
-        }
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  }
 
-        const url = `https://count.cab/get/vvkUhWyiT3/${apiKey}`;
+  // Handle preflight OPTIONS request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error("Failed to fetch data from the API");
-            }
+  // Ensure API key is available
+  const apiKey = process.env.API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: "API key not configured" });
+  }
 
-            const data = await response.json();
-            res.status(200).json(data); // Return the API response to the frontend
-        } catch (error) {
-            res.status(500).json({ error: "Failed to fetch visitor count" });
-        }
-    } else {
-        res.status(405).json({ error: "Method Not Allowed" }); // Handle non-GET requests
-    }
+  // Only handle GET requests
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  try {
+    // Initialize Redis connection
+    const redis = new Redis(process.env.REDIS_URL);
+
+    // Retrieve visitor count from Redis
+    const visitorCount = await redis.get("visitorCount");
+
+    // Ensure visitorCount is a number (default to 0 if not set)
+    const count = visitorCount ? parseInt(visitorCount, 10) : 0;
+
+    res.status(200).json({ visitorCount: count });
+  } catch (error) {
+    console.error("Redis Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
-
