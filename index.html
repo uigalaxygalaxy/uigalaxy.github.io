@@ -689,31 +689,42 @@ for (i = 0; i < coll.length; i++) {
  <script>
     document.addEventListener('DOMContentLoaded', async function () {
         async function getClickValue() {
+            try {
                 const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor');
 
-                // Network error check
                 if (!response.ok) {
                     const errorMessage = `Network error: ${response.status}`;
-                    console.error(errorMessage); // Log to console for debugging
-                    document.getElementById('errorLog').innerText = errorMessage; // Show error on the page
-                    throw new Error(errorMessage);
+                    console.error(errorMessage);
+                    document.getElementById('errorLog').innerText = errorMessage; 
+                    return;
                 }
-                const text = await response.text();
-                document.getElementById('responseLog').innerText = `Response text: ${text}`; // Show response on the page
 
-                if (text) {
-                    const data = JSON.parse(text);
-                    document.getElementById('parsedLog').innerText = `Parsed Data: ${JSON.stringify(data)}`; // Show parsed data on the page
+                const text = await response.text();
+                document.getElementById('responseLog').innerText = `Response text: ${text}`; 
+
+                let data;
+                try {
+                    data = JSON.parse(text);
+                    document.getElementById('parsedLog').innerText = `Parsed Data: ${JSON.stringify(data)}`;
+                } catch (jsonError) {
+                    console.error("Error parsing JSON:", jsonError);
+                    document.getElementById('errorLog').innerText = "Invalid JSON response";
+                    return;
                 }
-                if (data.value !== undefined) {
-                        document.getElementById('numbers123').innerText = `${data.visitorCount}`;
-                    } else {
-                        document.getElementById('numbers123').innerText = "Click value not found";
-                    }
-   
+
+                if (data.visitorCount !== undefined) {
+                    document.getElementById('numbers123').innerText = `${data.visitorCount}`;
+                } else {
+                    document.getElementById('numbers123').innerText = "Click value not found";
+                }
+            } catch (error) {
+                console.error("Fetch error:", error);
+                document.getElementById('errorLog').innerText = "Failed to load data";
+            }
         }
+
         // Call the function to fetch and update the element with click data
-        getClickValue();
+        await getClickValue();
     });
 </script>
 
