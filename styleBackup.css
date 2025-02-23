@@ -351,6 +351,11 @@ body {
     text-shadow: 0 0 6px rgba(var(--CC), 1);
 
   }
+  .appear:hover .tooltip, .appear:hover .tooltiptext, .appear:hover .tooltip2, .appear:hover .tooltiptext2 {
+    visibility: hidden;
+    opacity: 0;
+
+  }
   .visitorWrapper  {
     display: flex;
     width: 100%;
@@ -811,6 +816,7 @@ grid-gap: 12px;
     margin: 0 auto;
     text-shadow: 0 0 8px rgba(var(--CC), 0.5);
     font-family: "B612";
+    pointer-events: none;
 }
 
 .AreadTxt {
