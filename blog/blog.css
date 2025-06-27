@@ -113,9 +113,6 @@ background: rgb(var(--CC));
 transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 
 }
-.blogHeader:hover {
-
-}
 .blogText {
     font-size: min(2.4em, 0.8em + 3cqi);
     vertical-align: center;

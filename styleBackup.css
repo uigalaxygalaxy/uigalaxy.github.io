@@ -50,7 +50,7 @@ a {
     text-decoration: none;
     color: white;
 }
-}
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -71,9 +71,7 @@ html {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-.AlertWrapper, .ARead, .AreadTxt {
 
-}
 
 .uiURL {
     text-decoration: none;
