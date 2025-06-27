@@ -1,0 +1,135 @@
+@keyframes dbph {
+    from {
+        height: 6vh;
+        min-height: 35px;
+    }
+    to {
+        height: 6vh;
+        min-height: 35px;
+    }
+}
+@keyframes ui {
+    from {
+        margin-left: calc(-25vw + 100px);
+        margin-right: 100vw;
+        height: 10vh;
+    }
+    to {
+        margin-left: calc(-25vw + 100px);
+        margin-right: 100vw;
+        height: 10vh;
+    }
+}
+.dashboard, .dashboardblack, .dashboardLogo, .dashboardplace{
+height: 6vh;
+min-height: 35px;
+    box-shadow: 0 8px 64px rgba(9, 9, 15, 0); 
+
+}
+
+.tetraTitle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    font-size: 128px;
+    text-align: right;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, rgb(var(--CC)), rgb(var(--C2)));
+}
+.tetraOnline {
+    margin-top: 22px;
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+        font-family: B612;
+    font-weight: bold;
+}
+.tetraStatus {
+    font-weight: bold;
+    margin-top: -34px;
+    font-size: 66px;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 0 0 16px rgb(var(--CC));
+    animation: breathingGlow 4s forwards;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes breathingGlow {
+    from {
+    text-shadow: 0 0 16px rgb(var(--CC));
+    }
+    50% {
+    text-shadow: 0 0 40px rgb(var(--CC));
+    }
+    to {
+    text-shadow: 0 0 16px rgb(var(--CC));
+    }
+}
+.tetraLeagueTitleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.tlimg {
+    height: 100px;
+}
+.categoryTitle {
+    color: rgb(var(--CC));
+    font-size: 42px;
+}
+.bigStatNumber {
+    display: div;
+    height: 40px;
+    align-items: center;
+    color: rgb(var(--CC));
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+}
+.decimal {
+    font-family: B612;
+    color: color-mix(in hsl, rgb(var(--CC)), black 30%);
+}
+.glicko {
+    margin-top: 200px;
+    color: white;
+}
+.funshape {
+    position: absolute;
+    width: calc(30% - 5px);
+    height: 300px;
+background-color: rgb(var(--CC));
+margin-top: -60px;
+color: white;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+    clip-path: polygon(5.5% 25%, 49.54% 30.58%, 94.49% 25.9%, 81.81% 34.67%, 49.54% 41.75%, 17.45% 33.93%);
+
+
+}
+.tr {
+    color: black;
+    position: absolute;
+    z-index: 100;
+    margin-bottom: 85px;
+    font-size: 26px;
+}
+
+.tetraLeagueWrapper {
+    height: 70vh;
+    width: 30%;
+    border-width: 4px;
+    border-color: rgb(var(--CC));
+    border-style: solid;
+}
+
+.tetraLayout {
+    display: flex;
+}
+

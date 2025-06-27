@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://uigalaxy.net/api/hit.js">
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
+    <link rel="stylesheet" href="../styleBackup.css">
+    <link rel="stylesheet" href="../portfolio.css">
+    <link rel="stylesheet" href="bloomburg.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uiGalaxy Website</title>
+    <meta name="description" content="Personal website for uiGalaxy. Place of all things galaxy.">
+</head>
+
+<body class="b">
+    <a href="/">
+
+        <div class="dashboardLogo">
+        </div>
+        <div class="dashboard">
+            <img class="rnlogo" src="" id="random-logo" src="" alt="Boo!!!!!!! ">
+            <!-- <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!"> !-->
+            <video class="rnimg" src="/icons/uiBG.mp4" autoplay loop muted>B</video>
+
+        </div>
+    </a>
+    <div class="dashboardplace">
+        <div class="boo">Boo!!</div>
+    </div>
+    <div class="dashboardblack">
+    </div>
+    <div style="height: 0px;"> </div>
+
+    <div class="tetraTitle">
+        TETRA STATS
+        <div class="tetraOnlineWrapper">
+            <p class="tetraOnline">TETR.IO is currently</p>
+            <p class="tetraStatus">ONLINE</p>
+        </div>
+    </div>
+
+    <div class="tetraLayout">
+    <div class="tetraLeagueWrapper">
+
+        <div class="tetraLeagueTitleWrapper">
+            <img class="tlimg" src="../tes123123t.png">
+            <div class="categoryTitle">
+                TETRA LEAGUE
+            </div>
+
+        </div>
+        
+    <div class="bigStatNumber">
+        24081<span class="decimal">.83</span>
+    </div>
+    <div class="funshape">
+            <div class="tr"> TR
+    </div>
+    </div>
+
+    <div class="glicko">
+        3422<span class="decimal">.55</span>
+    </div>
+    </div>
+
+
+    </div>
+
+    <div class="visitorWrapper">
+        <p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>!
+            What's up?</p>
+    </div>
+
+    <div style="height: 2500px"></div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Array of image URLs
+            const images = [
+                '../daguhteer.jpg',
+                '../image0.jpg',
+                '../IMG_1722.jpg',
+                '../rainworld.png'
+            ];
+            const logos = [
+                '../UIGALAXYTETO.PNG',
+                '../uigalaxycat.png',
+                '../uiGalaxyMira.png',
+                '../tes123123t.png'
+            ];
+
+
+            // Function to select a random logo
+            function getRandomLogo(logos) {
+                const LogoIndex = Math.floor(Math.random() * logos.length);
+                return logos[LogoIndex];
+            }
+
+
+
+            const savedColor = localStorage.getItem('CC');
+            if (savedColor) {
+                document.documentElement.style.setProperty('--CC', savedColor);
+            }
+
+            const barackObama = localStorage.getItem('C2');
+            if (barackObama) {
+                document.documentElement.style.setProperty('--C2', barackObama);
+            }
+
+
+            const michelleObama = localStorage.getItem('PBN');
+            if (michelleObama) {
+                document.documentElement.style.setProperty('--PBN', michelleObama);
+            }
+            // Select a random image, logo, and message
+            const randomLogoUrl = getRandomLogo(logos);
+
+            // Set the src attribute of the random image and logo
+            const randomLogo = document.getElementById('random-logo');
+            randomLogo.src = randomLogoUrl;
+
+            // Set the innerHTML of the random message
+            document.getElementById('randoMessage').innerHTML = randomMsg;
+
+            // Clean the URL
+            const currentUrl = window.location.href;
+            var clean = currentUrl.replace('/portfolio', '');
+            document.getElementById('CURL').href = clean;
+        });
+    </script>
+
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="../_vercel/insights/script.js"></script>
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="../_vercel/speed-insights/script.js"></script>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+        }, false);
+    </script>

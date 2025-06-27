@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cart Button -->
+    <button id="cartButton">Cart (0)</button>
+
+    <!-- Cart Panel -->
+    <div id="cartPanel" class="cart-panel">
+        <h2>Your Cart</h2>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <p id="emptyCartMessage">Your cart is empty.</p>
+        </div>
+        <p>Subtotal: $<span id="subtotal">0.00</span></p>
+        <button id="closeCart">Close</button>
+    </div>
+
+    <!-- Product List -->
+    <div class="products">
+        <div class="product">
+            <h3>Product 1</h3>
+            <p>$10.00</p>
+            <div class="quantity-controls">
+                <button class="decrease">-</button>
+                <input type="number" class="quantity" value="1" min="1">
+                <button class="increase">+</button>
+            </div>
+            <button class="addToCart" data-name="Product 1" data-price="10.00">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h3>Product 2</h3>
+            <p>$20.00</p>
+            <div class="quantity-controls">
+                <button class="decrease">-</button>
+                <input type="number" class="quantity" value="1" min="1">
+                <button class="increase">+</button>
+            </div>
+            <button class="addToCart" data-name="Product 2" data-price="20.00">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
