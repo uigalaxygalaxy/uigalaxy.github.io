@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Button</title>
+    <style>
+        .custom-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            aspect-ratio: 3 / 1;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        .custom-button .image {
+            flex: 0 0 30%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .custom-button .text-area {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .custom-button .text-area .top-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .custom-button .text-area .bottom-shape {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-button .text-area .bottom-shape .parallelogram {
+            flex: 0 0 50%;
+            height: 30px;
+            background-color: #007BFF;
+            transform: skew(0deg);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            font-size: 0.9em;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        .custom-button .text-area .bottom-shape .extra-text {
+            flex: 1;
+            font-size: 0.9em;
+            color: #555;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <button class="custom-button">
+        <div class="image" style="background-image: url('https://via.placeholder.com/100');"></div>
+        <div class="text-area">
+            <div class="top-text">Top Text Area</div>
+            <div class="bottom-shape">
+                <div class="parallelogram">Left Text</div>
+                <div class="extra-text">Right Text</div>
+            </div>
+        </div>
+    </button>
+</body>
+</html>

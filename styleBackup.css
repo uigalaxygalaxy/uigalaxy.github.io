@@ -44,7 +44,12 @@
 }
 body {
     overflow-y: scroll;
-
+    background-color: color-mix(in srgb, rgba(var(--CC), 1) 8%, rgba(24,24,24,1));
+}
+a {
+    text-decoration: none;
+    color: white;
+}
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -72,8 +77,15 @@ html {
 
 .uiURL {
     text-decoration: none;
-    color: rgb(193, 124, 242);
-    text-shadow: 0 0 16px rgb(193, 124, 242);
+    text-decoration: underline;
+    color: rgb(var(--CC));
+    font-size: 1.1rem;
+        transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+    text-shadow: 0 0 16px rgb(var(--CC));
+}
+.uiURL:hover {
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 24px rgb(var(--CC));
 }
 .uiUrlImp {
     text-decoration: none;
@@ -94,9 +106,7 @@ html {
     font-weight: 300;
     text-align: middle;
 }
-body {
-    background-color: rgb(9, 9, 15);
-}
+
 .dashboard {
     z-index: 2;
     display: flex;
@@ -351,11 +361,10 @@ body {
     text-shadow: 0 0 6px rgba(var(--CC), 1);
 
   }
-  .appear:hover .tooltip, .appear:hover .tooltiptext, .appear:hover .tooltip2, .appear:hover .tooltiptext2 {
-    visibility: hidden;
-    opacity: 0;
 
-  }
+.appear{
+    pointer-events: none;
+}
   .visitorWrapper  {
     display: flex;
     width: 100%;
@@ -816,7 +825,6 @@ grid-gap: 12px;
     margin: 0 auto;
     text-shadow: 0 0 8px rgba(var(--CC), 0.5);
     font-family: "B612";
-    pointer-events: none;
 }
 
 .AreadTxt {
@@ -840,4 +848,117 @@ grid-gap: 12px;
     margin: 0 0px 0 0px;
     margin-right: 12px;
     color: rgb(var(--TCC));
+}
+.sylveonartWrapper {
+width: 85vw;
+margin-top: 60px;
+height: min(max(105px, 12vh), 150px);
+display: grid;
+grid-template-columns: .7fr 2fr .8fr;
+margin-left: 7.5vw;
+overflow: hidden;
+border-radius: 10px;
+filter: drop-shadow(0 0 3px rgba(var(--CC), 0.5));
+transition: all 0.74s cubic-bezier(0,.77,.37,1.18);
+
+
+
+}
+
+.sylveonartWrapper:hover {
+    filter: drop-shadow(0 0 16px rgba(var(--CC), 0.4));
+    width: 95vw;
+    margin-left: 2.5vw;
+
+
+}
+
+
+.pokePattern{
+pointer-events: none;
+width: 400%;
+height: 1550%;
+background-image: url(sylveonartuipatternSmall.png);
+background-repeat: repeat;
+mix-blend-mode: screen;
+z-index: -23;
+animation: 2.8s linear 0s infinite moveLeft;
+transition: all 0.74s cubic-bezier(0,.77,.37,1.18);
+
+}
+@keyframes moveLeft {
+    from {
+transform: translateX(-200px); 
+    }
+    to {
+        transform: translateX(-25px);
+    }
+}
+.pokeGradient {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-image: linear-gradient(to right, rgba(var(--CC)), rgb(var(--C2)));
+    background-clip: url(sylveonartuipatternSmall.png);
+}
+.TitleandText {
+    background: rgb(9, 9, 15, 1);
+    z-index: 12;
+}
+.TitleandText:after {
+    background-image: linear-gradient(to bottom, rgb(var(--CC)), rgb(var(--C2)));
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    opacity: 0.2;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 33% 100%, 58% 50%, 33% 0%);
+    transform: scaleX(0.2) translateX(800px);
+}
+.pokeTrans {
+width: 400%;
+height: 1550%;
+    transform: rotate(-10deg) scale(1.1);
+    overflow: hidden;
+    mix-blend-mode: screen;
+
+}
+.pokeTitle{
+    display: inline-block;
+    color: rgb(var(--CC));
+    font-size: 72px;
+    margin-left: 10px;
+    -webkit-text-stroke: 4px rgb(32,32,32);
+    paint-order: stroke fill;
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
+.pokeTitle:hover {
+    font-size: 82px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 12px rgb(var(--CC));
+}
+.pokeDesc {
+    color: white;
+    margin-left: 15px;
+    font-family: B612;
+    text-shadow: 0 0 12px rgb(var(--C2));
+}
+.artCaption {
+    position: absolute;
+    font-size: 24px;
+    font-family: B612;
+    background: rgb(0, 0, 0, 0.7);
+    padding-right: 4px;
+    color: white;
+    text-shadow: 0 0 12px rgb(var(--CC));
+    white-space: nowrap;
+    line-height: 22px;
+    padding-right: 20px;
+    padding-top: 7px;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+
+}
+.artImage {
+    width: 100%;
+    height: 100%;
 }
