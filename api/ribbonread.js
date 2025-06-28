@@ -16,9 +16,10 @@ export default async function handler(req, res) {
         const totalRibbons = await redis.get(ribbonCountKey);
         let alreadyRibboned = false;
 
-        if (totalRibbons === "undefined" || "null" || "") {
-            return res.status(500).json({ error: "Ribbon Value does not Exist!"});
-        }
+if (totalRibbons === null) {
+            await redis.set(ribbonCountKey, 0);
+            totalRibbons = 0;
+}
 
         if (await redis.get(ribbonedKey)) {
              alreadyRibboned = true;

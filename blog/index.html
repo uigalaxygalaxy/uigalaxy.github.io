@@ -283,8 +283,14 @@ document.querySelectorAll('.ribbonNum').forEach(button => {
                     document.querySelectorAll('.ribbonNum').forEach(button => {
                         const thisID = button.dataset.id;
                           fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
-                        .then(response => response.json())
+                        .then(response => { 
+                            if(!response.ok) {
+                                throw new Error("Network response was NOT OK");
+                            }
+                            return response.json();
+                        })
                         .then(data => {
+                                    button.innerHTML = data.ribbonCount ?? "0"; // Fallback to "0"
                             if (data.ribbonCount !== undefined) {
                                 button.innerHTML = data.ribbonCount;
                             } else {
