@@ -264,6 +264,7 @@ transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
     font-size: 21px;
 }
 
+
 .ribbonNum {
     background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2)));
     background-clip: text; 
@@ -288,10 +289,17 @@ transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
     transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 
 }
+.ribbonNum {
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
+.ribbonCounter {
+        transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
 .ribbonButton:hover {
 background-color: rgb(var(--CC));
 width: 135px;
 }
+
 .ribbonButton:hover .ribbonNum {
     background: black;
     background-clip: text;
@@ -302,7 +310,22 @@ width: 135px;
 .blogWrapper:hover .blogImg {
      background-color: white;
 }
+.ribbonButton:active {
+    background-color: color-mix(in srgb, rgb(var(--CC)), black 50%);
+}
+.ribbonButton:active .ribbonNum{
+    color: white;
+}
+.ribbonButton:active .ribbonCounter {
+    margin-top: 5px;
+}
+.ribboned {
+    color: black;
+    background-color: rgb(var(--CC));
+    text-shadow: 0 0 12px white;
 
+
+}
 
 .blogQuickRead {
     border-right: solid 2px rgb(var(--CC), 0.25);
