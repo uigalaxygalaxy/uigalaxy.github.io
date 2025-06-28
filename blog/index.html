@@ -232,8 +232,8 @@ element.innerHTML = `${timeSince(date)} ago`;
                     console.log(data);  // Log the parsed data
 
                     // Update the element with ID "numbers123" with the 'click' value
-                    if (data.click !== undefined) {
-                        document.getElementById('numbers123').innerText = `${data.click}`;
+                    if (data.visitorCount !== undefined) {
+                        document.getElementById('numbers123').innerText = `${data.visitorCount}`;
                     } else {
                         document.getElementById('numbers123').innerText = "Click value not found";
                     }
@@ -254,56 +254,28 @@ element.innerHTML = `${timeSince(date)} ago`;
     });
         </script>
         <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.ribbonNum').forEach(button => {
+        // Load initial state
+        const thisID = button.dataset.id;
+        fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
+            .then(response => response.json())
+            .then(data => {
+                button.innerHTML = data.ribbonCount ?? "0";
+                button.classList.toggle('ribboned', data.alreadyRibboned);
+            })
+            .catch(() => button.innerHTML = 'Error');
 
-document.querySelectorAll('.ribbonNum').forEach(button => {
-    button.addEventListener('click', () => {
-        const itemID = button.dataset.id;
-  fetch(`../api/ribbon.js?id=${encodeURIComponent(itemID)}`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.ribbonCount !== undefined) {
-        button.innerHTML = data.ribbonCount;
-      } else {
-        button.innerHTML = 'UNDEF';
-      }
-      button.classList.toggle('ribboned', data.alreadyRibboned);
-
-      
-    })
-    .catch(() => {
-      button.innerHTML = 'Gulp';
+        // Add click handler
+        button.addEventListener('click', () => {
+            fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+                .then(response => response.json())
+                .then(data => {
+                    button.innerHTML = data.ribbonCount ?? "0";
+                    button.classList.toggle('ribboned', data.alreadyRibboned);
+                })
+                .catch(() => button.innerHTML = 'Gulp');
+        });
     });
 });
-});
-
-        </script>
-
-        <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                    document.querySelectorAll('.ribbonNum').forEach(button => {
-                        const thisID = button.dataset.id;
-                          fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
-                        .then(response => { 
-                            if(!response.ok) {
-                                throw new Error("Network response was NOT OK");
-                            }
-                            return response.json();
-                        })
-                        .then(data => {
-                                    button.innerHTML = data.ribbonCount ?? "0"; // Fallback to "0"
-                            if (data.ribbonCount !== undefined) {
-                                button.innerHTML = data.ribbonCount;
-                            } else {
-                                button.innerHTML = "oops";
-                                console.error("ribbonCount doesn't exist!")
-                            }
-                            if(data.alreadyRibboned) {
-                                button.classList.add('ribboned');
-                            }
-                        })
-                        .catch(() => {
-                            button.innerHTML = 'caught'
-                        })
-                    })
-                    })
-        </script>
+</script>
