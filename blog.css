@@ -325,7 +325,7 @@ width: 135px;
     width: 155px;
     background-color: rgb(var(--CC));
 }
-.ribbonNum.ribboned  {
+.ribboned .ribbonNum  {
     color: black;
 }
 
