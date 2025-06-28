@@ -256,24 +256,48 @@ element.innerHTML = `${timeSince(date)} ago`;
         <script>
 
 document.querySelectorAll('.ribbonNum').forEach(button => {
-    button.addEventListener('click', function() {
-        const itemID = this.dataset.id;
-  fetch('../api/ribbon.js?id=${endodeURIComponent(itemID)}')
+    button.addEventListener('click', () => {
+        const itemID = button.dataset.id;
+  fetch(`../api/ribbon.js?id=${encodeURIComponent(itemID)}`)
     .then(response => response.json())
     .then(data => {
       if (data.ribbonCount !== undefined) {
-        this.innerHTML = data.ribbonCount;
+        button.innerHTML = data.ribbonCount;
       } else {
-        this.innerHTML = 'UNDEF';
+        button.innerHTML = 'UNDEF';
       }
-      this.classList.toggle('ribboned', data.alreadyRibboned);
+      button.classList.toggle('ribboned', data.alreadyRibboned);
 
       
     })
     .catch(() => {
-      this.innerHTML = 'Gulp';
+      button.innerHTML = 'Gulp';
     });
 });
 });
 
+        </script>
+
+        <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                    document.querySelectorAll('.ribbonNum').forEach(button => {
+                        const thisID = button.dataset.id;
+                          fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.ribbonCount !== undefined) {
+                                button.innerHTML = data.ribbonCount;
+                            } else {
+                                button.innerHTML = "oops";
+                                console.error("ribbonCount doesn't exist!")
+                            }
+                            if(data.alreadyRibboned) {
+                                button.classList.add('ribboned');
+                            }
+                        })
+                        .catch(() => {
+                            button.innerHTML = 'caught'
+                        })
+                    })
+                    })
         </script>
