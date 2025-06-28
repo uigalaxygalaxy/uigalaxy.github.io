@@ -276,6 +276,7 @@ transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
 }
 
 .ribbonButton {
+    cursor: pointer;
     background-color: rgb(var(--CC), 0.15);
     width: 125px;
     max-height: 32px;
@@ -320,11 +321,11 @@ width: 135px;
     margin-top: 5px;
 }
 
-.ribboned .ribbonButton {
+.ribbonButton.ribboned  {
     width: 155px;
     background-color: rgb(var(--CC));
 }
-.ribboned .ribbonNum {
+.ribbonNum.ribboned  {
     color: black;
 }
 
