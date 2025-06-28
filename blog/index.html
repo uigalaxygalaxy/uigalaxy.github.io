@@ -79,7 +79,8 @@
 <div class="BlogBar">
 <div class="ribbonButton">
 <div class="ribbonCounter">
-🎀 <span class="ribbonNum">no work</span>
+🎀 <span class="ribbonNum" data-id="post1">
+    :3</span>
 </div>
 </div>
 
@@ -252,4 +253,27 @@ element.innerHTML = `${timeSince(date)} ago`;
         getClickValue();
     });
         </script>
-        
+        <script>
+
+document.querySelectorAll('.ribbonNum').forEach(button => {
+    button.addEventListener('click', function() {
+        const itemID = this.dataset.id;
+  fetch('../api/ribbon.js?id=${endodeURIComponent(itemID)}')
+    .then(response => response.json())
+    .then(data => {
+      if (data.ribbonCount !== undefined) {
+        this.innerHTML = data.ribbonCount;
+      } else {
+        this.innerHTML = 'UNDEF';
+      }
+      this.classList.toggle('ribboned', data.alreadyRibboned);
+
+      
+    })
+    .catch(() => {
+      this.innerHTML = 'Gulp';
+    });
+});
+});
+
+        </script>
