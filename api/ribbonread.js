@@ -13,12 +13,11 @@ export default async function handler(req, res) {
     const ribbonCountKey = `ribbonCount:${id}`;
 
     try {
-        const totalRibbons = await redis.get(ribbonCountKey);
-        let alreadyRibboned = false;
+let totalRibbons = await redis.get(ribbonCountKey);
+let alreadyRibboned = false;
 
 if (totalRibbons === null) {
-            await redis.set(ribbonCountKey, 0);
-            totalRibbons = 0;
+    return res.status(404).json({ error: "totralRibbons doesn't exist!"});
 }
 
         if (await redis.get(ribbonedKey)) {
