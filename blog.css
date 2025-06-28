@@ -321,7 +321,7 @@ width: 135px;
     margin-top: 5px;
 }
 
-.ribbonButton.ribboned  {
+.ribboned  {
     width: 155px;
     background-color: rgb(var(--CC));
 }
