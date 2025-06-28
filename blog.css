@@ -319,16 +319,13 @@ width: 135px;
 .ribbonButton:active .ribbonCounter {
     margin-top: 5px;
 }
-.ribboned {
-    color: white;
-    text-shadow: 0 0 12px white;
+
+.ribboned .ribbonButton {
+    width: 155px;
+    background-color: rgb(var(--CC));
 }
 .ribboned .ribbonNum {
-    color: white;
-    text-shadow: 0 0 12px white;
-}
-.ribboned .blogButton {
-    background-color: rgb(var(-CC));
+    color: black;
 }
 
 .blogQuickRead {
