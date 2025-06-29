@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.ribbonButton').forEach(button => {
         // Load initial state
         const thisID = button.dataset.id;
-        fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
+        fetch(`../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
             .then(response => response.json())
             .then(data => {
                 button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add click handler
         button.addEventListener('click', () => {
-            fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+            fetch(`../../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
                 .then(response => response.json())
                 .then(data => {
                     button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
