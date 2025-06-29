@@ -508,7 +508,7 @@ h3 {
     height: 60px;
     max-height: 60px;
     width: 300px;
-    margin-bottom: 1px;
+    margin-bottom: -1px;
         clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
 }
 .entryCounter {
@@ -531,7 +531,7 @@ h3 {
     margin-top: -10px;
 }
 
-.entryCounter:hover {
+.entryButton:hover .entryNum {
     font-size: 48px;
 
 }
