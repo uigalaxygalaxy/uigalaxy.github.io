@@ -48,6 +48,14 @@
            <div class="entryMetabutton">Next Entry 🡺</div>
            -->
         </div>
+        <div class="center">
+        <div class="ribbonButton entryButton">
+<div class="ribbonCounter entryCounter">
+🎀 <span class="ribbonNum entryNum" data-id="post1">
+    :3</span>
+</div>
+</div>
+</div>
         <div class="entryTopWrapper">
             <div class="entryTitle">
         LAUNDERING CRYPTO IS A JOKE. SO I'LL TEACH YOU IN 5 MINUTES.
@@ -260,7 +268,7 @@ Some exchanges delist Monero due to regulatory pressure
 <div style="margin-bottom: 32px"></div>
 
 <h1>
-        Now.... Maybe you aren't the saint you portray yourself as and your coins are ... from a Taliban hit payment. Then, i'd reccomend <a href="https://majesticbank.sc"><span class="uiURL">MajesticBank (https://majesticbank.sc)</span></a>. If you don't want to use MajesticBank, download Tor Browser and go on the dread forums and find a different exchange. I won't link any since it will only take like 10 minutes for your money laundering ass 😭🙏  
+        Now.... Maybe you aren't the saint you portray yourself as and your coins are ... from a Taliban hit payment. Then, i'd reccomend <a href="https://majesticbank.sc/?ref=WpQgkc"><span class="uiURL">MajesticBank (https://majesticbank.sc)</span></a>. If you don't want to use MajesticBank, download Tor Browser and go on the dread forums and find a different exchange. I won't link any since it will only take like 10 minutes for your money laundering ass 😭🙏  
 </h1>
 <h1>
 
@@ -280,13 +288,16 @@ Some exchanges delist Monero due to regulatory pressure
       <a href="https://ff.io/?ref=1pmrk2fa"><span class="uiURL">FixedFloat (https://ff.io/?ref=1pmrk2fa)</span></a>. Best for non-sanctioned coins. Best Fees at only 0.5%. No KYC, if they are safe.
 </h1>
 <h1>
-          <a href="https://majesticbank.sc"><span class="uiURL">MajesticBank (https://majesticbank.sc)</span></a>. Best exchange for drug pins and traffickers. 2% fees. Never KYC.
+          <a href="https://majesticbank.sc/?ref=WpQgkc"><span class="uiURL">MajesticBank (https://majesticbank.sc/?ref=WpQgkc)</span></a>. Best exchange for drug pins and traffickers. ~0.5% fees. Never KYC.
 </h1>
 <h1>
-<a href="https://majestictfvnfjgo5hqvmuzynak4kjl5tjs3j5zdabawe6n2aaebldad.onion"><span class="uiURL">MajesticBank (Tor Mirror @ https://majestictfvnfjgo5hqvmuzynak4kjl5tjs3j5zdabawe6n2aaebldad.onion)</span></a>. drug pins deserve a tor mirror 💪
+<a href="https://majestictfvnfjgo5hqvmuzynak4kjl5tjs3j5zdabawe6n2aaebldad.onion/?ref=WpQgkc"><span class="uiURL">MajesticBank (Tor Mirror @ https://majestictfvnfjgo5hqvmuzynak4kjl5tjs3j5zdabawe6n2aaebldad.onion/?ref=WpQgkc)</span></a>. drug pins deserve a tor mirror 💪
 </h1>
 <h1>
-<a href="https://orangefren.com/affiliate/67A5422283EA49659A0FBD7D371EE517"><span class="uiURL">Other Exchanges at orangefren.com</span></a>. just in case you need more options. maybe the guys who pay you for trafficking orphans pay in $TRUMP. better find an exchange that accepts that
+<a href="https://orangeFren.com/?ref=BD00F6C"><span class="uiURL">Other Exchanges at orangefren.com</span></a>. just in case you need more options. maybe the guys who pay you for trafficking orphans pay in $TRUMP. better find an exchange that accepts that
+</h1>
+<h1>
+<a href="http://rnwis2whetqcj4oknksnc5l24jbh33nflunifff3xtjjonnoxu3ld6id.onion/?ref=BD00F6C"><span class="uiURL">Orange Fren (Tor Mirror @ http://rnwis2whetqcj4oknksnc5l24jbh33nflunifff3xtjjonnoxu3ld6id.onion/?ref=BD00F6C) </span></a>. tin foil hats help obscure the transactions so make sure you wear one
 </h1>
 
 <div style="filter: drop-shadow(0 0 12px rgba(var(--CC), 0.4));">
@@ -482,8 +493,8 @@ element.innerHTML = `${timeSince(date)} ago`;
                     console.log(data);  // Log the parsed data
 
                     // Update the element with ID "numbers123" with the 'click' value
-                    if (data.click !== undefined) {
-                        document.getElementById('numbers123').innerText = `${data.click}`;
+                    if (data.visitorCount !== undefined) {
+                        document.getElementById('numbers123').innerText = `${data.visitorCount}`;
                     } else {
                         document.getElementById('numbers123').innerText = "Click value not found";
                     }
@@ -503,4 +514,29 @@ element.innerHTML = `${timeSince(date)} ago`;
         getClickValue();
     });
         </script>
-        
+                <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.ribbonButton').forEach(button => {
+        // Load initial state
+        const thisID = button.dataset.id;
+        fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
+            .then(response => response.json())
+            .then(data => {
+                button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
+                button.classList.toggle('ribboned', data.alreadyRibboned);
+            })
+            .catch(() => button.innerHTML = 'Error');
+
+        // Add click handler
+        button.addEventListener('click', () => {
+            fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+                .then(response => response.json())
+                .then(data => {
+                    button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
+                    button.classList.toggle('ribboned', data.alreadyRibboned);
+                })
+                .catch(() => button.querySelector('.ribbonCounter .ribbonNum').innerHTML = 'Gulp');
+        });
+    });
+});
+</script>
