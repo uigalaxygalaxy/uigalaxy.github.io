@@ -33,7 +33,7 @@
 }
 :root {
     --CC: 36, 230, 155;
-    --C2: 9, 219, 104;
+    --C2: 0, 219, 66;
     --PB: brightness(12200%);
     --PBN: none;
     --TCC: black;
@@ -959,4 +959,139 @@ height: 1550%;
 .artImage {
     width: 100%;
     height: 100%;
+}
+
+.doingWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(var(--C2), 0.1);
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+.whatDoing {
+    color: rgb(var(--CC));
+    text-shadow: 0 0 15px rgba(var(--CC), 0.74);
+    font-size: 20px;
+    font-family: 'B612';
+    margin-left: calc(20vw - 134px);
+    
+}
+.responseWrapper {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bigDoing {
+    color: rgb(var(--CC));
+        text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+        font-size: 64px;
+        transform: scaleY(103%);
+}
+.smallDoing {
+        color: rgb(160, 160, 160);
+        text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+        font-family: B612;
+        font-size: 16px;
+        margin-top: 8px;
+}
+.recentTitle {
+    margin-top: 12px;
+        color: rgb(var(--CC));
+        text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+        font-size: 28px;
+        margin-bottom: 20px;
+        
+}
+.recentWrapper {
+    margin-bottom: 15px;
+}
+.activityWrapper {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+}
+.activityBorder {
+    display: flex;
+    justify-content: left;
+    width: 500px;
+    border-width: 3px;
+    border-image: linear-gradient(110deg,rgba(var(--CC), 0.1) 20%, rgba(var(--CC), 0.9) 50%, rgba(var(--CC), 0.1) 80%) 1;
+    border-style: solid;
+    background-image: linear-gradient(110deg,rgba(var(--CC), 0.05) 20%, rgba(var(--CC), 0.25) 50%, rgba(var(--CC), 0.05) 80%);
+}
+.activityInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 15px;
+    padding-top: 5px;
+    
+}
+.activityImage {
+    height: 100px;
+}
+.activityTime {
+        color: rgb(var(--CC));
+        text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+        font-family: B612;
+        text-align: left;
+}
+.activityTitle {
+            color: rgb(var(--CC));
+            text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+            font-size: 36px;
+            text-align: left;
+            transform: scaleY(103%);
+}
+.activityResponse {
+    color: rgb(var(--CC));
+    paint-order: stroke fill;
+    font-size: 14px;
+    text-align: left;
+    font-family: B612;
+    margin-top: 4px;
+    
+}
+.arrowDeco, .dotsDeco {
+    position: absolute;
+    transform: translateX(14vw) rotate(-10deg) scaleY(200%) scaleX(160%);
+    color: rgb(var(--CC));
+    opacity: 0.7;
+    text-shadow: 0 0 15px rgba(var(--CC), 1);
+    font-size: 32px;
+        }
+.dotsDeco {
+        transform: translateX(54vw) translateY(5.5vh);
+
+}
+.windowsWrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: row;
+}
+.recentWrapper {
+    margin-left: 10px;
+}
+.pingCircle {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, rgb(var(--CC)), rgb(var(--C2)));
+  display: inline-block;
+  transform: translateY(-1px);
+}
+.ping {
+    display: inline-block;
+        text-shadow: 0 0 15px rgba(var(--CC), 1);
+    color: rgb(var(--CC));
+}
+.pingNum {
+    font-size: 28px;
+    margin-left: 8px;
 }
