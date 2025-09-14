@@ -811,6 +811,72 @@ for (i = 0; i < coll.length; i++) {
         getClickValue();
     });
         </script>
-        <script src="api/findDoing.js" type="module">
+        <script>
+            async function loadWindows() {
+                const res = await fetch("api/findDoing");
+                const { recent, songName, songPlayer, timestamp } = await res.json();
+
+                
+const ping = Date.now() - timestamp;
+const Datestamp = new Date(timestamp);
+
+const RANDOMTITLES = [
+    { title: 'Discord', options: ['Group Meowing', 'Sweaty Discord Moderation', 'Gifting E-Kittens Nitro', 'Discordo'] }
+]
+
+function getRandomTitle(keyResponse) {
+    RANDOMTITLES.forEach(item => {
+        if (keyResponse == item.title) {
+            return item.options[Math.floor(Math.random() * item.options.length)];
+        }
+    });
+}
+
+const windows = JSON.parse("[" + recent + "]"); // turn da string to an array
+let keyResponse;
+let windowTitle;
+document.querySelectorAll('.activityInfo').forEach((object, index) => {
+    keyResponse = windows[index];
+    let oldResponse = keyResponse;
+    keyResponse = getRandomTitle(keyResponse);
+    let newResponse = keyResponse;
+    if (index == 0) {
+        object.querySelector('.activityTime').textContent = "Top Window";
+    }
+    else {
+        object.querySelector('.activityTime').textContent = `Window #${index + 1}`;
+    }
+    if (oldResponse == newResponse) {
+        windowTitle = newResponse;
+    }
+    else {
+        windowTitle = keyResponse;
+    }
+    object.querySelector('.activityTitle').textContent = windowTitle;
+    object.querySelector('.activityResponse').textContent = `Desktop sent "${oldResponse}" at ${Datestamp}`;
+
+    const symbol = object.querySelector('.pingCircle');
+    object.querySelector('.pingNum').textContent = Math.floor(ping);
+    if (ping > 1000) {
+        symbol.textContent = '⛒';
+        symbol.style.color = '#D06E6E';
+    }
+    else if (ping > 300) {
+        symbol.textContent = '⚠';
+        symbol.style.color = '#FBC02D';
+
+    }
+    else if (ping > 100) {
+        symbol.textContent = '⬤';
+        symbol.style.color = '#81C784';
+
+    }
+    else {
+        symbol.textContent = '★';
+        symbol.style.color = '#9dffffff';
+    }
+});
+
+            }
         </script>
 </html>
