@@ -838,8 +838,10 @@ else {
 }
 let keyResponse;
 let windowTitle;
-    const symbol = object.querySelector('.pingCircle');
+        const symbol = document.querySelector('.pingCircle');
+
 document.querySelectorAll('.activityInfo').forEach((object, index) => {
+
     keyResponse = windows[index];
     if(!keyResponse == 'OFFLINE!' || keyResponse) {
 
