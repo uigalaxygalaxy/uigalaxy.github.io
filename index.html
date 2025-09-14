@@ -813,12 +813,15 @@ for (i = 0; i < coll.length; i++) {
         </script>
         <script type="module">
             async function loadWindows() {
+                const start = performace.now();
                 const res = await fetch("api/findDoing");
+                const end = performace.now();
                 console.log(res);
                 const { recent, songName, songPlayer, timestamp } = await res.json();
 
                 
-const ping = Date.now() - timestamp;
+const ping = start - end;
+const timeAgo = Date.now() - timestamp;
 const Datestamp = new Date(timestamp);
 
 const RANDOMTITLES = [
@@ -840,6 +843,7 @@ else {
 let keyResponse;
 let windowTitle;
         const symbol = document.querySelector('.pingCircle');
+
 
 document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
@@ -892,9 +896,16 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
     if(!windows[0] || windows[0] == 'OFFLINE!') {
         document.querySelector('.recentTitle').textContent = 'Offline!';
+        document.querySelector('.bigDoing').textContent = 'OFFLINE';
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop send the response "Offline!"`
         symbol.textContent = '⛒';
         symbol.style.color = '#D06E6E';
         document.querySelector('.ping').textContent = 'Offline!';
+    }
+    else {
+        const title = getRandomTitle(windows[0]) || windows[0]; 
+        document.querySelector('.bigDoing').textContent = title.toUppercase();
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop send the response "${windows[0]}"`
     }
 
             }
