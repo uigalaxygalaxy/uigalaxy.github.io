@@ -768,7 +768,7 @@ for (i = 0; i < coll.length; i++) {
           }
               */ 
     </script>
-        <script type="module">
+        <script >
           document.addEventListener('DOMContentLoaded', async function () {
         async function getClickValue() {
             try {
@@ -811,7 +811,7 @@ for (i = 0; i < coll.length; i++) {
         getClickValue();
     });
         </script>
-        <script>
+        <script type="module">
             async function loadWindows() {
                 const res = await fetch("api/findDoing");
                 const { recent, songName, songPlayer, timestamp } = await res.json();
