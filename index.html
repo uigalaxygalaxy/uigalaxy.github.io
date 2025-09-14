@@ -864,7 +864,7 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
     object.querySelector('.activityTitle').textContent = windowTitle;
     object.querySelector('.activityResponse').textContent = `Desktop sent "${oldResponse}" at ${Datestamp}`;
 
-    object.querySelector('.pingNum').textContent = Math.floor(ping);
+    document.querySelector('.pingNum').textContent = Math.floor(ping);
     if (ping > 1000) {
         symbol.textContent = '⛒';
         symbol.style.color = '#D06E6E';
