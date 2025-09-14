@@ -830,7 +830,7 @@ function getRandomTitle(keyResponse) {
             return item.options[Math.floor(Math.random() * item.options.length)];
         }
 }
-if(recent == "Offline") {
+if(!recent == "Offline") {
 const windows = JSON.parse("[" + recent + "]"); // turn da string to an array
 }
 else {
