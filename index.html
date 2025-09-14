@@ -830,12 +830,19 @@ function getRandomTitle(keyResponse) {
             return item.options[Math.floor(Math.random() * item.options.length)];
         }
 }
-
+if(recent == "Offline") {
 const windows = JSON.parse("[" + recent + "]"); // turn da string to an array
+}
+else {
+    const windows = ['OFFLINE!'];
+}
 let keyResponse;
 let windowTitle;
+    const symbol = object.querySelector('.pingCircle');
 document.querySelectorAll('.activityInfo').forEach((object, index) => {
     keyResponse = windows[index];
+    if(!keyResponse == 'OFFLINE!' || keyResponse) {
+
     let oldResponse = keyResponse;
     keyResponse = getRandomTitle(keyResponse);
     let newResponse = keyResponse;
@@ -854,7 +861,6 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
     object.querySelector('.activityTitle').textContent = windowTitle;
     object.querySelector('.activityResponse').textContent = `Desktop sent "${oldResponse}" at ${Datestamp}`;
 
-    const symbol = object.querySelector('.pingCircle');
     object.querySelector('.pingNum').textContent = Math.floor(ping);
     if (ping > 1000) {
         symbol.textContent = '⛒';
@@ -874,7 +880,19 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
         symbol.textContent = '★';
         symbol.style.color = '#9dffffff';
     }
+    }
+    else {
+        object.style.display = 'none';
+    }
+
 });
+
+    if(!windows[0] || windows[0] == 'OFFLINE!') {
+        document.querySelector('.recentTitle').textContent = 'Offline!';
+        symbol.textContent = '⛒';
+        symbol.style.color = '#D06E6E';
+        document.querySelector('.ping').textContent = 'Offline!';
+    }
 
             }
             loadWindows();
