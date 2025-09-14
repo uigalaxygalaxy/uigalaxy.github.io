@@ -768,7 +768,7 @@ for (i = 0; i < coll.length; i++) {
           }
               */ 
     </script>
-        <script>
+        <script type="module">
           document.addEventListener('DOMContentLoaded', async function () {
         async function getClickValue() {
             try {
@@ -825,11 +825,9 @@ const RANDOMTITLES = [
 ]
 
 function getRandomTitle(keyResponse) {
-    RANDOMTITLES.forEach(item => {
-        if (keyResponse == item.title) {
+        if (RANDOMTITLES.find(item => item.title === keyResponse)) {
             return item.options[Math.floor(Math.random() * item.options.length)];
         }
-    });
 }
 
 const windows = JSON.parse("[" + recent + "]"); // turn da string to an array
