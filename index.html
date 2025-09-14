@@ -814,6 +814,7 @@ for (i = 0; i < coll.length; i++) {
         <script type="module">
             async function loadWindows() {
                 const res = await fetch("api/findDoing");
+                console.log(res);
                 const { recent, songName, songPlayer, timestamp } = await res.json();
 
                 
