@@ -836,7 +836,7 @@ function getRandomTitle(keyResponse) {
 }
 let windows;
 if(recent !== "Offline") {
- windows = JSON.parse("[" + recent + "]"); // turn da string to an array
+windows = recent.split(","); // turn string to aray better
 }
 else {
  windows = ['OFFLINE!'];
