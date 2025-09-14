@@ -837,7 +837,7 @@ function getRandomTitle(keyResponse) {
 }
 let windows;
 if(recent !== "Offline") {
-windows = recent.split(","); // turn string to aray better
+windows = recent.replace('"', '').split(","); // turn string to aray better
 }
 else {
  windows = ['OFFLINE!'];
