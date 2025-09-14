@@ -820,7 +820,7 @@ for (i = 0; i < coll.length; i++) {
                 const { recent, songName, songPlayer, timestamp } = await res.json();
 
                 
-const ping = start - end;
+const ping = end - start;
 const timeAgo = Date.now() - timestamp;
 const Datestamp = new Date(timestamp);
 
@@ -829,12 +829,13 @@ const RANDOMTITLES = [
 ]
 
 function getRandomTitle(keyResponse) {
+        const item = RANDOMTITLES.find(i => i.title === keyResponse);
         if (RANDOMTITLES.find(item => item.title === keyResponse)) {
             return item.options[Math.floor(Math.random() * item.options.length)];
         }
 }
 let windows;
-if(!recent == "Offline") {
+if(recent !== "Offline") {
  windows = JSON.parse("[" + recent + "]"); // turn da string to an array
 }
 else {
@@ -897,15 +898,15 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
     if(!windows[0] || windows[0] == 'OFFLINE!') {
         document.querySelector('.recentTitle').textContent = 'Offline!';
         document.querySelector('.bigDoing').textContent = 'OFFLINE';
-        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop send the response "Offline!"`
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "Offline!"`
         symbol.textContent = '⛒';
         symbol.style.color = '#D06E6E';
         document.querySelector('.ping').textContent = 'Offline!';
     }
     else {
         const title = getRandomTitle(windows[0]) || windows[0]; 
-        document.querySelector('.bigDoing').textContent = title.toUppercase();
-        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop send the response "${windows[0]}"`
+        document.querySelector('.bigDoing').textContent = title.toUpperCase();
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
     }
 
             }
