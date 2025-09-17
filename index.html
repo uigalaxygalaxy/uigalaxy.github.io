@@ -824,7 +824,6 @@ for (i = 0; i < coll.length; i++) {
 const ping = end - start;
 const timeAgo = Date.now() - timestamp;
 const Datestamp = new Date(timestamp);
-
 const RANDOMTITLES = [
     { title: 'Discord', options: ['Group Meowing', 'Sweaty Discord Moderation', 'Gifting E-Kittens Nitro', 'Discordo'] }
 ]
@@ -836,6 +835,7 @@ function getRandomTitle(keyResponse) {
         }
 }
 let windows;
+console.log(recent);
 if(recent !== "Offline") {
 windows = recent.replace('"', '').split(","); // turn string to aray better
 }
@@ -849,7 +849,44 @@ let windowTitle;
         const symbol = document.querySelector('.pingCircle');
 
 
-document.querySelectorAll('.activityInfo').forEach((object, index) => {
+
+    document.querySelector('.pingNum').textContent = Math.floor(ping);
+    if (ping > 1000) {
+        symbol.textContent = '⛒';
+        symbol.style.color = '#D06E6E';
+    }
+    else if (ping > 300) {
+        symbol.textContent = '⚠';
+        symbol.style.color = '#FBC02D';
+
+    }
+    else if (ping > 100) {
+        symbol.textContent = '⬤';
+        symbol.style.color = '#81C784';
+
+    }
+    else {
+        symbol.textContent = '★';
+        symbol.style.color = '#9dffffff';
+    }
+
+    if(!windows[0] || windows[0] == 'OFFLINE!') {
+        document.querySelector('.recentTitle').textContent = 'Offline!';
+        document.querySelector('.bigDoing').textContent = 'OFFLINE';
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "Offline!"`
+        symbol.textContent = '⛒';
+        symbol.style.color = '#D06E6E';
+        document.querySelector('.ping').textContent = 'Offline!';
+    }
+    else {
+        const title = getRandomTitle(windows[0]) || windows[0]; 
+        document.querySelector('.bigDoing').textContent = title.toUpperCase();
+        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
+    }
+
+    
+document.addEventListener("DOMContentLoaded", (event) => {
+    document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
     keyResponse = windows[index];
     if(keyResponse !== 'OFFLINE!' || keyResponse) {
@@ -878,41 +915,7 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
     }
 
 });
-
-
-    document.querySelector('.pingNum').textContent = Math.floor(ping);
-    if (ping > 1000) {
-        symbol.textContent = '⛒';
-        symbol.style.color = '#D06E6E';
-    }
-    else if (ping > 300) {
-        symbol.textContent = '⚠';
-        symbol.style.color = '#FBC02D';
-
-    }
-    else if (ping > 100) {
-        symbol.textContent = '⬤';
-        symbol.style.color = '#81C784';
-
-    }
-    else {
-        symbol.textContent = '★';
-        symbol.style.color = '#9dffffff';
-    }
-    
-    if(!windows[0] || windows[0] == 'OFFLINE!') {
-        document.querySelector('.recentTitle').textContent = 'Offline!';
-        document.querySelector('.bigDoing').textContent = 'OFFLINE';
-        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "Offline!"`
-        symbol.textContent = '⛒';
-        symbol.style.color = '#D06E6E';
-        document.querySelector('.ping').textContent = 'Offline!';
-    }
-    else {
-        const title = getRandomTitle(windows[0]) || windows[0]; 
-        document.querySelector('.bigDoing').textContent = title.toUpperCase();
-        document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
-    }
+});
 
             }
             loadWindows();
