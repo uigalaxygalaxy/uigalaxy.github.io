@@ -813,6 +813,8 @@ for (i = 0; i < coll.length; i++) {
     });
         </script>
         <script type="module">
+                        loadWindows();
+
             async function loadWindows() {
                 const start = performance.now();
                 const res = await fetch("api/findDoing");
@@ -883,12 +885,13 @@ let windowTitle;
         document.querySelector('.bigDoing').textContent = title.toUpperCase();
         document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
     }
+
     console.log(document.querySelectorAll('.activityInfo'));
     document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
     keyResponse = windows[index];
     if(keyResponse !== 'OFFLINE!' || keyResponse) {
-
+// if keyResponse is a valid string then do this:
     let oldResponse = keyResponse;
     keyResponse = getRandomTitle(keyResponse);
     let newResponse = keyResponse;
@@ -915,8 +918,5 @@ let windowTitle;
 });
 
             }
-            document.addEventListener("DOMContentLoaded", (event) => {
-            loadWindows();
-            });
         </script>
 </html>
