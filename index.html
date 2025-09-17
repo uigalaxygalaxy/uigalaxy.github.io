@@ -883,7 +883,7 @@ let windowTitle;
         document.querySelector('.bigDoing').textContent = title.toUpperCase();
         document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
     }
-
+document.addEventListener("DOMContentLoaded", (event) => {
     console.log(document.querySelectorAll('.activityInfo'));
     document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
@@ -914,7 +914,7 @@ let windowTitle;
     }
 
 });
-
+});
             }
             loadWindows();
         </script>
