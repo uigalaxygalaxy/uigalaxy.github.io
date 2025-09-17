@@ -831,7 +831,7 @@ const RANDOMTITLES = [
 
 function getRandomTitle(keyResponse) {
         const item = RANDOMTITLES.find(i => i.title === keyResponse);
-        if (RANDOMTITLES.find(item => item.title === keyResponse)) {
+        if (item) {
             return item.options[Math.floor(Math.random() * item.options.length)];
         }
 }
@@ -852,7 +852,7 @@ let windowTitle;
 document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
     keyResponse = windows[index];
-    if(!keyResponse == 'OFFLINE!' || keyResponse) {
+    if(keyResponse !== 'OFFLINE!' || keyResponse) {
 
     let oldResponse = keyResponse;
     keyResponse = getRandomTitle(keyResponse);
@@ -871,6 +871,14 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
     }
     object.querySelector('.activityTitle').textContent = windowTitle;
     object.querySelector('.activityResponse').textContent = `Desktop sent "${oldResponse}" at ${Datestamp}`;
+
+    }
+    else {
+        console.log(`object: ${object}`);
+    }
+
+});
+
 
     document.querySelector('.pingNum').textContent = Math.floor(ping);
     if (ping > 1000) {
@@ -891,13 +899,7 @@ document.querySelectorAll('.activityInfo').forEach((object, index) => {
         symbol.textContent = '★';
         symbol.style.color = '#9dffffff';
     }
-    }
-    else {
-        console.log(`object: ${object}`);
-    }
-
-});
-
+    
     if(!windows[0] || windows[0] == 'OFFLINE!') {
         document.querySelector('.recentTitle').textContent = 'Offline!';
         document.querySelector('.bigDoing').textContent = 'OFFLINE';
