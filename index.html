@@ -857,7 +857,7 @@ for (i = 0; i < coll.length; i++) {
                 const res = await fetch("api/findDoing");
                 const end = performance.now();
                 console.log(res);
-                const { recent, songName, songPlayer, timestamp } = await res.json();
+                const { recent, songName, songPlayer, songArtist, timestamp } = await res.json();
 
                 
 const ping = end - start;
@@ -933,8 +933,11 @@ let windowTitle;
     if(songName) {
         musicWrapper.style.display = 'flex';    
         songWrapper.textContent = songName;
-        if(songPlayer) {
-            artistWrapper.textContent = songPlayer;
+        if(songArtist) {
+            artistWrapper.textContent = `By ${songArtist}`;
+            if(songPlayer) {
+                artistWrapper.textContent = `By ${songArtist} on ${songPlayer}`
+            }
         }
         else {
             artistWrapper.textContent = 'Unknown Artist!';
