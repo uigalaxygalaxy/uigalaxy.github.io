@@ -926,6 +926,24 @@ let windowTitle;
         document.querySelector('.smallDoing').textContent = `Last updated ${(timeAgo / 1000).toFixed(2)} seconds ago | uiGalaxy's Desktop sent the response "${windows[0]}"`
     }
 
+    const musicWrapper = document.querySelector('.musicWrapper');
+    const songWrapper = document.querySelector('.songTitle');
+    const artistWrapper = document.querySelector('.songArtist');
+    
+    if(songName) {
+        musicWrapper.style.display = 'flex';    
+        songWrapper.textContent = songName;
+        if(songPlayer) {
+            artistWrapper.textContent = songPlayer;
+        }
+        else {
+            artistWrapper.textContent = 'Unknown Artist!';
+        }
+    }
+    else {
+        musicWrapper.style.display = 'none';
+    }
+
     console.log(document.querySelectorAll('.activityInfo'));
     document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
