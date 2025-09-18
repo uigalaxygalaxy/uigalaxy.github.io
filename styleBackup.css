@@ -43,6 +43,7 @@
     
 }
 body {
+    overflow-x: hidden;
     overflow-y: scroll;
     background-color: color-mix(in srgb, rgba(var(--CC), 1) 8%, rgba(24,24,24,1));
 }
@@ -110,6 +111,8 @@ html {
     display: flex;
     align-items: center;
     background-image: linear-gradient(to top, rgb(var(--CC)), rgb(var(--C2)));
+        box-shadow: 0 24px 64px rgba(9, 9, 15, 1); 
+
 }
 .dashboard, .dashboardblack, .dashboardLogo{
     animation: dbph 0.25s forwards;
@@ -123,7 +126,7 @@ html {
     min-height: 75px;
     opacity: 1;
     left: 0px;
-    box-shadow: 0 8px 64px rgba(9, 9, 15, 0.84); 
+
 }
 
 .signButton {
@@ -586,10 +589,12 @@ html {
 .PHeader {
     background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2))); 
     box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    
 }
 .CHeader {
     background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2))); 
     box-shadow: 0 0 134px rgba(var(--CC), 0.35);
+    
 
 }
 .THeaderimg, .FHeaderimg, .PHeaderimg, .CHeaderimg, .MHeaderimg, .AHeaderimg, .DHeaderimg  {
@@ -970,13 +975,16 @@ height: 1550%;
     padding-top: 30px;
     margin-top: 20px;
 }
-.whatDoing {
+.whatDoing, .musicHeader {
     color: rgb(var(--CC));
     text-shadow: 0 0 15px rgba(var(--CC), 0.74);
     font-size: 20px;
     font-family: 'B612';
     margin-left: calc(20vw - 134px);
     
+}
+.musicHeader {
+    margin-left: 0;
 }
 .responseWrapper {
     display: flex;
@@ -1094,4 +1102,53 @@ height: 1550%;
 .pingNum {
     font-size: 28px;
     margin-left: 8px;
+}
+
+.songTitle {
+    font-size: 48px;
+    white-space: nowrap;
+    color: rgb(var(--CC));
+    text-shadow: 0 0 15px rgba(var(--CC), 0.44);
+    transform: scaleY(104%);
+        font-family: B612;
+        font-weight: bold;
+}
+
+:root {
+    --titleMargin: 0;
+}
+
+@keyframes titleShuffle{
+    from {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    45% {
+        transform: translateX(calc(var(--titleMargin) * 1px));
+    }
+    80% {
+        transform: translateX(calc(var(--titleMargin) * 1px));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.songArtist {
+    color: rgb(var(--CC));
+    font-size: 20px;
+    transform: scaleY(104%);
+    text-shadow: 0 0 15px rgba(var(--CC), 1);
+}
+
+.divider {
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 10%, rgba(var(--CC), 0.7) 50%, rgba(0,0,0,0) 90%);
+    height: 4px;
+    width: 200px;
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
 }

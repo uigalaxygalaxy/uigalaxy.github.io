@@ -290,7 +290,7 @@
                 <div class="windowsWrapper">
                     <div class="recentWrapper">
                         <div class="arrowDeco">
-                            <<<
+                            
                         </div>
                         <div class="activityWrapper">
                             <div class="activityBorder">
@@ -312,7 +312,7 @@
 
                     <div class="recentWrapper">
                         <div class="arrowDeco">
-                            <<<
+                            
                         </div>
                         <div class="activityWrapper">
                             <div class="activityBorder">
@@ -334,7 +334,7 @@
 
                     <div class="recentWrapper">
                         <div class="arrowDeco">
-                            <<<
+                            
                         </div>
                         <div class="activityWrapper">
                             <div class="activityBorder">
@@ -354,11 +354,47 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                <span class="pingCircle">?</span><p class="ping" style="font-family: B612;"><span class="pingNum">Loading... </span>ms ping</p>
+                <div class="divider">
+                </div>
+                <div class="musicWrapper">
+                    <div class="musicHeader">
+                        I'm listening to
+                    </div>
+                    <div class="songTitle">
+                        Mist Engine ｜ Rain World (Alphas, Gems and Junk) [NiDKTo4DdU8]
+                    </div>
+                    <div class="songArtist">
+                        By James Primate ｜ RW 50
+                    </div>
+                </div>
+
+                                <div>
+                <span class="pingCircle">?</span><p class="ping" style="font-family: B612;"><span class="pingNum">Loading... </span>ms latency</p>
                 </div>
                     </div>
                                         </div>
+<script>
+const songTitle = document.querySelector('.songTitle');
+const songWrapper = document.querySelector('.musicWrapper');
+const width = songTitle.scrollWidth;
+
+
+
+function updateTextTranslate() {
+    console.log(width);
+console.log(window.innerWidth);
+if(width > window.innerWidth) {
+    document.querySelector(':root').style.setProperty('--titleMargin', (window.innerWidth - width - 15));
+    songTitle.style.animation = 'titleShuffle 7s cubic-bezier(.25,.72,.25,.72) 1.5s infinite forwards';
+}
+else {
+    songTitle.style.animation = '';
+    songTitle.style.transform = 0;
+}
+}
+updateTextTranslate();
+window.addEventListener("resize", updateTextTranslate);
+</script>
 
     <script>
         document.getElementById('Azure').addEventListener('click', function() {
@@ -835,6 +871,9 @@ function getRandomTitle(keyResponse) {
         const item = RANDOMTITLES.find(i => i.title === keyResponse);
         if (item) {
             return item.options[Math.floor(Math.random() * item.options.length)];
+        }
+        else {
+            return keyResponse;
         }
 }
 let windows;
