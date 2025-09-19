@@ -1106,8 +1106,9 @@ height: 1550%;
 .musicWrapper {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
-.songTitle {
+.titleText {
     font-size: 48px;
     white-space: nowrap;
     color: rgb(var(--CC));
@@ -1115,27 +1116,35 @@ height: 1550%;
     transform: scaleY(104%);
         font-family: B612;
         font-weight: bold;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
 }
-
+.songTitle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: left;
+}
 :root {
     --titleMargin: 0;
 }
 
 @keyframes titleShuffle{
     from {
-        transform: translateX(0);
+        transform: translateX(calc(var(--titleMargin) * -1px));
     }
     25% {
-        transform: translateX(0);
+        transform: translateX(calc(var(--titleMargin) * -1px));
     }
-    45% {
+    50% {
         transform: translateX(calc(var(--titleMargin) * 1px));
     }
-    80% {
+    75% {
         transform: translateX(calc(var(--titleMargin) * 1px));
     }
-    to {
-        transform: translateX(0);
+    100% {
+        transform: translateX(calc(var(--titleMargin) * -1px));
     }
 }
 

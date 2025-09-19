@@ -361,7 +361,7 @@
                         I'm listening to
                     </div>
                     <div class="songTitle">
-                        Mist Engine ｜ Rain World (Alphas, Gems and Junk) [NiDKTo4DdU8]
+                        <p class="titleText">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
                     </div>
                     <div class="songArtist">
                         By James Primate ｜ RW 50
@@ -905,7 +905,7 @@ let windowTitle;
     }
 
     const musicWrapper = document.querySelector('.musicWrapper');
-    const songWrapper = document.querySelector('.songTitle');
+    const songWrapper = document.querySelector('.titleText');
     const artistWrapper = document.querySelector('.songArtist');
     
     if(songName) {
@@ -960,22 +960,24 @@ let windowTitle;
         </script>
         
 <script>
-const songTitle = document.querySelector('.songTitle');
-const songWrapper = document.querySelector('.musicWrapper');
-const width = songTitle.scrollWidth;
+const songTitle = document.querySelector('.titleText');
+const width = songTitle.offsetWidth;
 
 
 
 function updateTextTranslate() {
-    console.log(width);
+    console.log(`width var ${width}`);
+
+        console.log(`offsetWidth ${songTitle.offsetWidth}`);
+                console.log(`scrollWidth ${songTitle.scrollWidth}`);
+
 console.log(window.innerWidth);
 if(width > window.innerWidth) {
-    document.querySelector(':root').style.setProperty('--titleMargin', (window.innerWidth - width - 15));
-    songTitle.style.animation = 'titleShuffle 7s cubic-bezier(.25,.72,.25,.72) 1.5s infinite forwards';
+    document.querySelector(':root').style.setProperty('--titleMargin', (window.innerWidth - width - 15)/2);
+    songTitle.style.animation = 'titleShuffle 10s cubic-bezier(.25,.72,.25,.72) 1.5s infinite forwards';
 }
 else {
     songTitle.style.animation = '';
-    songTitle.style.transform = 0;
 }
 }
 updateTextTranslate();
