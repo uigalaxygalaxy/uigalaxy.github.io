@@ -1020,13 +1020,13 @@ height: 1550%;
 .activityWrapper {
     display: flex;
     flex-direction: row;
-    
     justify-content: center;
 }
 .activityBorder {
     display: flex;
     justify-content: left;
-    width: 500px;
+    width: 30vw;
+    max-width: 700px;
     border-width: 3px;
     border-image: linear-gradient(110deg,rgba(var(--CC), 0.1) 20%, rgba(var(--CC), 0.9) 50%, rgba(var(--CC), 0.1) 80%) 1;
     border-style: solid;
