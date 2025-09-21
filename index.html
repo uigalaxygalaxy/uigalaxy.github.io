@@ -998,7 +998,7 @@ let windowTitle;
     document.querySelectorAll('.activityInfo').forEach((object, index) => {
 
     keyResponse = windows[index];
-    if(keyResponse !== 'OFFLINE!' || keyResponse || keyResponse !== '"' || keyResponse !== 'undefined') {
+    if(keyResponse !== 'OFFLINE!' && keyResponse && keyResponse !== '"' && keyResponse !== "undefined") {
 // if keyResponse is a valid string then do this:
     let oldResponse = keyResponse;
     keyResponse = getRandomTitle(keyResponse);
