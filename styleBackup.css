@@ -1083,6 +1083,7 @@ height: 1550%;
     height: 100%;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .recentWrapper {
     margin-left: 10px;
