@@ -977,12 +977,12 @@ let windowTitle;
     const songWrapper = document.querySelector('.titleText');
     const artistWrapper = document.querySelector('.songArtist');
     
-    if(songName) {
+    if(songName && songName !== 'No Song Playing') {
         musicWrapper.style.display = 'flex';    
         songWrapper.textContent = songName;
-        if(songArtist) {
+        if(songArtist && songArtist !== 'No Song Playing') {
             artistWrapper.textContent = `By ${songArtist}`;
-            if(songPlayer) {
+            if(songPlayer && songPlayer !== 'No Song Playing') {
                 artistWrapper.textContent = `By ${songArtist} on ${songPlayer}`
             }
         }
@@ -1020,7 +1020,7 @@ let windowTitle;
 
     }
     else {
-        object.style.display = 'none';
+        object.parentElement.parentElement.parentElement.querySelector('.recentWrapper').style.display = 'none';
     }
 
 });
