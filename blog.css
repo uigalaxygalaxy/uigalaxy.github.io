@@ -535,3 +535,78 @@ h3 {
     font-size: 48px;
 
 }
+.theBLOG {
+    font-size: 42px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.THETEXT {
+    font-size: 32px;
+        transform: scaleY(95%) translate(-110px, 5px);
+        color: rgb(var(--C2));
+        font-family: B612;
+        margin-bottom: -10px;
+        z-index: 100;
+        paint-order: stroke fill;
+    }
+.THETEXTBG {
+    height: 42px;
+    width: 80px;
+    position: absolute;
+    background-color: rgba(var(--C2), 0.4);
+    transform: translate(-110px, 3px);
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+
+}
+.theBLOGtext, .theBLOGtextStroke, .theBLOGtextStroke2 {
+    color: rgb(var(--CC));
+    font-size: 76px;
+    transform: scaleY(105%);
+}
+.theBLOGtext {
+    font-size: 76px;
+    text-shadow: 0 2px 12px color-mix(in srgb, rgb(var(--CC)) 40%, black);
+}
+
+.theBLOGtextStroke, .theBLOGtextStroke2 {
+    color: transparent;
+    position: absolute;
+    -webkit-text-stroke: 12px rgb(var(--C2));
+        text-shadow: 0 2px 12px color-mix(in srgb, rgb(var(--CC)) 40%, black);
+
+}
+.theBLOGtextStroke2 {
+    -webkit-text-stroke: 12px rgb(var(--C2));
+    }
+.leftBG, .rightBG {
+    position: absolute;
+    background-image: linear-gradient(90deg, rgba(var(--CC), 0.8), rgba(var(--C2), 0.4));
+    width: 100px;
+    height: 52px;
+}
+.leftBG {
+    transform: translate(-80px, 13px);
+    clip-path: polygon(6% 0, 0 21%, 11% 34%, 0 61%, 8% 78%, 0 100%, 98% 100%, 97% 80%, 86% 75%, 98% 60%, 84% 44%, 96% 19%, 100% 0);
+
+}
+.rightBG {
+        background-image: linear-gradient(270deg, rgba(var(--CC), 0.8), rgba(var(--C2), 0.4));
+        transform: translate(150px, 13px);
+        clip-path: polygon(6% 0, 0 21%, 11% 34%, 0 61%, 8% 78%, 0 100%, 98% 100%, 97% 80%, 86% 75%, 98% 60%, 84% 44%, 96% 19%, 100% 0);
+}
+.worldspin {
+    transform: translate(-37px, -37px);
+    width: 225px;
+    height: 225px;
+    mix-blend-mode: overlay;
+}
+.centerBG {
+    width: 150px;
+    height: 150px;
+    transform: translate(10px, -36px);
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgb(var(--CC));
+}
