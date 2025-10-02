@@ -1,376 +1,4 @@
 
-
-.blogButton {
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    width: calc(22vw + 24px);
-    min-width: 385px;
-    font-family: "Carbon Bold";
-    padding: 8px 0 8px;
-    border: none;
-    margin-top: 0px;
-    border-style: solid;
-    border-width: 3px;
-    text-align: center;
-    border-color: rgb(var(--CC));
-    background-color: rgb(9, 9, 15, 0);
-    color: rgb(var(--CC));
-    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-    overflow: hidden;
-    border-radius: 4px;
-    text-shadow: 0 0 12px rgba(var(--CC), 0.4);
-}
-.blogButton:hover {
-    background-color: rgb(var(--CC));
-    margin-top: -7px;
-    box-shadow: 0 0 95px rgb(var(--CC), 0.52);
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-    color: white;
-}
-
-
-.container, .image, .title, .info, .tag, .text {
-    color: black;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.container {
-    display: grid;
-    grid-template-rows: 0.5fr 2fr;
-    width: 700px;
-    height: 420px;
-}
-.SubBar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.Tag, .Text, .blogImg {
-    background: rgba(var(--CC), 1);
-    align-self: center;
-    justify-self: center;
-}
-.blogImg {
-    background: none;
-
-}
-.blogButton::after {
-    display: block;
-    content: '';
-    position: absolute;
-    height: 75px;
-    width: 169px;
-    filter: blur(2px);
-    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.65) 50%, transparent 55%);
-    transform: skew(-45deg);
-    top: -23px;
-    left: -115px;
-}
-.blogButton:hover::after {
-    animation: LightSweep 1.6s linear infinite;
-}
-.blogHeader {
-display: flex;
-position: absolute;
-align-items: center;
-justify-content: center;
-    width: 55vw;
-    z-index: 0;
-    min-height: calc(22px*0.7);
-    max-height: calc(35px*0.7);
-    transform: translateY(80%);
-    max-width: 500px;
-    height: calc(.7vw + .7vh + 7px);
-    clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
-background: rgb(var(--C2));
-transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-}
-.blogHeaderTop {
-    width: 27.5vw;
-    z-index: 1;
-    display: flex;
-position: relative;
-align-items: center;
-justify-content: center;
-    margin-bottom: 15px;
-    max-width: 250px;
-    height: calc(2vw + 2vh + 20px);
-    min-height: 40px;
-    max-height: 55px;
-    position: relative;
-    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
-background: rgb(var(--CC));
-transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-
-}
-.blogText {
-    font-size: min(2.4em, 0.8em + 3cqi);
-    vertical-align: center;
-    text-align: center;
-    color: white;
-    -webkit-text-stroke: 4px rgba(0, 0, 0, 0.6);
-    paint-order: stroke fill;
-    text-shadow: 0 0 12px black;
-    margin-left: 0px;
-    position: absolute;
-}
-.recentWrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    
-    
-}
-.blogWrapper {
-    width: clamp(400px, 50vw, 800px);
-    min-width: 580px;
-    height: 96px;
-    margin: 0;
-    margin-top: 20px;
-    display: flex;
-    border: solid rgb(var(--CC)) 2px;
-    border-radius: 3px;
-    background-color: rgba(var(--CC), 0.12);
-    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-    overflow: hidden;
-    position: relative;
-}
-.blogWrapper:hover {
-    background-color: rgba(var(--CC), 1);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 32px rgba(var(--CC), 0.5);
-}
-  .blogWrapper::after {
-    display: block;
-    content: '';
-    position: absolute;
-    height: 175px;
-    width: 169px;
-    filter: blur(2px);
-    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.65) 50%, transparent 55%);
-    transform: skew(-45deg);
-    margin-top: -45px;
-    margin-left: -180px;
-  }
-  @keyframes BigLightSweep {
-    0% {
-        left: -115px;
-    }
-    20% {
-        left: calc(100% + 525px);
-    }
-    100% {
-        left: calc(100% + 525px);
-    }
-}
-    .blogWrapper:hover::after {
-    animation: BigLightSweep 1.6s linear infinite;
-}
-.blogWrapper:hover .blogTitle{
-    color: black;
-}
-.blogWrapper:hover .blogDate {
-    color: black;
-}
-.blogImg {
-    width: 128px;
-    height: 96px;
-    object-fit: cover;
-    margin: 0;
-    background-color: black;
-    mix-blend-mode: overlay;
-
-}
-.blogBox {
-    margin-left: 25px;
-}
-.blogArrow {
-    width: 0; 
-    height: 0; 
-    border-top: 13px solid transparent;
-    border-bottom: 13px solid transparent; 
-    
-    border-right: 20px solid white;
-    position: absolute;
-    margin-left: 108px;
-    margin-top: 71px;
-}
-.BlogRight {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 1fr 26px;
-}
-.blogMeta {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-}
-.blogCategory {
-    text-align: left;
-    color: black;
-    font-size: 26px;
-    background: rgb(var(--CC));
-    vertical-align: bottom;
-    clip-path: polygon(0 0, 94% 0, 100% 100%, 0% 100%);
-
-}
-.BlogBar { /* Note: fixed the capitalization to match HTML */
-    width: clamp(400px, 50vw, 800px);
-    height: 32px;
-    margin-bottom: 54px;
-    display: flex;
-    align-items: center;
-            transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-    /* justify-content: center; Remove this to allow natural left-right alignment */
-}
-
-.BlogBar:hover{
-        height: 86px;
-        margin-bottom: 0;
-
-
-}
-.BlogBar:hover .ribbonButton {
-    margin-bottom: 54px;
-}
-.BlogBar:hover .blogQuickRead {
-    white-space: wrap;
-    font-size: 17px;
-    color: white;
-    
-}
-.blogPlacement {
-    display: flex;
-    width: 100%;
-    height: 60%;
-    flex-wrap: wrap;
-}
-
-.ribbonCounter {
-    margin-left: 10px;
-    font-size: 21px;
-}
-
-
-.ribbonNum {
-    background-image: linear-gradient(165deg, rgb(var(--CC)), rgb(var(--C2)));
-    background-clip: text; 
-    color: transparent;
-    font-family: "B612";
-    font-size: 21px;
-    text-shadow: 0 0 8px rgb(var(--CC));
-
-}
-
-.ribbonButton {
-    cursor: pointer;
-    background-color: rgb(var(--CC), 0.15);
-    width: 125px;
-    max-height: 32px;
-    z-index: 0;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-    /* Add these to ensure proper alignment */
-    display: flex;
-    align-items: center;
-    height: 100%;
-    transition: background-color 0.44s cubic-bezier(0,.77,.37,1.18);
-    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-
-}
-.ribbonNum {
-    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-}
-.ribbonCounter {
-        transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-}
-.ribbonButton:hover {
-background-color: rgb(var(--CC));
-width: 135px;
-}
-
-.ribbonButton:hover .ribbonNum {
-    background: black;
-    background-clip: text;
-}
-.ribbonButton:hover .ribbonCounter {
-    color: black;
-}
-.blogWrapper:hover .blogImg {
-     background-color: white;
-}
-.ribbonButton:active {
-    background-color: color-mix(in srgb, rgb(var(--CC)), black 50%);
-}
-.ribbonButton:active .ribbonNum{
-    color: white;
-}
-.ribbonButton:active .ribbonCounter {
-    margin-top: 5px;
-}
-
-.ribboned  {
-    width: 155px;
-    background-color: rgb(var(--CC));
-}
-.ribboned .ribbonNum  {
-    color: black;
-}
-
-.blogQuickRead {
-    border-right: solid 2px rgb(var(--CC), 0.25);
-    width: calc(clamp(400px, 50vw, 800px) - 125px);
-    padding-left: 5px;
-    display: flex;
-    height: 77%;
-    color: rgb(167, 167, 167);
-    text-shadow: 0 0 6px rgb(var(--CC), 0.5);
-    font-family: B612;
-    font-size: 16px;
-    vertical-align: center;
-    margin-top: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-        transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
-
-}
-.blogDate {
-    width: 100%;
-    text-align: right;
-    color: rgb(var(--CC));
-    font-size: 20px;
-    font-family: B612;
-
-}
-.blogTitle {
-    width: 100%;
-    height: 100%;
-    padding-left: 6px;
-    padding-top: 6px;
-    color: rgb(var(--CC));
-    font-size: clamp(1.4em, 2.35cqi, 1.8em);
-    line-height: 0.8;
-    text-overflow: ellipsis;
-}
-.blogBar {
-    width: 100%;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-}
 .cssisgay {
     font-size: 28px;
     position: absolute;
@@ -541,24 +169,32 @@ h3 {
     align-items: center;
     flex-direction: column;
 }
-.THETEXT {
+.THETEXT, .ESTTEXT {
     font-size: 32px;
-        transform: scaleY(95%) translate(-110px, 5px);
+        transform: scaleY(95%) translate(-110px, -28px);
         color: rgb(var(--C2));
         font-family: B612;
         margin-bottom: -10px;
         z-index: 100;
         paint-order: stroke fill;
+            position: absolute;
+
     }
-.THETEXTBG {
+.THETEXTBG, .ESTTEXTBG {
     height: 42px;
     width: 80px;
     position: absolute;
     background-color: rgba(var(--C2), 0.4);
-    transform: translate(-110px, 3px);
+    transform: translate(-110px, -29px);
     border-top-left-radius: 30%;
     border-top-right-radius: 30%;
-
+}
+.ESTTEXTBG {
+        transform: translate(103px, 65px) rotate(180deg);
+}
+.ESTTEXT {
+    font-size: 24px;
+        transform: scaleY(95%) translate(103px, 75px);
 }
 .theBLOGtext, .theBLOGtextStroke, .theBLOGtextStroke2 {
     color: rgb(var(--CC));
@@ -609,4 +245,77 @@ h3 {
     position: absolute;
     border-radius: 100%;
     background-color: rgb(var(--CC));
+}
+.blogNav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.navTab {
+    font-weight: black;
+    display: flex;
+    flex-direction: row;
+    
+}
+.recentTab {
+    width: 40%;
+    background-image: linear-gradient(180deg, rgba(var(--CC), 0.5), rgba(var(--CC), 0.3));
+    padding-left: 4px;
+    font-size: 24px;
+    color: rgba(var(--CC), 0.8);
+    -webkit-text-stroke: rgba(var(--CC), 0.6) 0.12px;
+}
+.searchTab {
+    width: 60%;
+    width: 40%;
+    background-image: linear-gradient(180deg, rgba(var(--CC), 0.5), rgba(var(--CC), 0.3));
+    padding-left: 4px;
+    font-size: 24px;
+    color: rgba(var(--CC), 0.8);
+    -webkit-text-stroke: rgba(var(--CC), 0.6) 0.12px;
+}
+.secondTab {
+    display: flex;
+    flex-direction: row;
+}
+.recentWrapper {
+    height: 800px;
+    margin: 0;
+    width: 40%;
+        color: rgb(var(--CC));
+        font-family: B612;
+        border-right-style: solid;
+        border-right-color: rgba(var(--CC), 0.5);
+        border-right-width: 2px;
+    background-image: linear-gradient(180deg, rgba(var(--CC), 0.15), rgba(var(--CC), 0.05));
+}
+.recentText {
+    justify-self: center;
+    font-size: 28px;
+    margin-top: 4px;
+}
+.searchBar {
+    justify-self: center;
+    font-size: 28px;
+    margin-top: 4px;
+}
+.searchWrapper {
+        margin: 0;
+
+    width: 60%;
+
+    height: 800px;
+    margin: 0;
+    width: 40%;
+        color: rgb(var(--CC));
+        font-family: B612;
+    background-image: linear-gradient(180deg, rgba(var(--CC), 0.15), rgba(var(--CC), 0.05));
+
+
+}
+.blogWrapper{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

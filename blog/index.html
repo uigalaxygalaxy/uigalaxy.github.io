@@ -44,6 +44,8 @@
 <div class="theBLOG">
     <div class="THETEXT">THE</div>
     <div class="THETEXTBG"></div>
+    <div class="ESTTEXT">est '23</div>
+    <div class="ESTTEXTBG"></div>
     <div>
         <div class="centerBG"><div class="worldspinBG"></div><video class="worldspin" src="../icons/worldspin.webm" autoplay loop muted></video></div>
         <div class="leftBG"></div>
@@ -57,46 +59,30 @@
 <div style="margin-top: 100px;">
 
 </div>
-<div class=recentWrapper><div class="blogHeaderTop"><p class="blogText">RECENT</p> </div> <div class="blogHeader"></div></div>
-
-
-
-
-<div class="blogBox">
-<div class="blogWrapper" onclick="window.location.href = window.location.pathname + '/blogEntries/laundering-crypto.html';">
-    <div class="BlogLeft">
-        <div class="blogArrow">
+<div class="blogWrapper">
+    <div class="blogNav">
+        <div class="recentTab">
+            Curated List
         </div>
-        <img class="blogImg" src="blogEntries/images/robber.png">
-    </div>
-    <div class="BlogRight">
-        <div class="blogTitle">
-            LAUNDERING CRYPTO IS A JOKE. SO I'LL TEACH YOU IN 5 MINUTES.
-        </div>
-        <div class="blogMeta">
-            <div class="blogCategory">CRYPTOCURRENCY</div>
-            <div class="blogDate" id="timeAgo" data-time="1751166556000">Evui</div>
-            <script>
-
-            </script>
-
+        <div class="searchTab">
+            Search
         </div>
     </div>
 
-</div>
-<div class="BlogBar">
-<div class="ribbonButton">
-<div class="ribbonCounter">
-🎀 <span class="ribbonNum" data-id="post1">
-  :3</span>
-</div>
+    <div class="secondTab">
+    <div class="recentWrapper">
+        <div class="recentText">
+            [Recent]
+        </div>
+    </div>
+    <div class="searchWrapper">
+        <div class="searchBar">
+            Search []
+        </div>
+    </div>
+    </div>
 </div>
 
-<div class="blogQuickRead" >
-WAIT. ISN'T EVERY BLOCKCHAIN RECORD 100% PUBLIC? Yup... Until Monero dropped.
-</div>
-</div>
-</div>
 
 
 
@@ -135,7 +121,7 @@ document.querySelectorAll('.blogDate').forEach(element => {
   const timestamp = parseInt(element.getAttribute('data-time'));
 const date = new Date(timestamp);
 if (element === document.querySelector('.blogDate')) {
-element.innerHTML = `[Hover! 🔽]<span style="display:inline-block; width:2em;"></span>${timeSince(date)} ago`;
+element.innerHTML = `[Hover! 🡇]<span style="display:inline-block; width:2em;"></span>${timeSince(date)} ago`;
     return;
 }
 element.innerHTML = `${timeSince(date)} ago`;

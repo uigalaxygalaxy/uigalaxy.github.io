@@ -31,6 +31,10 @@
     font-family: "Apple Casual";
     src: url(Apple\ Casual\ Regular.ttf)
 }
+@font-face {
+    font-family: "Pro Font Windows";
+    src: url(ProFontWindows.ttf)
+}
 :root {
     --CC: 36, 230, 155;
     --C2: 0, 219, 66;
