@@ -127,7 +127,7 @@
                         </a>
 
                         <div class="blogRibbons">
-                            <div class="ribbonButton" id="post1">🎀</div>
+                            <div class="ribbonButton" data-id="post1">🎀</div>
                         </div>
                     </div>
 
@@ -310,7 +310,7 @@
             let totalRibbons = 0;
             document.querySelectorAll('.ribbonButton').forEach(button => {
                 // Load initial state
-                const thisID = button.id;
+                const thisID = button.dataset.id;
                 fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
                     .then(response => response.json())
                     .then(data => {
