@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://uigalaxy.net/api/hit.js">
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="gif/x-icon" href="icons/sylvZOOM.png">
+    <link rel="stylesheet" href="../../styleBackup.css">
+    <link rel="stylesheet" href="../../portfolio.css">
+    <link rel="stylesheet" href="../../blog.css">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uiGalaxy Website</title>
+    <meta name="description" content="Personal website for uiGalaxy. Place of all things galaxy.">
+</head>
+
+
+
+<body class="b">
+    <a href="/">
+
+        <div class="dashboardLogo">
+        </div>
+        <div class="dashboard">
+            <img class="rnlogo"  src="" id="random-logo" src="" alt="Boo!!!!!!! ">
+            <!-- <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!"> !-->
+             <video class="rnimg" src="/../icons/uiBG.mp4" autoplay loop muted >B</video>
+    
+        </div>
+    </a>
+    <div class="dashboardplace">
+        <div class="boo">Boo!!</div>
+    </div>
+    <div class="dashboardblack">
+    </div>
+    <div style="margin-top: clamp(-90px, -6vh, -10px);"> </div>
+        <div class="blogBar">
+           <div class="entryMetabutton" onclick="window.location.href = window.location.pathname.replace('/blogEntries/laundering-crypto.html', '');"><span class="cssisgay">⮨</span><span style="margin-left: 28px;"></span> Go Back</div>
+        </div>
+        <!--
+        <div class="blogBar" style="margin-bottom: 42px;">
+           <div class="entryMetabutton">🡸 Last Entry</div>
+           <div class="entryMetabutton">Next Entry 🡺</div>
+           -->
+        </div>
+        <div class="center">
+            <div class="entryRibbonButton" id="post2">
+                🎀 <span class="entryRibbonCount">67</span>
+            </div>
+</div>
+        <div class="entryTopWrapper" >
+            <div class="entryTitle">
+        EQUUUENOX'S PID GUIDE
+            </div>
+            <div class="entryTitleMeta">
+                <div style="margin-left: 0px;" data-time="1762116750000" class="entryDate"></div>
+                            <div class="entryCategory">ENGINEERING</div>
+                            
+            </div>
+                        <div class="readTime">4 min read</div>
+
+
+        </div>
+<div style="margin-bottom: 77px"></div>
+
+<h1>
+    Have you ever asked yourself, "Man, I really like Eqwetox from last years Robotiscz, I wish they made a PID Guide for my very bad and poopy team" Here you go little boy
+</h1>
+
+<h1>
+    note: this will not go over any math and other bull shit because thats hard mangos to fit in this stupid blog post
+</h1>
+
+<h2>
+    Step 1: Set up
+</h2>
+
+<h1>
+    Read your template's docs and set it up properly. If you don't do this, you will suffer. If you don't use a template, consider using one because I know your ass isn't coding a whole VEX template in the big 2025 😭🙏
+</h1>
+
+<h2>
+    Step 2: Binary Search
+</h2>
+
+<h1>
+Binary search is good because it makes tuning PID less ✡ <br>
+
+The premise is you have a set value (lets say 5) and a change value (which is the same as the set value so also 5). Depending if it overshoots or undershoots, you divide the changing value by 2 and you add or substract it by your set value.
+</h1>
+
+<h1>
+ So it gonna look something like this: <br>
+
+ Set value is 5, changing value is 5. <br>
+
+ Robot doesn't oscillate, add the set value by the changing value (new set value is 10) <br>
+ Robot oscillates, substract the set value by the changing value divided by 2. (So 10 - 2.5 = 7.5)<br>
+ Robot doesn't oscillate, add the set value by the changing value divided by 2. (So 7.5 + 1.25 = 8.75)<br>
+</h1>
+
+<h1>
+    Do this a bunch of times. If you don't rlly understand it its fine if you cant handle the heat stay out of the kitchen or something
+</h1>
+
+<h2>
+    Step 3: kP
+</h2>
+
+<h1>
+    kP is what makes your robot move forward a lot. So the higher it is the faster it goes (which is very good). Now a good boy would say increase it until it oscillates (aka goes back and forth), but the devil on ur shoulder (me) says increase it until it oscillates like 2 times so do that
+</h1>
+
+<h2>
+    Step 4: kD
+</h2>
+
+<h1>
+    kD is what makes ur bot slow down when it reaching where it wanna go. Higher = harsher stops. U increase it til it stop oscillating (goes back and forth) Pretty easy mangoes so far right
+</h1>
+
+<h2>
+    Step 5: kI and anti wind up
+</h2>
+
+<h1>
+kinda rare that u tune this, only needed when ur bot is overshooting or undershooting <br>
+find antiwindup by taking how much it overshoots and adding 50% <br>
+then for kI you keep increasing it until it starts oscillatting <br>
+then ur kinda done
+</h1>
+
+<h2>
+    Step 6: Oh no!!!! Our mangoes is broken!!!
+</h2>
+
+<h1>
+If yo PID is like kinda unstable you probably gotta max the accelleration cuz u got a weird build<br>
+U could also have poopy motor friction <br>
+If still bad, redo it with less kP. <br>
+If still bad after that, Quit and do professional jewish braiding instead because your robot is haunted with bad jewish demons.
+</h1>
+
+<div class="blogImageWrapper">
+            <img src="images/jewishbraiding.webp" class="blogImage">
+            <div class="captionWrapper">
+            <p class="blogCaption"> Jewish braiding for motivation</p>
+            </div>
+            </div>
+
+            <script>
+                function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + "yr ";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + "mo ";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + "d ";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + "hr ";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + "m ";
+  }
+  return Math.floor(seconds) + "sec ";
+}
+
+document.querySelectorAll('.entryDate').forEach(element => {
+  const timestamp = parseInt(element.getAttribute('data-time'));
+const date = new Date(timestamp);
+element.innerHTML = `${timeSince(date)} ago`;
+});
+
+            </script>
+<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>! What's up?</p> </div>
+
+    <div style="height: 2500px"></div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Array of image URLs
+            const logos = [
+                '../../UIGALAXYTETO.PNG',
+                '../../uigalaxycat.png',
+                '../../uiGalaxyMira.png',
+                '../../tes123123t.png'
+            ];
+        
+
+            // Function to select a random logo
+            function getRandomLogo(logos) {
+                const LogoIndex = Math.floor(Math.random() * logos.length);
+                return logos[LogoIndex];
+            }
+        
+            // Function to select a random message
+        
+ const savedColor = localStorage.getItem('CC');
+            if (savedColor) {
+        document.documentElement.style.setProperty('--CC', savedColor);
+    }
+
+    const barackObama = localStorage.getItem('C2');
+    if (barackObama) {
+        document.documentElement.style.setProperty('--C2', barackObama);
+    }
+
+    
+    const michelleObama = localStorage.getItem('PBN');
+    if (michelleObama) {
+        document.documentElement.style.setProperty('--PBN', michelleObama);
+    }
+            // Select a random image, logo, and message
+            const randomLogoUrl = getRandomLogo(logos);
+        
+            // Set the src attribute of the random image and logo
+            const randomLogo = document.getElementById('random-logo');
+            randomLogo.src = randomLogoUrl;
+        
+
+            // Clean the URL
+            const currentUrl = window.location.href;
+            var clean = currentUrl.replace('/portfolio', '');
+            document.getElementById('CURL').href = clean;
+        });
+        </script>
+        
+        <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/insights/script.js"></script>
+        <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        </script>
+        <script defer src="../_vercel/speed-insights/script.js"></script>
+        
+        <script>
+        window.addEventListener('scroll', () => {
+            document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+        }, false);
+        </script>
+        
+ 
+     
+  
+        <script>
+          document.addEventListener('DOMContentLoaded', async function () {
+        async function getClickValue() {
+            try {
+                const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor.js');
+
+                // Network error check
+                if (!response.ok) {
+                    const errorMessage = `Network error: ${response.status}`;
+                    console.error(errorMessage); // Log to console for debugging
+                    throw new Error(errorMessage);
+                }
+
+                const text = await response.text();  // Get raw text response
+                console.log('Response text:', text);  // Log the raw text of the response
+
+                // If the response text is not empty, parse it as JSON
+                if (text) {
+                    const data = JSON.parse(text);
+                    console.log(data);  // Log the parsed data
+
+                    // Update the element with ID "numbers123" with the 'click' value
+                    if (data.visitorCount !== undefined) {
+                        document.getElementById('numbers123').innerText = `${data.visitorCount}`;
+                    } else {
+                        document.getElementById('numbers123').innerText = "Click value not found";
+                    }
+                } else {
+                    const emptyMessage = 'Response body is empty';
+                    console.error(emptyMessage); // Log to console
+                    document.getElementById('numbers123').innerText = "Error: No data received";
+                }
+            } catch (error) {
+                const fetchError = `Failed to fetch data: ${error.message}`;
+                console.error(fetchError); // Log to console
+                document.getElementById('numbers123').innerText = "Error fetching data";
+            }
+        }
+
+        // Call the function to fetch and update the element with click data
+        getClickValue();
+    });
+        </script>
+                <script>
+                    
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.entryRibbonButton').forEach(button => {
+        // Load initial state
+        const thisID = button.dataset.id;
+        fetch(`../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(`fetched at: ../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`);
+                button.querySelector('.entryRibbonCount').innerHTML = data.ribbonCount ?? "0";
+                button.classList.toggle('ribboned', data.alreadyRibboned);
+            })
+            .catch(() => button.innerHTML = 'Error');
+
+        // Add click handler
+        button.addEventListener('click', () => {
+            fetch(`../../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+                .then(response => response.json())
+                .then(data => {
+                    button.querySelector('.entryRibbonCount').innerHTML = data.ribbonCount ?? "0";
+                    button.classList.toggle('ribboned', data.alreadyRibboned);
+                })
+                .catch(() => button.querySelector('.entryRibbonCount').innerHTML = 'Gulp');
+        });
+    });
+});
+
+
+</script>
