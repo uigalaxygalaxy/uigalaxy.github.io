@@ -314,9 +314,11 @@
                 fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
                     .then(response => response.json())
                     .then(data => {
-                        button.querySelector('.ribbonButton').innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                        button.innerHTML = `${data.ribbonCount} 🎀` ?? "0";
                         button.classList.toggle('ribboned', data.alreadyRibboned);
                         totalRibbons += data.ribbonCount;
+                        const ribbonTotal = document.querySelector('.totalRibbonCount');
+                        if(ribbonTotal) ribbonTotal.textContent = totalRibbons;
                     })
                     .catch(() => button.innerHTML = 'Error');
 
@@ -325,14 +327,13 @@
                     fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
                         .then(response => response.json())
                         .then(data => {
-                            button.querySelector('.ribbonButton').innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                            button.innerHTML = `${data.ribbonCount} 🎀` ?? "0";
                             button.classList.toggle('ribboned', data.alreadyRibboned);
                         })
-                        .catch(() => button.querySelector('.ribbonButton').innerHTML = 'Gulp');
+                        .catch(() => button.innerHTML = 'Gulp');
                 });
             });
 
-            document.querySelector('.totalRibbonCount').textContent = totalRibbons;
         });
     </script>
 
