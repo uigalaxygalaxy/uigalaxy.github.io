@@ -106,20 +106,20 @@
 
 
                     <div class="blogGrid colored">
-                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+                        <a class="aelement" href="blogEntries/laundering-crypto.html">
 
                             <div class="blogTags">
                                 CRYPTOCURRENCY
                             </div>
                         </a>
 
-                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+                        <a class="aelement" href="blogEntries/laundering-crypto.html">
                             <div class="blogTitle">
 
                                 LAUNDERING CRYPTO IS A JOKE. SO I'LL TEACH YOU IN 5 MINUTES.
                             </div>
                         </a>
-                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+                        <a class="aelement" href="blogEntries/laundering-crypto.html">
 
                             <div class="blogTimeAgo" data-time="1751166556000" data-readtime="5">
                                 2mo ago
@@ -314,23 +314,23 @@
                 fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
                     .then(response => response.json())
                     .then(data => {
-                        button.innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                        button.textContent = `${data.ribbonCount} 🎀` ?? "0";
                         button.classList.toggle('ribboned', data.alreadyRibboned);
                         totalRibbons += parseInt(data.ribbonCount);
                         const ribbonTotal = document.querySelector('.totalRibbonCount');
                         if(ribbonTotal) ribbonTotal.textContent = totalRibbons;
                     })
-                    .catch(() => button.innerHTML = 'Error');
+                    .catch(() => button.textContent = 'Error');
 
                 // Add click handler
                 button.addEventListener('click', () => {
                     fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
                         .then(response => response.json())
                         .then(data => {
-                            button.innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                            button.textContent = `${data.ribbonCount} 🎀` ?? "0";
                             button.classList.toggle('ribboned', data.alreadyRibboned);
                         })
-                        .catch(() => button.innerHTML = 'Gulp');
+                        .catch(() => button.textContent = 'Gulp');
                 });
             });
 
