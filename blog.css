@@ -403,6 +403,14 @@ margin-left: 6px;
     border-right-style: solid;
 }
 
+.ribboned {
+    background-color: rgb(var(--CC));
+    color: black;
+    box-shadow: 0 0 20px rgb(var(--CC));
+    border-right: rgb(var(--C2)) 5px;
+    border-right-style: solid;
+}
+
 .blogRibbons:active {
     color: white;
     border-right: rgb(var(--C2)) 0px;
