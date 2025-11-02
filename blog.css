@@ -463,31 +463,38 @@ color: black;
     color: black;
     box-shadow: 0 0 12px rgb(var(--CC));
 }
-.entryRibbonButton::before {
+.squareEffect {
     content: "";
     position: absolute;
     width: 0px;
     height: 30px;
     transform: skew(-10deg);
     background-color: rgb(var(--CC));
+    left:0;
+right:0;
+margin-left:auto;
+margin-right:auto;
         z-index: -4;
 
 }
-.entryRibbonButton:hover::before {
+.entryRibbonButton:hover .squareEffect {
         transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
     opacity: 1;
-    width: 200px;
-    transform: translate(-57px, 7.5px) skew(-10deg);
+    width: 220px;
+left:-100px;
+right:-100px;
+margin-left:auto;
+margin-right:auto;
+    transform: translateY(8px) skew(-10deg);
 }
 
 .entryRibbonButton:active {
-    transform: skew(10deg);
     font-size: 32px;
 }
 
-.entryRibbonButton:active::before {
-    width: 160px;
-        transform: translate(-32px, 7.5px) skew(-10deg);
+.entryRibbonButton:active .squareEffect {
+    width: 180px;
+        transform: translateY(8px) skew(-15deg);
 
 }
 

@@ -49,11 +49,12 @@
            -->
         </div>
         <div class="center">
-            <div class="entryRibbonButton" id="post1">
+            <div class="entryRibbonButton">
+                <div class="squareEffect"></div>
                 🎀 <span class="entryRibbonCount">67</span>
             </div>
 </div>
-        <div class="entryTopWrapper" >
+        <div class="entryTopWrapper" id="post1">
             <div class="entryTitle">
         LAUNDERING CRYPTO IS A JOKE. SO I'LL TEACH YOU IN 5 MINUTES.
             </div>
@@ -516,7 +517,7 @@ element.innerHTML = `${timeSince(date)} ago`;
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.entryRibbonButton').forEach(button => {
         // Load initial state
-        const thisID = button.dataset.id;
+        const thisID = button.id;
         fetch(`../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
             .then(response => response.json())
             .then(data => {
