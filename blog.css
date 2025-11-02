@@ -407,13 +407,6 @@ margin-left: 6px;
     background-color: rgb(var(--CC));
     color: black;
     box-shadow: 0 0 20px rgb(var(--CC));
-    border-right: rgb(var(--C2)) 5px;
-    border-right-style: solid;
-}
-
-.ribboned:hover {
-    border-right: rgb(var(--C2)) 5px;
-    border-right-style: solid;
 }
 
 .blogRibbons:active {
