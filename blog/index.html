@@ -315,7 +315,7 @@
                     .then(response => response.json())
                     .then(data => {
                         button.textContent = `${data.ribbonCount} 🎀` ?? "0";
-                        button.classList.toggle('ribboned', data.alreadyRibboned);
+                        button.parentElement.classList.toggle('ribboned', data.alreadyRibboned);
                         totalRibbons += parseInt(data.ribbonCount);
                         const ribbonTotal = document.querySelector('.totalRibbonCount');
                         if(ribbonTotal) ribbonTotal.textContent = totalRibbons;
@@ -328,7 +328,7 @@
                         .then(response => response.json())
                         .then(data => {
                             button.textContent = `${data.ribbonCount} 🎀` ?? "0";
-                            button.classList.toggle('ribboned', data.alreadyRibboned);
+                            button.parentElement.classList.toggle('ribboned', data.alreadyRibboned);
                         })
                         .catch(() => button.textContent = 'Gulp');
                 });
