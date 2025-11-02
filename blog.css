@@ -411,6 +411,11 @@ margin-left: 6px;
     border-right-style: solid;
 }
 
+.ribboned:hover {
+    border-right: rgb(var(--C2)) 5px;
+    border-right-style: solid;
+}
+
 .blogRibbons:active {
     color: white;
     border-right: rgb(var(--C2)) 0px;
