@@ -49,11 +49,9 @@
            -->
         </div>
         <div class="center">
-        <div class="ribbonButton entryButton" data-id="post1">
-<div class="ribbonCounter entryCounter">
-🎀<span class="ribbonNum entryNum">:3</span>
-</div>
-</div>
+            <div class="entryRibbonButton">
+                🎀 <span class="entryRibbonCount">67</span>
+            </div>
 </div>
         <div class="entryTopWrapper">
             <div class="entryTitle">
@@ -514,15 +512,16 @@ element.innerHTML = `${timeSince(date)} ago`;
     });
         </script>
                 <script>
+                    
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.ribbonButton').forEach(button => {
+    document.querySelectorAll('.entryRibbonButton').forEach(button => {
         // Load initial state
         const thisID = button.dataset.id;
         fetch(`../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
             .then(response => response.json())
             .then(data => {
                 console.log(`fetched at: ../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`);
-                button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
+                button.querySelector('.entryRibbonCount').innerHTML = data.ribbonCount ?? "0";
                 button.classList.toggle('ribboned', data.alreadyRibboned);
             })
             .catch(() => button.innerHTML = 'Error');
@@ -532,11 +531,13 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`../../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
                 .then(response => response.json())
                 .then(data => {
-                    button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
+                    button.querySelector('.entryRibbonCount').innerHTML = data.ribbonCount ?? "0";
                     button.classList.toggle('ribboned', data.alreadyRibboned);
                 })
-                .catch(() => button.querySelector('.ribbonCounter .ribbonNum').innerHTML = 'Gulp');
+                .catch(() => button.querySelector('.entryRibbonCount').innerHTML = 'Gulp');
         });
     });
 });
+
+
 </script>

@@ -147,6 +147,7 @@ h3 {
     text-align: center;
     width: 300px;
     font-size: 18px;
+    background-color: rgb(var(--CC));
 }
 .entryNum {
     font-size: 42px;
@@ -374,6 +375,21 @@ margin-left: 6px;
     background-color: rgba(var(--CC), 0.2);
 }
 
+.blogGrid {
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+}
+.blogGrid:hover {
+    background-color: rgb(var(--CC));
+    border-bottom: 3px rgb(var(--C2)) solid;
+}
+.blogGrid:active {
+    border-bottom: 0px rgb(var(--C2)) solid;
+    margin-top: 3px;
+}
+.blogGrid:hover .blogTags, .blogGrid:hover .blogTitle, .blogGrid:hover .blogTimeAgo, .blogGrid:hover .blogRibbons {
+color: black;
+}
+
 .ribbonButton {
     font-family: "Pro Font Windows";
     margin-right: 6px;
@@ -384,6 +400,7 @@ margin-left: 6px;
     border-radius: 0;
 
 }
+
 .blogRibbons {
         font-family: "Pro Font Windows";
     color: rgb(var(--CC));
@@ -403,11 +420,7 @@ margin-left: 6px;
     border-right-style: solid;
 }
 
-.ribboned {
-    background-color: rgb(var(--CC));
-    color: black;
-    box-shadow: 0 0 20px rgb(var(--CC));
-}
+
 
 .blogRibbons:active {
     color: white;
@@ -419,6 +432,69 @@ margin-left: 6px;
 .aelement {
     color: rgb(var(--CC));
     font-family: "Pro Font Windows";
+}
+
+
+.entryRibbonButton {
+    position: relative;
+    margin-right: 6px;
+        border-right: rgb(var(--C2)) 0px;
+    border-right-style: solid;
+    background-image: linear-gradient(to top, rgba(var(--CC), 0.4) 0%, transparent 50%);
+    border-bottom: 2px rgb(var(--CC)) solid;
+    padding: 4px 12px 4px 12px;
+    color: rgb(var(--CC));
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+    border-radius: 0;
+}
+.entryRibbonCount {
+    font-family: "Pro Font Windows";
+    font-size: 42px;
+    display: inline-block;
+    transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+
+}
+.entryRibbonButton:hover .entryRibbonCount {
+    transform: skew(-10deg);
+    font-size: 48px;
+}
+.entryRibbonButton:hover {
+    background-color: rgb(var(--CC));
+    color: black;
+    box-shadow: 0 0 12px rgb(var(--CC));
+}
+.entryRibbonButton::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 30px;
+    transform: skew(-10deg);
+    background-color: rgb(var(--CC));
+        z-index: -4;
+
+}
+.entryRibbonButton:hover::before {
+        transition: all 0.44s cubic-bezier(0,.77,.37,1.18);
+    opacity: 1;
+    width: 200px;
+    transform: translate(-57px, 7.5px) skew(-10deg);
+}
+
+.entryRibbonButton:active {
+    transform: skew(10deg);
+    font-size: 32px;
+}
+
+.entryRibbonButton:active::before {
+    width: 160px;
+        transform: translate(-32px, 7.5px) skew(-10deg);
+
+}
+
+.ribboned {
+    background-color: rgb(var(--CC));
+    color: black;
+    box-shadow: 0 0 20px rgb(var(--CC));
 }
 @media screen and (width > 1250px) {
     .blogGrid, .blogHeader {
