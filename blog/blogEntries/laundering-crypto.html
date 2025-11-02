@@ -521,6 +521,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(`../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
             .then(response => response.json())
             .then(data => {
+                console.log(`fetched at: ../../api/ribbonread.js?id=${encodeURIComponent(thisID)}`);
                 button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
                 button.classList.toggle('ribboned', data.alreadyRibboned);
             })
