@@ -27,10 +27,10 @@
         <div class="dashboardLogo">
         </div>
         <div class="dashboard">
-            <img class="rnlogo"  src="" id="random-logo" src="" alt="Boo!!!!!!! ">
+            <img class="rnlogo" src="" id="random-logo" src="" alt="Boo!!!!!!! ">
             <!-- <img class="rnimg" id="random-image" src="" alt="Boo!!!!!!!!!"> !-->
-             <video class="rnimg" src="../icons/uiBG.mp4" autoplay loop muted >B</video>
-    
+            <video class="rnimg" src="../icons/uiBG.mp4" autoplay loop muted>B</video>
+
         </div>
     </a>
     <div class="dashboardplace">
@@ -40,96 +40,154 @@
     </div>
     <div style="height: 0px;"> </div>
 
-<div class="center">
-<div class="theBLOG">
-    <div class="THETEXT">THE</div>
-    <div class="THETEXTBG"></div>
-    <div class="ESTTEXT">est '23</div>
-    <div class="ESTTEXTBG"></div>
-    <div>
-        <div class="centerBG"><div class="worldspinBG"></div><video class="worldspin" src="../icons/worldspin.webm" autoplay loop muted></video></div>
-        <div class="leftBG"></div>
-        <div class="rightBG"></div>
-        <div class="theBLOGtextStroke2">BLOG</div>
-        <div class="theBLOGtextStroke">BLOG</div>
-        <div class="theBLOGtext">BLOG</div>
-    </div>
-</div>
-</div>
-<div style="margin-top: 100px;">
-
-</div>
-<div class="blogWrapper">
-    <div class="blogNav">
-        <div class="recentTab">
-            Curated List
-        </div>
-        <div class="searchTab">
-            Search
+    <div class="center">
+        <div class="theBLOG">
+            <div class="THETEXT">THE</div>
+            <div class="THETEXTBG"></div>
+            <div class="ESTTEXT">est '23</div>
+            <div class="ESTTEXTBG"></div>
+            <div>
+                <div class="centerBG">
+                    <div class="worldspinBG"></div><video class="worldspin" src="../icons/worldspin.webm" autoplay loop
+                        muted></video>
+                </div>
+                <div class="leftBG"></div>
+                <div class="rightBG"></div>
+                <div class="theBLOGtextStroke2">BLOG</div>
+                <div class="theBLOGtextStroke">BLOG</div>
+                <div class="theBLOGtext">BLOG</div>
+            </div>
         </div>
     </div>
+    <div style="margin-top: 100px;">
 
-    <div class="secondTab">
-    <div class="recentWrapper">
-        <div class="recentText">
-            [Recent]
+    </div>
+    <div class="blogWrapper">
+        <div class="blogNav">
+            <div class="recentTab">
+                Curated List
+            </div>
+            <div class="searchTab">
+                Search
+            </div>
+        </div>
+
+        <div class="secondTab">
+            <div class="recentWrapper">
+            </div>
+            <div class="searchWrapper">
+                <div class="searchBar">
+                    Search []
+                </div>
+                <div class="recentText">
+                    Recent
+                </div>
+                <div class="metaData">
+                    <span style="opacity: 0.67">Stats For Nerds:</span> <br>
+                    <span class="totalBlogCount">:O</span> blog(s), <span class="totalRibbonCount">:O</span> total ribbons, ~<span class="readTimeTotal">5</span> min read time
+                </div>
+                <div class="blogTerminal">
+                    <div class="blogHeader">
+                        <div class="blogTags">
+                            Tags
+                        </div>
+                        <div class="blogTitle">
+                            Title
+                        </div>
+                        <div class="blogHeaderTimeAgo">
+                            Time Ago
+                        </div>
+                        <div class="blogRibbonsHeader">
+                            <div class="blogRibbonsText">
+                                Ribbons
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="blogGrid colored">
+                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+
+                            <div class="blogTags">
+                                CRYPTOCURRENCYasd
+                            </div>
+                        </a>
+
+                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+                            <div class="blogTitle">
+
+                                LAUNDERING CRYPTO IS A JOKE. SO I'LL TEACH YOU IN 5 MINUTES.
+                            </div>
+                        </a>
+                        <a class="aelement" href="./blogEntries/laundering-crypto.html">
+
+                            <div class="blogTimeAgo" data-time="1751166556000" data-readtime="5">
+                                2mo ago
+                            </div>
+                        </a>
+
+                        <div class="blogRibbons" id="post1">
+                            <div class="ribbonButton">🎀</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
         </div>
     </div>
-    <div class="searchWrapper">
-        <div class="searchBar">
-            Search []
-        </div>
+
+
+
+
+
+
+    <script>
+        function timeSince(date) {
+
+            var seconds = Math.floor((new Date() - date) / 1000);
+
+            var interval = seconds / 31536000;
+
+            if (interval > 1) {
+                return Math.floor(interval) + "yr ";
+            }
+            interval = seconds / 2592000;
+            if (interval > 1) {
+                return Math.floor(interval) + "mo ";
+            }
+            interval = seconds / 86400;
+            if (interval > 1) {
+                return Math.floor(interval) + "d ";
+            }
+            interval = seconds / 3600;
+            if (interval > 1) {
+                return Math.floor(interval) + "hr ";
+            }
+            interval = seconds / 60;
+            if (interval > 1) {
+                return Math.floor(interval) + "m ";
+            }
+            return Math.floor(seconds) + "sec ";
+        }
+
+        let totalTime = 0;
+        document.querySelectorAll('.blogTimeAgo').forEach(element => {
+            const timestamp = parseInt(element.getAttribute('data-time'));
+            const date = new Date(timestamp);
+            element.innerHTML = `${timeSince(date)} ago`;
+            totalTime += parseInt(element.getAttribute('data-readtime'));
+        });
+
+        document.querySelector('.readTimeTotal').textContent = totalTime;
+    </script>
+
+    <div class="visitorWrapper">
+        <p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>!
+            What's up?</p>
     </div>
-    </div>
-</div>
-
-
-
-
-
-
-            <script>
-                function timeSince(date) {
-
-  var seconds = Math.floor((new Date() - date) / 1000);
-
-  var interval = seconds / 31536000;
-
-  if (interval > 1) {
-    return Math.floor(interval) + "yr ";
-  }
-  interval = seconds / 2592000;
-  if (interval > 1) {
-    return Math.floor(interval) + "mo ";
-  }
-  interval = seconds / 86400;
-  if (interval > 1) {
-    return Math.floor(interval) + "d ";
-  }
-  interval = seconds / 3600;
-  if (interval > 1) {
-    return Math.floor(interval) + "hr ";
-  }
-  interval = seconds / 60;
-  if (interval > 1) {
-    return Math.floor(interval) + "m ";
-  }
-  return Math.floor(seconds) + "sec ";
-}
-
-document.querySelectorAll('.blogDate').forEach(element => {
-  const timestamp = parseInt(element.getAttribute('data-time'));
-const date = new Date(timestamp);
-if (element === document.querySelector('.blogDate')) {
-element.innerHTML = `[Hover! 🡇]<span style="display:inline-block; width:2em;"></span>${timeSince(date)} ago`;
-    return;
-}
-element.innerHTML = `${timeSince(date)} ago`;
-});
-
-            </script>
-
-<div class="visitorWrapper"><p class="NumberText">You are visitor #<span class="counterText" id="numbers123">Loading (I like eevees)</span>! What's up?</p> </div>
 
     <div style="height: 2500px"></div>
 
@@ -146,130 +204,140 @@ element.innerHTML = `${timeSince(date)} ago`;
                 '../uiGalaxyMira.png',
                 '../tes123123t.png'
             ];
-        
+
 
             // Function to select a random logo
             function getRandomLogo(logos) {
                 const LogoIndex = Math.floor(Math.random() * logos.length);
                 return logos[LogoIndex];
             }
-        
+
             // Function to select a random message
-        
- const savedColor = localStorage.getItem('CC');
+
+            const savedColor = localStorage.getItem('CC');
             if (savedColor) {
-        document.documentElement.style.setProperty('--CC', savedColor);
-    }
+                document.documentElement.style.setProperty('--CC', savedColor);
+            }
 
-    const barackObama = localStorage.getItem('C2');
-    if (barackObama) {
-        document.documentElement.style.setProperty('--C2', barackObama);
-    }
+            const barackObama = localStorage.getItem('C2');
+            if (barackObama) {
+                document.documentElement.style.setProperty('--C2', barackObama);
+            }
 
-    
-    const michelleObama = localStorage.getItem('PBN');
-    if (michelleObama) {
-        document.documentElement.style.setProperty('--PBN', michelleObama);
-    }
+
+            const michelleObama = localStorage.getItem('PBN');
+            if (michelleObama) {
+                document.documentElement.style.setProperty('--PBN', michelleObama);
+            }
             // Select a random image, logo, and message
             const randomLogoUrl = getRandomLogo(logos);
-        
+
             // Set the src attribute of the random image and logo
             const randomLogo = document.getElementById('random-logo');
             randomLogo.src = randomLogoUrl;
-        
+
 
             // Clean the URL
             const currentUrl = window.location.href;
             var clean = currentUrl.replace('/portfolio', '');
             document.getElementById('CURL').href = clean;
         });
-        </script>
-        
-        <script>
+    </script>
+
+    <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-        <script defer src="../_vercel/insights/script.js"></script>
-        <script>
+    </script>
+    <script defer src="../_vercel/insights/script.js"></script>
+    <script>
         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-        </script>
-        <script defer src="../_vercel/speed-insights/script.js"></script>
-        
-        <script>
+    </script>
+    <script defer src="../_vercel/speed-insights/script.js"></script>
+
+    <script>
         window.addEventListener('scroll', () => {
             document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
         }, false);
-        </script>
-        
- 
-     
-  
-        <script>
-          document.addEventListener('DOMContentLoaded', async function () {
-        async function getClickValue() {
-            try {
-                const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor.js');
+    </script>
 
-                // Network error check
-                if (!response.ok) {
-                    const errorMessage = `Network error: ${response.status}`;
-                    console.error(errorMessage); // Log to console for debugging
-                    throw new Error(errorMessage);
-                }
 
-                const text = await response.text();  // Get raw text response
-                console.log('Response text:', text);  // Log the raw text of the response
 
-                // If the response text is not empty, parse it as JSON
-                if (text) {
-                    const data = JSON.parse(text);
-                    console.log(data);  // Log the parsed data
 
-                    // Update the element with ID "numbers123" with the 'click' value
-                    if (data.visitorCount !== undefined) {
-                        document.getElementById('numbers123').innerText = `${data.visitorCount}`;
-                    } else {
-                        document.getElementById('numbers123').innerText = "Click value not found";
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            async function getClickValue() {
+                try {
+                    const response = await fetch('https://uigalaxy-github-io.vercel.app/api/visitor.js');
+
+                    // Network error check
+                    if (!response.ok) {
+                        const errorMessage = `Network error: ${response.status}`;
+                        console.error(errorMessage); // Log to console for debugging
+                        throw new Error(errorMessage);
                     }
-                } else {
-                    const emptyMessage = 'Response body is empty';
-                    console.error(emptyMessage); // Log to console
-                    document.getElementById('numbers123').innerText = "Error: No data received";
+
+                    const text = await response.text();  // Get raw text response
+                    console.log('Response text:', text);  // Log the raw text of the response
+
+                    // If the response text is not empty, parse it as JSON
+                    if (text) {
+                        const data = JSON.parse(text);
+                        console.log(data);  // Log the parsed data
+
+                        // Update the element with ID "numbers123" with the 'click' value
+                        if (data.visitorCount !== undefined) {
+                            document.getElementById('numbers123').innerText = `${data.visitorCount}`;
+                        } else {
+                            document.getElementById('numbers123').innerText = "Click value not found";
+                        }
+                    } else {
+                        const emptyMessage = 'Response body is empty';
+                        console.error(emptyMessage); // Log to console
+                        document.getElementById('numbers123').innerText = "Error: No data received";
+                    }
+                } catch (error) {
+                    const fetchError = `Failed to fetch data: ${error.message}`;
+                    console.error(fetchError); // Log to console
+                    document.getElementById('numbers123').innerText = "Error fetching data";
                 }
-            } catch (error) {
-                const fetchError = `Failed to fetch data: ${error.message}`;
-                console.error(fetchError); // Log to console
-                document.getElementById('numbers123').innerText = "Error fetching data";
             }
-        }
 
-        // Call the function to fetch and update the element with click data
-        getClickValue();
-    });
-        </script>
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.ribbonButton').forEach(button => {
-        // Load initial state
-        const thisID = button.dataset.id;
-        fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
-            .then(response => response.json())
-            .then(data => {
-                button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
-                button.classList.toggle('ribboned', data.alreadyRibboned);
-            })
-            .catch(() => button.innerHTML = 'Error');
-
-        // Add click handler
-        button.addEventListener('click', () => {
-            fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
-                .then(response => response.json())
-                .then(data => {
-                    button.querySelector('.ribbonCounter .ribbonNum').innerHTML = data.ribbonCount ?? "0";
-                    button.classList.toggle('ribboned', data.alreadyRibboned);
-                })
-                .catch(() => button.querySelector('.ribbonCounter .ribbonNum').innerHTML = 'Gulp');
+            // Call the function to fetch and update the element with click data
+            getClickValue();
         });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let totalRibbons = 0;
+            document.querySelectorAll('.ribbonButton').forEach(button => {
+                // Load initial state
+                const thisID = button.dataset.id;
+                fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        button.querySelector('.ribbonButton').innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                        button.classList.toggle('ribboned', data.alreadyRibboned);
+                        totalRibbons += data.ribbonCount;
+                    })
+                    .catch(() => button.innerHTML = 'Error');
+
+                // Add click handler
+                button.addEventListener('click', () => {
+                    fetch(`../api/ribbon.js?id=${encodeURIComponent(thisID)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            button.querySelector('.ribbonButton').innerHTML = `${data.ribbonCount} 🎀` ?? "0";
+                            button.classList.toggle('ribboned', data.alreadyRibboned);
+                        })
+                        .catch(() => button.querySelector('.ribbonButton').innerHTML = 'Gulp');
+                });
+            });
+
+            document.querySelector('.totalRibbonCount').textContent = totalRibbons;
+        });
+    </script>
+
+    <script>
+     document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('.totalBlogCount').textContent = document.querySelectorAll('.blogGrid').length;
     });
-});
-</script>
+    </script>

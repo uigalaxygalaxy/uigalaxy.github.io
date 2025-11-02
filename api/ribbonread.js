@@ -17,7 +17,7 @@ let totalRibbons = await redis.get(ribbonCountKey);
 let alreadyRibboned = false;
 
 if (totalRibbons === null) {
-    return res.status(404).json({ error: "totralRibbons doesn't exist!"});
+    return res.status(404).json({ error: "totalRibbons doesn't exist!"});
 }
 
         if (await redis.get(ribbonedKey)) {
