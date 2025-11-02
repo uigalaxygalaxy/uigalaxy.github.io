@@ -316,7 +316,7 @@
                     .then(data => {
                         button.innerHTML = `${data.ribbonCount} 🎀` ?? "0";
                         button.classList.toggle('ribboned', data.alreadyRibboned);
-                        totalRibbons += data.ribbonCount;
+                        totalRibbons += parseInt(data.ribbonCount);
                         const ribbonTotal = document.querySelector('.totalRibbonCount');
                         if(ribbonTotal) ribbonTotal.textContent = totalRibbons;
                     })
