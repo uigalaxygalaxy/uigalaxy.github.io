@@ -310,7 +310,7 @@
             let totalRibbons = 0;
             document.querySelectorAll('.ribbonButton').forEach(button => {
                 // Load initial state
-                const thisID = button.dataset.id;
+                const thisID = button.id;
                 fetch(`../api/ribbonread.js?id=${encodeURIComponent(thisID)}`)
                     .then(response => response.json())
                     .then(data => {
